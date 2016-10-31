@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-Regular.ttf">
+            <string>Oswald-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SubCategoryCell" id="3T5-HG-PaH" customClass="SubCategoryCell" customModule="PizzaMRD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="312" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u85-CB-rSA">
+                        <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald Regular" pointSize="26"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </state>
+                        <connections>
+                            <action selector="subCategoriesButtonSelected:" destination="3T5-HG-PaH" eventType="touchUpInside" id="42p-eX-K2O"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="u85-CB-rSA" firstAttribute="leading" secondItem="3T5-HG-PaH" secondAttribute="leading" id="5WW-s9-PyJ"/>
+                <constraint firstAttribute="bottom" secondItem="u85-CB-rSA" secondAttribute="bottom" id="hjV-o7-bG2"/>
+                <constraint firstItem="u85-CB-rSA" firstAttribute="top" secondItem="3T5-HG-PaH" secondAttribute="top" id="tmq-ZG-Esg"/>
+                <constraint firstAttribute="trailing" secondItem="u85-CB-rSA" secondAttribute="trailing" id="yBC-3J-V64"/>
+            </constraints>
+            <size key="customSize" width="312" height="108"/>
+            <connections>
+                <outlet property="subCategoryButton" destination="u85-CB-rSA" id="Rjw-2x-A4y"/>
+            </connections>
+            <point key="canvasLocation" x="-103" y="-165"/>
+        </collectionViewCell>
+    </objects>
+</document>

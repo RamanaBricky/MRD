@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryVC" customModule="PizzaMRD" customModuleProvider="target">
+            <connections>
+                <outlet property="subCategoriesCollectionView" destination="Ciy-rO-kCu" id="Ete-YW-c5O"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vtW-CM-oOw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ciy-rO-kCu">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CMl-fI-23e">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fZh-8W-Htp"/>
+                        <outlet property="delegate" destination="-1" id="ea2-bk-brt"/>
+                    </connections>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub-Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPD-tI-BPf">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="u3U-pL-URN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="46"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PPD-tI-BPf" secondAttribute="trailing" id="CDo-LG-gkb"/>
+                <constraint firstItem="Ciy-rO-kCu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JtK-Z8-aTH"/>
+                <constraint firstItem="PPD-tI-BPf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WAy-mh-Vdj"/>
+                <constraint firstAttribute="trailing" secondItem="Ciy-rO-kCu" secondAttribute="trailing" id="b06-7U-i2f"/>
+                <constraint firstAttribute="bottom" secondItem="Ciy-rO-kCu" secondAttribute="bottom" id="cvg-Tw-fdD"/>
+                <constraint firstItem="Ciy-rO-kCu" firstAttribute="top" secondItem="PPD-tI-BPf" secondAttribute="bottom" id="hH3-pB-aCP"/>
+                <constraint firstItem="PPD-tI-BPf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="rxC-yF-0f0"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
