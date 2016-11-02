@@ -13,6 +13,8 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     
     @IBOutlet weak var subCategoriesCollectionView: UICollectionView!
     
+    @IBOutlet weak var subCategoriesTitleLabel: UILabel!
+    
     var viewModel:SubCategoryViewModel? {
         didSet{
             viewModel?.delegate = self
@@ -22,14 +24,57 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let coreDataStack = CoreDataStack()
+        
+        subCategoriesTitleLabel.text = coreDataStack.categoriesList[(viewModel?.selectedCategoryID)!]
+        
         subCategoriesCollectionView.register(UINib.init(nibName: String(describing: SubCategoryCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SubCategoryCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(SubCategoryVC.subCategorySelected), name: NSNotification.Name(rawValue:"SubCategorySelected"), object: nil)
         
     }
     
     func subCategorySelected(notification: Notification){
-         let subCategoryOptions = notification.object as! (Int,Int,[String])
-        print("subCategoryOptions \(subCategoryOptions)")
+        
+        
+         let subCategoryOptionsDict = notification.userInfo
+         let mrdDetailsVM = MRDetailsVM()
+        mrdDetailsVM.selectedCategoryID = subCategoryOptionsDict!["cat"] as! Int
+        mrdDetailsVM.selectedSubCategoryID = subCategoryOptionsDict!["sub"] as! Int
+        let mrdDetailsVC = MRDDetailsVC()
+        mrdDetailsVC.viewModel = mrdDetailsVM
+         self.navigationController?.pushViewController(mrdDetailsVC, animated: true)
+        
+//        let subCategoryOptions = SubCategoryOptions.init(catID: subCategoryOptionsDict!["cat"] as! Int, subCatID: subCategoryOptionsDict!["sub"] as! Int)
+//        subCategoryOptions.delegate = self
+//        
+////        let startCenter = cell.contentView.convert(startCenter, to: self.window)
+////        
+////        let endCenter   = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+////        overView.center = startCenter
+////        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//        
+//        AlertWindowView.sharedInstance.showWithView(subCategoryOptions,
+//                                                      animations:
+//            {
+//                UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
+//                               animations: {
+//                                subCategoryOptions.transform = CGAffineTransform.identity
+////                                subCategoryOptions.center = endCenter
+//                    },
+//                               completion: {(completed) in
+//                })
+//            },
+//                                                      dismissAnimations:
+//            {
+//                [weak subCategoryOptions] in
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    if let overView = subCategoryOptions
+//                    {
+//                        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001);
+////                        overView.center = startCenter
+//                    }
+//                })
+//            })
     }
 }
 
@@ -44,6 +89,7 @@ extension SubCategoryVC: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubCategoryCell", for: indextPath) as! SubCategoryCell
         cell.subCategoryID = (indextPath as NSIndexPath).row + 1
+        cell.categoryID = viewModel?.selectedCategoryID
         cell.subCategoryButton.setTitle(buttonTitle, for: .normal)
         return cell
     }
@@ -74,7 +120,7 @@ extension SubCategoryVC: SubCategoryOptionsDelegate {
         
     }
     
-    func optionSelected(with indexPath: IndexPath){
+    func optionSelected(with indexPath: Int){
         
     }
 }

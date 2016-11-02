@@ -13,6 +13,7 @@ class SubCategoryOptionCell: UITableViewCell {
     
     @IBOutlet weak var subCategoryOptionLabel: UILabel!
     @IBAction func switchSelectionAction(_ sender: AnyObject) {
+        
     }
     
 }

@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryVC" customModule="PizzaMRD" customModuleProvider="target">
             <connections>
                 <outlet property="subCategoriesCollectionView" destination="Ciy-rO-kCu" id="Ete-YW-c5O"/>
+                <outlet property="subCategoriesTitleLabel" destination="PPD-tI-BPf" id="6vh-nq-mz9"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vtW-CM-oOw"/>
             </connections>
         </placeholder>

@@ -21,6 +21,7 @@ protocol SubCategoryViewModelDelegate:class {
 class SubCategoryVM:SubCategoryViewModel {
     var subCategoryList:Dictionary<Int,String>?
     var selectedCategoryID:Int = 0
+    var selectedCategoryTitle: String?
     weak var delegate: SubCategoryViewModelDelegate?
     
     init(categoryID:Int){

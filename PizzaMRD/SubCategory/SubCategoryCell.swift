@@ -15,8 +15,10 @@ class SubCategoryCell: UICollectionViewCell {
 
     @IBOutlet var subCategoryButton: UIButton!
     var subCategoryID: Int!
+    var categoryID: Int!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         applyGradientAndShadow()
     }
     
@@ -57,7 +59,7 @@ class SubCategoryCell: UICollectionViewCell {
     }
     
     @IBAction func subCategoriesButtonSelected(_ sender: AnyObject) {
-        let obj = (1,1,["L","M","S"])
-        NotificationCenter.default.post(name:  NSNotification.Name(rawValue:"SubCategorySelected"), object: obj)
+        let userinfo = ["cat":categoryID, "sub":subCategoryID]
+        NotificationCenter.default.post(name:  NSNotification.Name(rawValue:"SubCategorySelected"), object: nil, userInfo:userinfo)
     }
 }

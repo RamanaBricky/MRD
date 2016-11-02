@@ -29,6 +29,12 @@
 		9630B54A1DC49C8E0073B16D /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
 		96D44C1E1DC60D0B00753A30 /* MRD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */; };
 		96D44C201DC6106600753A30 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* CoreDataStack.swift */; };
+		96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
+		96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
+		96E4163B1DC9511C00939B62 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
+		96E416401DC95B2000939B62 /* MRDDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */; };
+		96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416411DC95B5500939B62 /* MRDDetailsVC.swift */; };
+		96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		9630B5491DC49C8E0073B16D /* CategoriesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVM.swift; sourceTree = "<group>"; };
 		96D44C1D1DC60D0B00753A30 /* MRD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRD.xcdatamodel; sourceTree = "<group>"; };
 		96D44C1F1DC6106600753A30 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryOptionsVM.swift; sourceTree = "<group>"; };
+		96E4163A1DC9511C00939B62 /* AlertWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindowView.swift; sourceTree = "<group>"; };
+		96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRDDetailsVC.xib; sourceTree = "<group>"; };
+		96E416411DC95B5500939B62 /* MRDDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVC.swift; sourceTree = "<group>"; };
+		96E416431DC95BB500939B62 /* MRDDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 				9601ACB11DC804B300FE3145 /* SubCategoryOptions.swift */,
 				9601ACB31DC8074A00FE3145 /* SubCategoryOptionCell.swift */,
 				9601ACB51DC8075D00FE3145 /* SubCategoryOptionCell.xib */,
+				96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */,
 			);
 			path = SubCategory;
 			sourceTree = "<group>";
@@ -114,6 +127,7 @@
 		9630B52A1DC495A00073B16D /* PizzaMRD */ = {
 			isa = PBXGroup;
 			children = (
+				96E4163C1DC95AB200939B62 /* MRDDetails */,
 				9601ACA41DC7E43F00FE3145 /* SubCategory */,
 				96D44C1B1DC60CD700753A30 /* Model */,
 				9630B5441DC49BD30073B16D /* CategoriesCell */,
@@ -141,10 +155,22 @@
 		96D44C1B1DC60CD700753A30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */,
 				96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */,
 				96D44C1F1DC6106600753A30 /* CoreDataStack.swift */,
+				96E4163A1DC9511C00939B62 /* AlertWindowView.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		96E4163C1DC95AB200939B62 /* MRDDetails */ = {
+			isa = PBXGroup;
+			children = (
+				96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */,
+				96E416411DC95B5500939B62 /* MRDDetailsVC.swift */,
+				96E416431DC95BB500939B62 /* MRDDetailsVM.swift */,
+			);
+			path = MRDDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +236,7 @@
 				9630B53E1DC496010073B16D /* CategoriesCell in Resources */,
 				9630B5361DC495A00073B16D /* LaunchScreen.storyboard in Resources */,
 				9630B5331DC495A00073B16D /* Assets.xcassets in Resources */,
+				96E416401DC95B2000939B62 /* MRDDetailsVC.xib in Resources */,
 				9601ACAE1DC7F6F700FE3145 /* SubCategoryCell.xib in Resources */,
 				9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */,
 				9601ACB01DC8049C00FE3145 /* SubCategoryOptions.xib in Resources */,
@@ -226,11 +253,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */,
+				96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */,
 				9630B5471DC49BE30073B16D /* CategoriesCell.swift in Sources */,
 				9601ACB21DC804B300FE3145 /* SubCategoryOptions.swift in Sources */,
+				96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */,
 				9601ACAA1DC7E5B500FE3145 /* SubCategoryVM.swift in Sources */,
 				9601ACB41DC8074A00FE3145 /* SubCategoryOptionCell.swift in Sources */,
+				96E4163B1DC9511C00939B62 /* AlertWindowView.swift in Sources */,
 				9630B52E1DC495A00073B16D /* ViewController.swift in Sources */,
+				96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */,
 				96D44C1E1DC60D0B00753A30 /* MRD.xcdatamodeld in Sources */,
 				9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */,
 				96D44C201DC6106600753A30 /* CoreDataStack.swift in Sources */,
