@@ -76,33 +76,28 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         madeTimeTextField.text = date.toString(.none, timeStyle: .short)
         
         if !(mrdStruct?.isEmpty)! {
-            if let firstMRDStruct = mrdStruct?[0] {
-                let (rDate,rTime) = calculateDateAndTime(frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
-                readyDateTextField.text = rDate
-                readyTimeTextField.text = rTime
+            if let firstMRDStruct = mrdStruct?[(viewModel?.selectedMRDType)!] {
+                let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
+                readyDateTextField.text = rDate.toString(.short, timeStyle: .none)
+                readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
                 
-                let (dDate,dTime) = calculateDateAndTime(frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
-                discardDateTextField.text = dDate
-                discardTimeTextField.text = dTime
+                let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
+                discardDateTextField.text = dDate.toString(.short, timeStyle: .none)
+                discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
             }
         }
        
     }
     
-    func calculateDateAndTime(frequency: Frequency = .undefined, interval: Int = 0) -> (String,String){
-        
-        let date = Date()
-
+    func calculateDateAndTime(date: Date, frequency: Frequency = .undefined, interval: Int = 0) -> Date{
         switch frequency
         {
             case .hours:
-                let addedHours = date.dateByAddingHours(interval)
-                return (addedHours.toString(.short, timeStyle: .none), addedHours.toString(.none, timeStyle: .short))
+                return date.dateByAddingHours(interval)
             case .days:
-                let addedDays = date.dateByAddingDays(interval)
-                return (addedDays.toString(.short, timeStyle: .none), addedDays.toString(.none, timeStyle: .short))
+                return date.dateByAddingDays(interval)
             default:
-                return (" ", " ")
+                return date
         }
     }
     
