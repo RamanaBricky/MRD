@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SubCategoryOptionCell" selectionStyle="default" indentationWidth="10" id="Xrb-DX-JiE" customClass="SubCategoryOptionCell" customModule="PizzaMRD" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SubCategoryOptionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubCategoryOptionCell" id="Xrb-DX-JiE" customClass="SubCategoryOptionCell" customModule="PizzaMRD" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xrb-DX-JiE" id="8T4-nA-FLW">
@@ -25,24 +25,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-Bz-rxK">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="31" id="19d-Z5-zdG"/>
-                            <constraint firstAttribute="width" constant="49" id="hYz-OC-R4D"/>
-                        </constraints>
-                        <connections>
-                            <action selector="switchSelectionAction:" destination="Xrb-DX-JiE" eventType="valueChanged" id="oFl-fu-doI"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Y4b-Bz-rxK" secondAttribute="bottom" constant="6" id="3J7-g1-nMl"/>
-                    <constraint firstAttribute="trailing" secondItem="Y4b-Bz-rxK" secondAttribute="trailing" constant="8" id="EZ0-4d-fyr"/>
-                    <constraint firstAttribute="bottom" secondItem="Sgr-1g-Ca9" secondAttribute="bottom" id="Ey7-yp-52t"/>
-                    <constraint firstItem="Y4b-Bz-rxK" firstAttribute="top" secondItem="8T4-nA-FLW" secondAttribute="top" constant="6" id="GNp-hm-0ve"/>
-                    <constraint firstItem="Y4b-Bz-rxK" firstAttribute="leading" secondItem="Sgr-1g-Ca9" secondAttribute="trailing" id="Pad-xv-CiT"/>
-                    <constraint firstItem="Sgr-1g-Ca9" firstAttribute="leading" secondItem="8T4-nA-FLW" secondAttribute="leading" id="maA-6s-fF7"/>
-                    <constraint firstItem="Sgr-1g-Ca9" firstAttribute="top" secondItem="8T4-nA-FLW" secondAttribute="top" id="qO9-cE-S6s"/>
+                    <constraint firstItem="Sgr-1g-Ca9" firstAttribute="leading" secondItem="8T4-nA-FLW" secondAttribute="leading" id="0Fj-cN-5CJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Sgr-1g-Ca9" secondAttribute="trailing" id="8s9-d9-Bdo"/>
+                    <constraint firstItem="Sgr-1g-Ca9" firstAttribute="top" secondItem="8T4-nA-FLW" secondAttribute="top" id="SgT-JK-Z32"/>
+                    <constraint firstAttribute="bottom" secondItem="Sgr-1g-Ca9" secondAttribute="bottom" id="WaG-9r-FbI"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

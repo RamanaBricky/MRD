@@ -14,7 +14,8 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     @IBOutlet weak var subCategoriesCollectionView: UICollectionView!
     
     @IBOutlet weak var subCategoriesTitleLabel: UILabel!
-    
+    var catID:Int = 0
+    var subCatID:Int = 0
     var viewModel:SubCategoryViewModel? {
         didSet{
             viewModel?.delegate = self
@@ -35,46 +36,52 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     
     func subCategorySelected(notification: Notification){
         
+        let subCategoryOptionsDict = notification.userInfo
+        catID = subCategoryOptionsDict!["cat"] as! Int
+        subCatID = subCategoryOptionsDict!["sub"] as! Int
+        let coreDataStack = CoreDataStack()
         
-         let subCategoryOptionsDict = notification.userInfo
-         let mrdDetailsVM = MRDetailsVM()
-        mrdDetailsVM.selectedCategoryID = subCategoryOptionsDict!["cat"] as! Int
-        mrdDetailsVM.selectedSubCategoryID = subCategoryOptionsDict!["sub"] as! Int
+        if let mrdTypeArray = coreDataStack.mrdType[catID]![subCatID], mrdTypeArray.count <= 1 {
+            //navigate to print screen
+            navigateToPrintScreen()
+        }
+        else {
+            //Show the MRD Type if there is any
+            let subCategoryOptions = SubCategoryOptions.init(catID: catID, subCatID:  subCatID)
+            subCategoryOptions.delegate = self
+            subCategoryOptions.center = view.center
+            
+            AlertWindowView.sharedInstance.showWithView(subCategoryOptions,
+                                                        animations:{
+                    UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
+                                   animations: {
+                                        subCategoryOptions.transform = CGAffineTransform.identity
+                                    },
+                                   completion: {(completed) in})
+                },dismissAnimations:{
+                    [weak subCategoryOptions] in
+                    UIView.animate(withDuration: 0.3, animations: {
+                        if let overView = subCategoryOptions
+                        {
+                            overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                        }
+                    })
+                })
+        }
+    }
+    
+    func navigateToPrintScreen(selectedMRDType: Int = -1){
+        let mrdDetailsVM = MRDetailsVM()
+        mrdDetailsVM.selectedCategoryID = catID
+        mrdDetailsVM.selectedSubCategoryID = subCatID
+        if selectedMRDType != -1 {
+            mrdDetailsVM.selectedMRDType = selectedMRDType
+        }
+        
         let mrdDetailsVC = MRDDetailsVC()
         mrdDetailsVC.viewModel = mrdDetailsVM
-         self.navigationController?.pushViewController(mrdDetailsVC, animated: true)
         
-//        let subCategoryOptions = SubCategoryOptions.init(catID: subCategoryOptionsDict!["cat"] as! Int, subCatID: subCategoryOptionsDict!["sub"] as! Int)
-//        subCategoryOptions.delegate = self
-//        
-////        let startCenter = cell.contentView.convert(startCenter, to: self.window)
-////        
-////        let endCenter   = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
-////        overView.center = startCenter
-////        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-//        
-//        AlertWindowView.sharedInstance.showWithView(subCategoryOptions,
-//                                                      animations:
-//            {
-//                UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
-//                               animations: {
-//                                subCategoryOptions.transform = CGAffineTransform.identity
-////                                subCategoryOptions.center = endCenter
-//                    },
-//                               completion: {(completed) in
-//                })
-//            },
-//                                                      dismissAnimations:
-//            {
-//                [weak subCategoryOptions] in
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    if let overView = subCategoryOptions
-//                    {
-//                        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001);
-////                        overView.center = startCenter
-//                    }
-//                })
-//            })
+        self.navigationController?.pushViewController(mrdDetailsVC, animated: true)
     }
 }
 
@@ -117,10 +124,11 @@ extension SubCategoryVC: UICollectionViewDataSource {
 extension SubCategoryVC: SubCategoryOptionsDelegate {
     
     func didCancel(){
-        
+        AlertWindowView.sharedInstance.dismissAlert()
     }
     
     func optionSelected(with indexPath: Int){
-        
+        AlertWindowView.sharedInstance.dismissAlert()
+        navigateToPrintScreen(selectedMRDType: indexPath)
     }
 }

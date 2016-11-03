@@ -22,11 +22,15 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
         viewModel.delegate = self
         }
     }
-
+    @IBOutlet var view: UIView!
+    @IBOutlet weak var subCategoryOptionTableView: UITableView!
+    @IBOutlet weak var selectButton: UIButton!
+    
      init(catID:Int, subCatID:Int){
         self.viewModel = SubCategoryOptionsVM()
-        subSubCategoryList = self.viewModel.getSubSubCategoryList(catID: catID, subCatID: subCatID)
+        subSubCategoryList = self.viewModel.getMRDList(catID: catID, subCatID: subCatID)
         super.init(frame: CGRect(x: 0,y: 0,width: 250,height: 180))
+        nibSetup()
     }
     
     override init(frame: CGRect)
@@ -39,7 +43,26 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
         fatalError("MarketCellOptions must be called with init(indexPath: NSIndexPath) method")
     }
     
-    @IBOutlet weak var subCategoryOptionTableView: UITableView!
+    fileprivate func nibSetup()
+    {
+        backgroundColor = UIColor.clear
+        view = loadViewFromNib()
+        let frame = CGRect(x: 0,y: 0,width: 300,height: 280)
+        view.frame = frame
+        bounds = view.frame
+        view.layer.cornerRadius = 6.0
+        addSubview(view)
+        subCategoryOptionTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
+        subCategoryOptionTableView.tableFooterView = UIView()
+        selectButton.isEnabled = false
+    }
+    
+    fileprivate func loadViewFromNib() -> UIView
+    {
+        let nib = UINib(nibName: String(describing: SubCategoryOptions.self), bundle: nil)
+        let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        return nibView
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,14 +74,26 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoryOptionCell", for: indexPath) as! SubCategoryOptionCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoryOptionCell", for: indexPath) as? SubCategoryOptionCell
         
-        let row = indexPath.row
-        cell.subCategoryOptionLabel.text = subSubCategoryList[row]
+        if cell == nil {
+            cell = SubCategoryOptionCell(style: .default, reuseIdentifier: "SubCategoryOptionCell")
+        }
         
-        return cell
+       let row = indexPath.row
+       cell?.subCategoryOptionLabel.text = subSubCategoryList[row]
+        
+        return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath.row
+        selectButton.isEnabled = true
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath.row
+    }
     @IBAction func CancelButtonAction(_ sender: AnyObject) {
         delegate?.didCancel()
     }
@@ -66,6 +101,4 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     @IBAction func selectAction(_ sender: AnyObject) {
         delegate?.optionSelected(with: selectedIndexPath)
     }
-    
-    
 }

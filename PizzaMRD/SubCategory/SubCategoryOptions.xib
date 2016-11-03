@@ -13,7 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryOptions" customModule="PizzaMRD" customModuleProvider="target">
             <connections>
+                <outlet property="selectButton" destination="00a-do-ZGw" id="42i-ce-HS5"/>
                 <outlet property="subCategoryOptionTableView" destination="Iz7-Pr-fM9" id="QJC-ca-69g"/>
+                <outlet property="view" destination="iN0-l3-epB" id="xbG-NX-Gfh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,7 +30,7 @@
                         <outlet property="delegate" destination="-1" id="OeC-Bh-tZw"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sub-category options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-Z2-7V2">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select MRD Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-Z2-7V2">
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="yJX-u6-Nyh"/>
                     </constraints>

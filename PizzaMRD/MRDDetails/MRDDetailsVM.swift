@@ -12,6 +12,7 @@ protocol MRDDetailsViewModel {
     weak var delegate:MRDDetailsDelegate? {get set}
     var selectedCategoryID:Int {get set}
     var selectedSubCategoryID:Int {get set}
+    var selectedMRDType:Int? {get set}
 }
 
 protocol MRDDetailsDelegate:class {
@@ -23,4 +24,5 @@ class MRDetailsVM: MRDDetailsViewModel {
     weak var delegate:MRDDetailsDelegate?
     var selectedCategoryID: Int = 0
     var selectedSubCategoryID: Int = 0
+    var selectedMRDType: Int?
 }
