@@ -88,17 +88,18 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath.row
-        selectButton.isEnabled = true
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedIndexPath = indexPath.row
-    }
-    @IBAction func CancelButtonAction(_ sender: AnyObject) {
-        delegate?.didCancel()
-    }
-    
-    @IBAction func selectAction(_ sender: AnyObject) {
         delegate?.optionSelected(with: selectedIndexPath)
+//        selectButton.isEnabled = true
     }
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        selectedIndexPath = indexPath.row
+//    }
+//    @IBAction func CancelButtonAction(_ sender: AnyObject) {
+//        delegate?.didCancel()
+//    }
+//    
+//    @IBAction func selectAction(_ sender: AnyObject) {
+//        delegate?.optionSelected(with: selectedIndexPath)
+//    }
 }

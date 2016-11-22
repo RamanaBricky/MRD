@@ -27,7 +27,7 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         let coreDataStack = CoreDataStack()
         
-        subCategoriesTitleLabel.text = coreDataStack.categoriesList[(viewModel?.selectedCategoryID)!]
+         self.navigationItem.title = coreDataStack.categoriesList[(viewModel?.selectedCategoryID)!]
         
         subCategoriesCollectionView.register(UINib.init(nibName: String(describing: SubCategoryCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SubCategoryCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(SubCategoryVC.subCategorySelected), name: NSNotification.Name(rawValue:"SubCategorySelected"), object: nil)
@@ -76,6 +76,9 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         mrdDetailsVM.selectedSubCategoryID = subCatID
         if selectedMRDType != -1 {
             mrdDetailsVM.selectedMRDType = selectedMRDType
+        }
+        else {
+            mrdDetailsVM.selectedMRDType = 0
         }
         
         let mrdDetailsVC = MRDDetailsVC()

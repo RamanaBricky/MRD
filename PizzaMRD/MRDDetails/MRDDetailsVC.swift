@@ -54,7 +54,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let subCategoryText = coreDataStack.subCategoriesList[catID!]?[subCatID!]
         if let mrdType = viewModel?.selectedMRDType {
             let mrdTypeText = coreDataStack.mrdType[catID!]?[subCatID!]?[mrdType]
-            titleLabel.text = ("\(subCategoryText!) - \(mrdTypeText!)")
+            navigationItem.title = ("\(subCategoryText!) - \(mrdTypeText!)")
         }
         else {
             titleLabel.text = subCategoryText

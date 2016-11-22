@@ -59,9 +59,9 @@
 		9630B5371DC495A00073B16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9630B53D1DC496010073B16D /* CategoriesCell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CategoriesCell; path = /Users/RamanaReddy/Desktop/PizzaMRD/PizzaMRD/CategoriesCell; sourceTree = "<absolute>"; };
 		9630B5411DC496BD0073B16D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		9630B5451DC49BE30073B16D /* CategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesCell.swift; path = CategoriesCell/CategoriesCell.swift; sourceTree = "<group>"; };
-		9630B5461DC49BE30073B16D /* CategoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCell.xib; path = CategoriesCell/CategoriesCell.xib; sourceTree = "<group>"; };
-		9630B5491DC49C8E0073B16D /* CategoriesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVM.swift; sourceTree = "<group>"; };
+		9630B5451DC49BE30073B16D /* CategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		9630B5461DC49BE30073B16D /* CategoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
+		9630B5491DC49C8E0073B16D /* CategoriesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesVM.swift; path = ../CategoriesVM.swift; sourceTree = "<group>"; };
 		9635D8E01DCADBA000E668EE /* PrintLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrintLabelView.xib; sourceTree = "<group>"; };
 		9635D8E21DCADBB000E668EE /* PrintLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintLabelView.swift; sourceTree = "<group>"; };
 		96D44C1D1DC60D0B00753A30 /* MRD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRD.xcdatamodel; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				9630B5461DC49BE30073B16D /* CategoriesCell.xib */,
 				9630B5491DC49C8E0073B16D /* CategoriesVM.swift */,
 			);
-			name = CategoriesCell;
+			path = CategoriesCell;
 			sourceTree = "<group>";
 		};
 		96D44C1B1DC60CD700753A30 /* Model */ = {
@@ -211,6 +211,7 @@
 				TargetAttributes = {
 					9630B5271DC495A00073B16D = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 58BUFTG2ZL;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -399,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58BUFTG2ZL;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AarviTech.PizzaMRD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,7 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58BUFTG2ZL;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AarviTech.PizzaMRD;
 				PRODUCT_NAME = "$(TARGET_NAME)";

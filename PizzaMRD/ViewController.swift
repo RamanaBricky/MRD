@@ -24,6 +24,9 @@ class ViewController: UIViewController, CategoriesViewModelDelegate, UICollectio
         viewModel = CategoriesVM()
         categoriesCollectionView.register(UINib.init(nibName: String(describing: CategoriesCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CategoriesCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.navigateToSubCategory), name: NSNotification.Name(rawValue:"NavigateToSubCategory"), object: nil)
+        
+        self.navigationItem.title = "MRD Label Generator"
+
     }
 
     override func didReceiveMemoryWarning() {
