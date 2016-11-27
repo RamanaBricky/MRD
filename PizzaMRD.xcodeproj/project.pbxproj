@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		076A21191DE64D5D00E7828D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5341DC495A00073B16D /* LaunchScreen.storyboard */; };
 		07E2DFC91DE500F400CBD7F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B52F1DC495A00073B16D /* Main.storyboard */; };
+		07E6F3181DE9F387000EB387 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
 		9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601ACA21DC7D67200FE3145 /* CoreData.framework */; };
 		9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
 		9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */; };
@@ -33,12 +34,13 @@
 		96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
 		96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
 		96E4163B1DC9511C00939B62 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
-		96E416401DC95B2000939B62 /* MRDDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */; };
+		96E416401DC95B2000939B62 /* MRDDetailsVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */; };
 		96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416411DC95B5500939B62 /* MRDDetailsVC.swift */; };
 		96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~iphone.xib"; sourceTree = "<group>"; };
 		9601ACA21DC7D67200FE3145 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
 		9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryVC.xib; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryOptionsVM.swift; sourceTree = "<group>"; };
 		96E4163A1DC9511C00939B62 /* AlertWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindowView.swift; sourceTree = "<group>"; };
-		96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRDDetailsVC.xib; sourceTree = "<group>"; };
+		96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~ipad.xib"; sourceTree = "<group>"; };
 		96E416411DC95B5500939B62 /* MRDDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVC.swift; sourceTree = "<group>"; };
 		96E416431DC95BB500939B62 /* MRDDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,11 +170,12 @@
 		96E4163C1DC95AB200939B62 /* MRDDetails */ = {
 			isa = PBXGroup;
 			children = (
-				96E4163F1DC95B2000939B62 /* MRDDetailsVC.xib */,
+				96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */,
 				96E416411DC95B5500939B62 /* MRDDetailsVC.swift */,
 				96E416431DC95BB500939B62 /* MRDDetailsVM.swift */,
 				9635D8E01DCADBA000E668EE /* PrintLabelView.xib */,
 				9635D8E21DCADBB000E668EE /* PrintLabelView.swift */,
+				07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */,
 			);
 			path = MRDDetails;
 			sourceTree = "<group>";
@@ -241,8 +244,9 @@
 				07E2DFC91DE500F400CBD7F2 /* Main.storyboard in Resources */,
 				9630B5421DC496BE0073B16D /* Fonts in Resources */,
 				9630B5331DC495A00073B16D /* Assets.xcassets in Resources */,
-				96E416401DC95B2000939B62 /* MRDDetailsVC.xib in Resources */,
+				96E416401DC95B2000939B62 /* MRDDetailsVC~ipad.xib in Resources */,
 				9601ACAE1DC7F6F700FE3145 /* SubCategoryCell.xib in Resources */,
+				07E6F3181DE9F387000EB387 /* MRDDetailsVC~iphone.xib in Resources */,
 				9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */,
 				9635D8E11DCADBA000E668EE /* PrintLabelView.xib in Resources */,
 				9601ACB01DC8049C00FE3145 /* SubCategoryOptions.xib in Resources */,
