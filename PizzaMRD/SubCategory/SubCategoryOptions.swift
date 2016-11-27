@@ -24,7 +24,6 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     }
     @IBOutlet var view: UIView!
     @IBOutlet weak var subCategoryOptionTableView: UITableView!
-    @IBOutlet weak var selectButton: UIButton!
     
      init(catID:Int, subCatID:Int){
         self.viewModel = SubCategoryOptionsVM()
@@ -54,7 +53,6 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
         addSubview(view)
         subCategoryOptionTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
         subCategoryOptionTableView.tableFooterView = UIView()
-        selectButton.isEnabled = false
     }
     
     fileprivate func loadViewFromNib() -> UIView
@@ -89,7 +87,6 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath.row
         delegate?.optionSelected(with: selectedIndexPath)
-//        selectButton.isEnabled = true
     }
     
 //    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

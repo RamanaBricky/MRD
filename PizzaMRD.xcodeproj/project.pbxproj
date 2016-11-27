@@ -94,7 +94,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9601ACA41DC7E43F00FE3145 /* SubCategory */ = {
+		9601ACA41DC7E43F00FE3145 /* dfsq */ = {
 			isa = PBXGroup;
 			children = (
 				9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */,
@@ -108,6 +108,7 @@
 				9601ACB51DC8075D00FE3145 /* SubCategoryOptionCell.xib */,
 				96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */,
 			);
+			name = dfsq;
 			path = SubCategory;
 			sourceTree = "<group>";
 		};
@@ -132,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				96E4163C1DC95AB200939B62 /* MRDDetails */,
-				9601ACA41DC7E43F00FE3145 /* SubCategory */,
+				9601ACA41DC7E43F00FE3145 /* dfsq */,
 				96D44C1B1DC60CD700753A30 /* Model */,
 				9630B5441DC49BD30073B16D /* CategoriesCell */,
 				9630B5411DC496BD0073B16D /* Fonts */,
@@ -401,15 +402,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9ZYWNJDG54;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bbb4c8c1-982c-4c7b-953b-d54b51a2bdb0";
-				PROVISIONING_PROFILE_SPECIFIER = "PHMRD Dist Profile";
+				PROVISIONING_PROFILE = "78c03569-5cf3-4958-aa4d-b669966a82dd";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev provisioning profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -418,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 9ZYWNJDG54;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;

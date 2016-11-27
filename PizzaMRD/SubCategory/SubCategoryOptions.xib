@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Oswald-Medium.ttf">
-            <string>Oswald-Medium</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryOptions" customModule="PizzaMRD" customModuleProvider="target">
             <connections>
-                <outlet property="selectButton" destination="00a-do-ZGw" id="42i-ce-HS5"/>
                 <outlet property="subCategoryOptionTableView" destination="Iz7-Pr-fM9" id="QJC-ca-69g"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xbG-NX-Gfh"/>
             </connections>
@@ -24,6 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iz7-Pr-fM9">
+                    <rect key="frame" x="0.0" y="30" width="472" height="348"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="lFr-ZD-ScD"/>
@@ -31,6 +29,7 @@
                     </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select MRD Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-Z2-7V2">
+                    <rect key="frame" x="0.0" y="0.0" width="472" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="yJX-u6-Nyh"/>
                     </constraints>
@@ -38,42 +37,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-eY-SHW">
-                    <constraints>
-                        <constraint firstAttribute="width" constant="90" id="Rgc-1Y-4uH"/>
-                        <constraint firstAttribute="height" constant="49" id="ZCx-pc-UqA"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
-                    <state key="normal" title="Cancel">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="CancelButtonAction:" destination="-1" eventType="touchUpInside" id="UdA-aH-FsL"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00a-do-ZGw">
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
-                    <state key="normal" title="Select"/>
-                    <connections>
-                        <action selector="selectAction:" destination="-1" eventType="touchUpInside" id="jsf-9O-VsX"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="00a-do-ZGw" firstAttribute="centerY" secondItem="Q3g-eY-SHW" secondAttribute="centerY" id="8zg-8i-vd4"/>
                 <constraint firstAttribute="trailing" secondItem="Iz7-Pr-fM9" secondAttribute="trailing" id="LEz-sX-isA"/>
                 <constraint firstAttribute="trailing" secondItem="GkO-Z2-7V2" secondAttribute="trailing" id="OiZ-2d-oJd"/>
                 <constraint firstItem="GkO-Z2-7V2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ToJ-al-94I"/>
-                <constraint firstItem="00a-do-ZGw" firstAttribute="top" secondItem="Iz7-Pr-fM9" secondAttribute="bottom" constant="32" id="Uev-fe-KgT"/>
+                <constraint firstAttribute="bottom" secondItem="Iz7-Pr-fM9" secondAttribute="bottom" id="WW8-2b-Rpq"/>
                 <constraint firstItem="Iz7-Pr-fM9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XKC-47-TF7"/>
                 <constraint firstItem="GkO-Z2-7V2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xgf-cG-xG5"/>
-                <constraint firstAttribute="trailing" secondItem="00a-do-ZGw" secondAttribute="trailing" constant="53" id="dtH-49-SeO"/>
-                <constraint firstItem="00a-do-ZGw" firstAttribute="width" secondItem="Q3g-eY-SHW" secondAttribute="width" id="fiN-H4-BVH"/>
-                <constraint firstAttribute="bottom" secondItem="Q3g-eY-SHW" secondAttribute="bottom" constant="31" id="h8C-ac-XAZ"/>
                 <constraint firstItem="Iz7-Pr-fM9" firstAttribute="top" secondItem="GkO-Z2-7V2" secondAttribute="bottom" id="hgB-Cq-F3N"/>
-                <constraint firstItem="00a-do-ZGw" firstAttribute="bottom" secondItem="Q3g-eY-SHW" secondAttribute="bottom" id="iZJ-TQ-C6d"/>
-                <constraint firstItem="Q3g-eY-SHW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="53" id="wCF-aO-jW8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-144" y="-83"/>
