@@ -75,7 +75,17 @@ extension ViewController: UICollectionViewDataSource {
         }
     }
     
-//    func collectionView(_ colle)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        categoriesCollectionView.reloadData()
+        coordinator.animate(alongsideTransition: {
+            context in
+            self.categoriesCollectionView.collectionViewLayout.invalidateLayout()
+            self.categoriesCollectionView.performBatchUpdates({
+                self.categoriesCollectionView.setCollectionViewLayout(self.categoriesCollectionView.collectionViewLayout, animated: true)
+            })
+        })
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate {

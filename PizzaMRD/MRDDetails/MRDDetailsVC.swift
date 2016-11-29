@@ -81,15 +81,27 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                 readyDateTextField.text = rDate.toString(.short, timeStyle: .none)
                 readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
                 
-                let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
-                discardDateTextField.text = dDate.toString(.short, timeStyle: .none)
-                discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
+                if firstMRDStruct.mRDDiscardFrequency == .useByDate {
+                    discardDateTextField.text = "UBD"
+                    discardTimeTextField.text = "UBD"
+                }
+                else {
+                    let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
+                    discardDateTextField.text = dDate.toString(.short, timeStyle: .none)
+                    
+                    if firstMRDStruct.eod {
+                        discardTimeTextField.text = "11:59 PM"
+                    }
+                    else {
+                        discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
+                    }
+                }
             }
         }
        
     }
     
-    func calculateDateAndTime(date: Date, frequency: Frequency = .undefined, interval: Int = 0) -> Date{
+    func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
         switch frequency
         {
             case .hours:
@@ -103,29 +115,36 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     @IBAction func printAction(_ sender: AnyObject) {
         
+//        let printArray = [(subSubCategoryList?[selectedIndexPath])!,
+//                            "Made",
+//                          "\(madeDateTextField.text!) - \(madeTimeTextField.text!)",
+//                            "Ready",
+//                            "\(readyDateTextField.text!) - \(readyTimeTextField.text!)",
+//                            "Discard",
+//                            "\(discardDateTextField.text!) - \(discardTimeTextField.text!)"]
+//        
+//        let printLabelAlert = PrintLabelView.init(printInfo: printArray)
+//        printLabelAlert.delegate = self
+//        printLabelAlert.center = view.center
+        
         let printArray = [(subSubCategoryList?[selectedIndexPath])!,
-                            "Made",
-                          "\(madeDateTextField.text!) - \(madeTimeTextField.text!)",
-                            "Ready",
-                            "\(readyDateTextField.text!) - \(readyTimeTextField.text!)",
-                            "Discard",
-                            "\(discardDateTextField.text!) - \(discardTimeTextField.text!)"]
-        
-        let printLabelAlert = PrintLabelView.init(printInfo: printArray)
-        printLabelAlert.delegate = self
-        printLabelAlert.center = view.center
-        
-        AlertWindowView.sharedInstance.showWithView(printLabelAlert,
+                           madeDateTextField.text!, madeTimeTextField.text!,
+                           readyDateTextField.text!, readyTimeTextField.text!,
+                           discardDateTextField.text!, discardTimeTextField.text!]
+        let printViewAlert = MRDPrintView.init(printInfo: printArray)
+        printViewAlert.delegate = self
+        printViewAlert.center = view.center
+        AlertWindowView.sharedInstance.showWithView(printViewAlert,
                                                     animations:{
                                                         UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
                                                                        animations: {
-                                                                        printLabelAlert.transform = CGAffineTransform.identity
+                                                                        printViewAlert.transform = CGAffineTransform.identity
                                                             },
                                                                        completion: {(completed) in})
             },dismissAnimations:{
-                [weak printLabelAlert] in
+                [weak printViewAlert] in
                 UIView.animate(withDuration: 0.3, animations: {
-                    if let overView = printLabelAlert
+                    if let overView = printViewAlert
                     {
                         overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                     }
@@ -171,7 +190,7 @@ extension MRDDetailsVC:UITableViewDelegate {
     }
 }
 
-extension MRDDetailsVC:PrintLabelDelegate {
+extension MRDDetailsVC:PrintViewDelegate {
     func didOK() {
         AlertWindowView.sharedInstance.dismissAlert()
     }
