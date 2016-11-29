@@ -51,6 +51,10 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         }
         
         printLabelCountTextField.text = "1"
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MRDDetailsVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
     }
     
     var subSubCategoryList:[String]?
@@ -82,6 +86,10 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             mrdView.layer.borderWidth = 1.0
         }
         applyGradientAndShadow()
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func fillMRDDetails() {
