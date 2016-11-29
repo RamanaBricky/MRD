@@ -20,13 +20,14 @@ class ViewController: UIViewController, CategoriesViewModelDelegate, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black
+        self.categoriesCollectionView.backgroundColor = UIColor.black
         // Do any additional setup after loading the view, typically from a nib.
         viewModel = CategoriesVM()
         categoriesCollectionView.register(UINib.init(nibName: String(describing: CategoriesCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CategoriesCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.navigateToSubCategory), name: NSNotification.Name(rawValue:"NavigateToSubCategory"), object: nil)
         
-        self.navigationItem.title = "MRD Label Generator"
-
+        self.title = "MRD Menu"
     }
 
     override func didReceiveMemoryWarning() {

@@ -148,8 +148,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="aZz-mG-BqT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="OK"/>
+                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" red="1" green="0.24319955400000001" blue="0.19601283180000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="okButtonPressed:" destination="-1" eventType="touchUpInside" id="03k-QU-CSr"/>
                     </connections>

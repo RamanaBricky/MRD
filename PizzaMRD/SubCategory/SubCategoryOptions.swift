@@ -53,6 +53,7 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
         addSubview(view)
         subCategoryOptionTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
         subCategoryOptionTableView.tableFooterView = UIView()
+        subCategoryOptionTableView.backgroundColor = UIColor.black
     }
     
     fileprivate func loadViewFromNib() -> UIView

@@ -26,7 +26,7 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let coreDataStack = CoreDataStack()
-        
+        subCategoriesCollectionView.backgroundColor = UIColor.black
          self.navigationItem.title = coreDataStack.categoriesList[(viewModel?.selectedCategoryID)!]
         
         subCategoriesCollectionView.register(UINib.init(nibName: String(describing: SubCategoryCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SubCategoryCell.self))

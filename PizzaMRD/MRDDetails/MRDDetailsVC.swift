@@ -27,14 +27,22 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     @IBOutlet weak var printLabelCountTextField: UITextField!
     
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var madeLabel: UILabel!
+    @IBOutlet weak var readyLabel: UILabel!
+    @IBOutlet weak var discardLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var numberOfLabels: UILabel!
+    @IBOutlet weak var printButton: UIButton!
+    @IBOutlet weak var mrdView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         fillMRDDetails()
         subSubCategoryTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
         subSubCategoryTableView.tableFooterView = UIView()
-        subSubCategoryTableView.layer.borderColor = UIColor.gray.cgColor
-        subSubCategoryTableView.layer.borderWidth = 5.0
         
         if (subSubCategoryList?.count) != nil {
             let indexPath = IndexPath.init(row: 0, section: 0)
@@ -47,6 +55,35 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     var subSubCategoryList:[String]?
     var selectedIndexPath = -1
+    
+    func setupUI() {
+        view.backgroundColor = UIColor.black
+        madeLabel.textColor = UIColor.red
+        readyLabel.textColor = UIColor.red
+        discardLabel.textColor = UIColor.red
+        dateLabel.textColor = UIColor.red
+        timeLabel.textColor = UIColor.red
+        numberOfLabels.textColor = UIColor.red
+        madeDateTextField.textColor = UIColor.red
+        madeTimeTextField.textColor = UIColor.red
+        readyDateTextField.textColor = UIColor.red
+        readyTimeTextField.textColor = UIColor.red
+        discardDateTextField.textColor = UIColor.red
+        discardTimeTextField.textColor = UIColor.red
+        
+        subSubCategoryTableView.backgroundColor = UIColor.black
+        printLabelCountTextField.textColor = UIColor.red
+        
+        subSubCategoryTableView.layer.borderColor = UIColor.gray.cgColor
+        subSubCategoryTableView.layer.borderWidth = 5.0
+        
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            mrdView.layer.borderColor = UIColor.lightGray.cgColor
+            mrdView.layer.borderWidth = 1.0
+        }
+        applyGradientAndShadow()
+    }
+    
     func fillMRDDetails() {
         let coreDataStack = CoreDataStack()
         let catID = viewModel?.selectedCategoryID
@@ -54,10 +91,10 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let subCategoryText = coreDataStack.subCategoriesList[catID!]?[subCatID!]
         if let mrdType = viewModel?.selectedMRDType {
             let mrdTypeText = coreDataStack.mrdType[catID!]?[subCatID!]?[mrdType]
-            navigationItem.title = ("\(subCategoryText!) - \(mrdTypeText!)")
+            title = ("\(subCategoryText!) - \(mrdTypeText!)")
         }
         else {
-            titleLabel.text = subCategoryText
+            title = subCategoryText
         }
         
         subSubCategoryList = coreDataStack.subSubCategoryList[catID!]?[subCatID!]
@@ -90,7 +127,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                     discardDateTextField.text = dDate.toString(.short, timeStyle: .none)
                     
                     if firstMRDStruct.eod {
-                        discardTimeTextField.text = "11:59 PM"
+                        discardTimeTextField.text = "23:59"
                     }
                     else {
                         discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
@@ -158,6 +195,35 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    func applyGradientAndShadow()
+    {
+        printButton.setTitleColor(UIColor.red, for: .normal)
+        printButton.layer.cornerRadius = 4.0
+        //        categoryButton.titleLabel!.font = UIFont.gtBoldFont(withSize: 16)
+        let color1 = UIColor(white: 1.0, alpha: 0.7)
+        let color2 = UIColor(white: 0.3, alpha: 1.0)
+        
+        printButton.backgroundColor = UIColor.clear
+        
+        printButton.layer.shadowColor = UIColor.black.cgColor
+        printButton.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        printButton.layer.shadowOpacity = 0.7
+        printButton.layer.shadowRadius = 0.0
+        
+        let mainLayer = CAGradientLayer()
+        mainLayer.frame = printButton.layer.bounds
+        
+        mainLayer.colors = [color1.cgColor, color2.cgColor]
+        
+        mainLayer.locations = [0.0, 1.0]
+        
+        mainLayer.cornerRadius = printButton.layer.cornerRadius
+        
+        printButton.layer.insertSublayer(mainLayer, at: 0)
+        
+        printButton.setTitleColor(UIColor.red, for: .normal)
     }
 }
 

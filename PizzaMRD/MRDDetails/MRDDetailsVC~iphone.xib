@@ -8,17 +8,29 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRDDetailsVC" customModule="PizzaMRD" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="7xF-Mi-Vbc" id="ebN-Lv-XDn"/>
                 <outlet property="discardDateTextField" destination="Wt7-eA-HfT" id="HUs-ef-0JT"/>
+                <outlet property="discardLabel" destination="kXf-w6-bfm" id="WbG-eH-aal"/>
                 <outlet property="discardTimeTextField" destination="Hrx-KP-ogd" id="D2R-JN-U3q"/>
                 <outlet property="madeDateTextField" destination="Fty-Se-VuH" id="N6K-aC-PtB"/>
+                <outlet property="madeLabel" destination="qWp-bX-tlr" id="lgO-iI-PnA"/>
                 <outlet property="madeTimeTextField" destination="cF9-Nv-1mR" id="OfH-kr-Mcw"/>
+                <outlet property="numberOfLabels" destination="uc7-d6-CYe" id="aes-UD-Bvq"/>
+                <outlet property="printButton" destination="vUa-L2-Kku" id="KRr-Yn-SbA"/>
                 <outlet property="printLabelCountTextField" destination="I3y-hI-foN" id="y06-tl-Wkp"/>
                 <outlet property="readyDateTextField" destination="JBP-hV-ZrN" id="tCb-aY-ptq"/>
+                <outlet property="readyLabel" destination="rVS-G1-Xgd" id="ET1-s1-xEe"/>
                 <outlet property="readyTimeTextField" destination="oCz-ky-2Uq" id="5ar-oK-ODS"/>
                 <outlet property="subSubCategoryTableView" destination="MOK-P0-cDB" id="Hmn-35-m3s"/>
+                <outlet property="timeLabel" destination="pGN-JZ-pIX" id="vhG-pN-ReQ"/>
                 <outlet property="view" destination="cQw-ty-8Ge" id="48R-6b-fku"/>
             </connections>
         </placeholder>
@@ -117,7 +129,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="oCz-ky-2Uq" firstAttribute="baseline" secondItem="rVS-G1-Xgd" secondAttribute="baseline" id="0Lq-rf-T6R"/>
                                         <constraint firstItem="pGN-JZ-pIX" firstAttribute="top" secondItem="UA3-jC-Y1b" secondAttribute="top" constant="25" id="4Wd-TG-laC"/>
@@ -175,7 +187,7 @@
                                         <outlet property="delegate" destination="-1" id="sj0-aZ-r3F"/>
                                     </connections>
                                 </tableView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-hI-foN">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-hI-foN">
                                     <rect key="frame" x="258" y="458" width="97" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="WMt-yN-GKx"/>
@@ -195,18 +207,19 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-L2-Kku">
-                                    <rect key="frame" x="164.5" y="491" width="46" height="30"/>
+                                    <rect key="frame" x="149.5" y="502" width="76" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="84e-mm-Vjd"/>
-                                        <constraint firstAttribute="width" constant="46" id="TOW-QC-0iG"/>
+                                        <constraint firstAttribute="width" constant="76" id="TOW-QC-0iG"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
                                     <state key="normal" title="Print"/>
                                     <connections>
                                         <action selector="printAction:" destination="-1" eventType="touchUpInside" id="JB5-DE-WIT"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="uc7-d6-CYe" firstAttribute="top" secondItem="MOK-P0-cDB" secondAttribute="bottom" constant="21" id="KlK-eS-AXS"/>
                                 <constraint firstItem="I3y-hI-foN" firstAttribute="leading" secondItem="uc7-d6-CYe" secondAttribute="trailing" constant="50" id="LZ2-kD-UuE"/>
@@ -219,7 +232,7 @@
                                 <constraint firstItem="I3y-hI-foN" firstAttribute="baseline" secondItem="uc7-d6-CYe" secondAttribute="baseline" id="fbo-Xl-Yeb"/>
                                 <constraint firstAttribute="trailing" secondItem="UA3-jC-Y1b" secondAttribute="trailing" id="isP-76-DVC"/>
                                 <constraint firstItem="MOK-P0-cDB" firstAttribute="top" secondItem="UA3-jC-Y1b" secondAttribute="bottom" id="lXm-UY-OVd"/>
-                                <constraint firstItem="vUa-L2-Kku" firstAttribute="top" secondItem="uc7-d6-CYe" secondAttribute="bottom" constant="9" id="qYh-sL-c3l"/>
+                                <constraint firstItem="vUa-L2-Kku" firstAttribute="top" secondItem="uc7-d6-CYe" secondAttribute="bottom" constant="20" id="qYh-sL-c3l"/>
                                 <constraint firstItem="MOK-P0-cDB" firstAttribute="leading" secondItem="HTi-Hc-ExJ" secondAttribute="leading" id="zdr-U2-jm5"/>
                             </constraints>
                         </view>

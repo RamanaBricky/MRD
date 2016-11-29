@@ -20,7 +20,7 @@ class CategoriesCell: UICollectionViewCell {
     
     func applyGradientAndShadow()
     {
-        categoryButton.setTitleColor(UIColor(white:0.3, alpha:1.0), for: .normal)
+        categoryButton.setTitleColor(UIColor.red, for: .normal)
         categoryButton.layer.cornerRadius = 4.0
 //        categoryButton.titleLabel!.font = UIFont.gtBoldFont(withSize: 16)
         let color1 = UIColor(white: 1.0, alpha: 0.7)
@@ -57,7 +57,7 @@ class CategoriesCell: UICollectionViewCell {
     func applyTextShadow() {
         categoryButton.titleLabel!.layer.shadowOpacity = 0.3
         categoryButton.titleLabel!.layer.shadowRadius = 0.5
-        categoryButton.titleLabel!.layer.shadowColor = UIColor.black.cgColor
+        categoryButton.titleLabel!.layer.shadowColor = UIColor.white.cgColor
         categoryButton.titleLabel!.layer.shadowOffset = CGSize(width: 0.0, height: 0.5)
     }
 }

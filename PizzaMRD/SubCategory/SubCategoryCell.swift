@@ -24,7 +24,7 @@ class SubCategoryCell: UICollectionViewCell {
     
     func applyGradientAndShadow()
     {
-        subCategoryButton.setTitleColor(UIColor(white:0.3, alpha:1.0), for: .normal)
+        subCategoryButton.setTitleColor(UIColor.red, for:.normal)
         subCategoryButton.layer.cornerRadius = 4.0
         //        categoryButton.titleLabel!.font = UIFont.gtBoldFont(withSize: 16)
         let color1 = UIColor(white: 1.0, alpha: 0.7)
