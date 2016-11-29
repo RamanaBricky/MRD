@@ -27,7 +27,7 @@ class ViewController: UIViewController, CategoriesViewModelDelegate, UICollectio
         categoriesCollectionView.register(UINib.init(nibName: String(describing: CategoriesCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CategoriesCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.navigateToSubCategory), name: NSNotification.Name(rawValue:"NavigateToSubCategory"), object: nil)
         
-        self.title = "MRD Menu"
+        self.title = "MRD"
     }
 
     override func didReceiveMemoryWarning() {

@@ -119,7 +119,7 @@ class CoreDataStack: NSObject {
                    3:[MRDData(1," ", .days, 1, .days, 2)]],
                 7:[1:[MRDData(1," ", .hours, 0, .days, 9)],
                    2:[MRDData(1," ", .hours, 0, .days, 4)]],
-                8:[1:[MRDData(1," ", .hours, 0, .days, 4)],
+                8:[1:[MRDData(1," ", .hours, 0, .days, 27)],
                    2:[MRDData(1," ", .hours, 0, .days, 13)]]]
     }
     
