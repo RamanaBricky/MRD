@@ -57,21 +57,36 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsetsMake(30.0, 10.0, 10.0, 10.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return 30.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return 10.0
+    }
+    
     @objc(collectionView:layout:sizeForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation){
-            if UIScreen.main.bounds.size.width > 1024 {
-                return CGSize.init(width: 340.0, height: 100.0)
+            if UIScreen.main.bounds.size.width >= 1024 {
+                return CGSize.init(width: 320.0, height: 100.0)
             }
             else {
                 return CGSize.init(width: 330.0, height: 100.0)
             }
         }
         else{
-            if UIScreen.main.bounds.size.width > 768 {
-                return CGSize.init(width: 256.0, height: 100.0)
+            if UIScreen.main.bounds.size.width >= 768 {
+                return CGSize.init(width: 360.0, height: 100.0)
             }
             else {
-                return CGSize.init(width: 340.0, height: 100.0)
+                return CGSize.init(width: 170.0, height: 90.0)
             }
         }
     }

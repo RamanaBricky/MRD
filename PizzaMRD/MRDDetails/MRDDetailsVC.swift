@@ -117,13 +117,14 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 
         let date = Date()
         
-        madeDateTextField.text = date.toString(.short, timeStyle: .none)
+        madeDateTextField.text = convertDateToString(date: date)
         madeTimeTextField.text = date.toString(.none, timeStyle: .short)
         
         if !(mrdStruct?.isEmpty)! {
             if let firstMRDStruct = mrdStruct?[(viewModel?.selectedMRDType)!] {
                 let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
-                readyDateTextField.text = rDate.toString(.short, timeStyle: .none)
+                
+                readyDateTextField.text = convertDateToString(date: rDate)
                 readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
                 
                 if firstMRDStruct.mRDDiscardFrequency == .useByDate {
@@ -132,7 +133,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                 }
                 else {
                     let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
-                    discardDateTextField.text = dDate.toString(.short, timeStyle: .none)
+                    discardDateTextField.text = convertDateToString(date: dDate)
                     
                     if firstMRDStruct.eod {
                         discardTimeTextField.text = "23:59"
@@ -144,6 +145,12 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             }
         }
        
+    }
+    
+    func convertDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM"
+        return dateFormatter.string(from: date)
     }
     
     func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{

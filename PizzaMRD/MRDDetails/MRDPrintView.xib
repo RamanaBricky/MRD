@@ -12,8 +12,11 @@
         <array key="Oswald-Bold.ttf">
             <string>Oswald-Bold</string>
         </array>
-        <array key="Oswald-Light.ttf">
-            <string>Oswald-Light</string>
+        <array key="Oswald-Heavy.ttf">
+            <string>Oswald-Heavy</string>
+        </array>
+        <array key="Oswald-LightItalic.ttf">
+            <string>Oswald-LightItalic</string>
         </array>
         <array key="Oswald-Medium.ttf">
             <string>Oswald-Medium</string>
@@ -55,7 +58,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="7xw-IA-gLU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="Oswald-LightItalic" family="Oswald" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -86,7 +89,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="4mX-jz-ZXC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="Oswald-LightItalic" family="Oswald" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -97,7 +100,7 @@
                         <constraint firstAttribute="width" constant="100" id="854-cX-IdH"/>
                         <constraint firstAttribute="height" constant="25" id="Abh-8a-drU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Oswald-Bold" family="Oswald" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -108,7 +111,7 @@
                         <constraint firstAttribute="height" constant="25" id="DjE-HB-eFo"/>
                         <constraint firstAttribute="width" constant="100" id="KTd-xS-DPf"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Oswald-Bold" family="Oswald" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -117,7 +120,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Czy-NQ-bhx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="Oswald-LightItalic" family="Oswald" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -128,7 +131,7 @@
                         <constraint firstAttribute="height" constant="30" id="GBt-kl-sMV"/>
                         <constraint firstAttribute="width" constant="100" id="nfj-eX-Fnm"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Oswald-Heavy" family="Oswald" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -139,7 +142,7 @@
                         <constraint firstAttribute="height" constant="30" id="Cit-gU-GuD"/>
                         <constraint firstAttribute="width" constant="100" id="zNW-XE-kBa"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Oswald-Heavy" family="Oswald" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>

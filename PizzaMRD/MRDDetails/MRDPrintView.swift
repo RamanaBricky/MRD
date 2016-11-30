@@ -61,7 +61,9 @@ class MRDPrintView:UIView {
         let frame = CGRect(x: 0,y: 0,width: 200,height: 225)
         view.frame = frame
         bounds = view.frame
-        view.layer.cornerRadius = 6.0
+        
+        view.layer.borderColor = UIColor.red.cgColor
+        view.layer.borderWidth = 2.0
         addSubview(view)
         
         applyBorderChanges(to: titleLabel)

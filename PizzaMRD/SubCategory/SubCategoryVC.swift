@@ -88,7 +88,7 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     }
 }
 
-extension SubCategoryVC: UICollectionViewDataSource {
+extension SubCategoryVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (viewModel?.subCategoryList!.count)!
     }
@@ -104,23 +104,50 @@ extension SubCategoryVC: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return 10.0
+    }
+    
     @objc(collectionView:layout:sizeForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation){
-            if UIScreen.main.bounds.size.width > 1024 {
-                return CGSize.init(width: 340.0, height: 100.0)
+            if UIScreen.main.bounds.size.width >= 1024 {
+                return CGSize.init(width: 320.0, height: 100.0)
             }
             else {
                 return CGSize.init(width: 330.0, height: 100.0)
             }
         }
         else{
-            if UIScreen.main.bounds.size.width > 768 {
-                return CGSize.init(width: 256.0, height: 100.0)
+            if UIScreen.main.bounds.size.width >= 768 {
+                return CGSize.init(width: 365.0, height: 100.0)
             }
             else {
                 return CGSize.init(width: 340.0, height: 100.0)
             }
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        subCategoriesCollectionView.reloadData()
+        coordinator.animate(alongsideTransition: {
+            context in
+            self.subCategoriesCollectionView.collectionViewLayout.invalidateLayout()
+            self.subCategoriesCollectionView.performBatchUpdates({
+                self.subCategoriesCollectionView.setCollectionViewLayout(self.subCategoriesCollectionView.collectionViewLayout, animated: true)
+            })
+        })
+        super.viewWillTransition(to: size, with: coordinator)
     }
 }
 
