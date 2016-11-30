@@ -149,8 +149,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     func convertDateToString(date: Date) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM"
-        return dateFormatter.string(from: date)
+        dateFormatter.dateFormat = " dd/MM "
+        return "  \(dateFormatter.string(from: date))   "
     }
     
     func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
