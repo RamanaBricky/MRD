@@ -62,8 +62,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     func setupUI() {
         view.backgroundColor = UIColor.black
-        madeLabel.textColor = UIColor.red
-        readyLabel.textColor = UIColor.red
+        madeLabel.textColor = UIColor.white
+        readyLabel.textColor = UIColor.green
         discardLabel.textColor = UIColor.red
         dateLabel.textColor = UIColor.red
         timeLabel.textColor = UIColor.red
@@ -99,7 +99,12 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let subCategoryText = coreDataStack.subCategoriesList[catID!]?[subCatID!]
         if let mrdType = viewModel?.selectedMRDType {
             let mrdTypeText = coreDataStack.mrdType[catID!]?[subCatID!]?[mrdType]
-            title = ("\(subCategoryText!) - \(mrdTypeText!)")
+            if mrdTypeText?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
+                title = ("\(subCategoryText!) - \(mrdTypeText!)")
+            }
+            else {
+               title = subCategoryText
+            }
         }
         else {
             title = subCategoryText
@@ -149,8 +154,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     func convertDateToString(date: Date) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = " dd/MM "
-        return "  \(dateFormatter.string(from: date))   "
+        dateFormatter.dateFormat = "dd/MM "
+        return "\(dateFormatter.string(from: date))   "
     }
     
     func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
@@ -179,7 +184,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 //        printLabelAlert.delegate = self
 //        printLabelAlert.center = view.center
         
-        let printArray = [(subSubCategoryList?[selectedIndexPath])!,
+        let printArray = [title!,
                            madeDateTextField.text!, madeTimeTextField.text!,
                            readyDateTextField.text!, readyTimeTextField.text!,
                            discardDateTextField.text!, discardTimeTextField.text!]
