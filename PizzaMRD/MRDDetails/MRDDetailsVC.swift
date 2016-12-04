@@ -26,6 +26,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     @IBOutlet weak var subSubCategoryTableView: UITableView!
     @IBOutlet weak var printLabelCountTextField: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var madeLabel: UILabel!
     @IBOutlet weak var readyLabel: UILabel!
@@ -55,6 +56,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(MRDDetailsVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
+        
     }
     
     var subSubCategoryList:[String]?
@@ -154,8 +156,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     func convertDateToString(date: Date) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM "
-        return "\(dateFormatter.string(from: date))   "
+        dateFormatter.dateFormat = "dd/MM"
+        return "\(dateFormatter.string(from: date))"
     }
     
     func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
@@ -171,19 +173,6 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
     
     @IBAction func printAction(_ sender: AnyObject) {
-        
-//        let printArray = [(subSubCategoryList?[selectedIndexPath])!,
-//                            "Made",
-//                          "\(madeDateTextField.text!) - \(madeTimeTextField.text!)",
-//                            "Ready",
-//                            "\(readyDateTextField.text!) - \(readyTimeTextField.text!)",
-//                            "Discard",
-//                            "\(discardDateTextField.text!) - \(discardTimeTextField.text!)"]
-//        
-//        let printLabelAlert = PrintLabelView.init(printInfo: printArray)
-//        printLabelAlert.delegate = self
-//        printLabelAlert.center = view.center
-        
         let printArray = [title!,
                            madeDateTextField.text!, madeTimeTextField.text!,
                            readyDateTextField.text!, readyTimeTextField.text!,
@@ -279,5 +268,19 @@ extension MRDDetailsVC:UITableViewDelegate {
 extension MRDDetailsVC:PrintViewDelegate {
     func didOK() {
         AlertWindowView.sharedInstance.dismissAlert()
+    }
+}
+
+extension MRDDetailsVC:UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.scrollView.contentOffset = CGPoint(x: 0, y: 90)
+        })
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.scrollView.contentOffset = CGPoint(x:0, y:0)
+        })
     }
 }

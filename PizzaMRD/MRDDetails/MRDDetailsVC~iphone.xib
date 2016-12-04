@@ -32,6 +32,7 @@
                 <outlet property="readyDateTextField" destination="JBP-hV-ZrN" id="tCb-aY-ptq"/>
                 <outlet property="readyLabel" destination="rVS-G1-Xgd" id="ET1-s1-xEe"/>
                 <outlet property="readyTimeTextField" destination="oCz-ky-2Uq" id="5ar-oK-ODS"/>
+                <outlet property="scrollView" destination="kcS-1Z-6hS" id="65x-GJ-P7S"/>
                 <outlet property="subSubCategoryTableView" destination="MOK-P0-cDB" id="Hmn-35-m3s"/>
                 <outlet property="timeLabel" destination="pGN-JZ-pIX" id="vhG-pN-ReQ"/>
                 <outlet property="view" destination="cQw-ty-8Ge" id="48R-6b-fku"/>
@@ -67,7 +68,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fty-Se-VuH">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fty-Se-VuH">
                                             <rect key="frame" x="93" y="67" width="97" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -179,7 +180,7 @@
                                         <constraint firstItem="JBP-hV-ZrN" firstAttribute="top" secondItem="Fty-Se-VuH" secondAttribute="bottom" constant="22" id="zGc-0F-0Wa"/>
                                     </constraints>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-P0-cDB">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-P0-cDB">
                                     <rect key="frame" x="0.0" y="220" width="375" height="220"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -198,6 +199,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="Ump-nE-8ER"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter number of labels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc7-d6-CYe">
                                     <rect key="frame" x="8" y="461" width="200" height="21"/>
