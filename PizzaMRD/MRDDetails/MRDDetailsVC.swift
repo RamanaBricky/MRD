@@ -88,6 +88,12 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             mrdView.layer.borderWidth = 1.0
         }
         applyGradientAndShadow()
+		
+		let settingsButton = UIButton()
+		settingsButton.setImage(UIImage.init(named: "button_settings"), for: .normal)
+		let barButtonItem = UIBarButtonItem(customView: settingsButton)
+		
+		self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
     func dismissKeyboard() {
@@ -178,26 +184,52 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                            readyDateTextField.text!, readyTimeTextField.text!,
                            discardDateTextField.text!, discardTimeTextField.text!]
         let printViewAlert = MRDPrintView.init(printInfo: printArray)
-        printViewAlert.delegate = self
-        printViewAlert.center = view.center
-        AlertWindowView.sharedInstance.showWithView(printViewAlert,
-                                                    animations:{
-                                                        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
-                                                                       animations: {
-                                                                        printViewAlert.transform = CGAffineTransform.identity
-                                                            },
-                                                                       completion: {(completed) in})
-            },dismissAnimations:{
-                [weak printViewAlert] in
-                UIView.animate(withDuration: 0.3, animations: {
-                    if let overView = printViewAlert
-                    {
-                        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-                    }
-                })
-            })
+		
+		printThis(mrdLabel: printViewAlert)
+
+//        printViewAlert.delegate = self
+//        printViewAlert.center = view.center
+//        AlertWindowView.sharedInstance.showWithView(printViewAlert,
+//                                                    animations:{
+//                                                        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
+//                                                                       animations: {
+//                                                                        printViewAlert.transform = CGAffineTransform.identity
+//                                                            },
+//                                                                       completion: {(completed) in})
+//            },dismissAnimations:{
+//                [weak printViewAlert] in
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    if let overView = printViewAlert
+//                    {
+//                        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//                    }
+//                })
+//            })
     }
-    
+	
+	func printThis(mrdLabel: UIView) {
+		UIGraphicsBeginImageContextWithOptions(mrdLabel.bounds.size, false, 0.0)
+		
+		mrdLabel.drawHierarchy(in: mrdLabel.bounds, afterScreenUpdates: true)
+		//pass this image to printer
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		
+		let printInfo = UIPrintInfo(dictionary:nil)
+		printInfo.outputType = UIPrintInfoOutputType.general
+		printInfo.jobName = "MRD"
+		
+		// Set up print controller
+		let printController = UIPrintInteractionController.shared
+		printController.printInfo = printInfo
+		
+		// Assign a UIImage version of my UIView as a printing item
+		printController.printingItem = image
+		
+		// Do it
+		printController.present(from: mrdLabel.frame, in: mrdLabel, animated: true, completionHandler: nil)
+	}
+	
     override var shouldAutorotate: Bool {
         return false
     }
