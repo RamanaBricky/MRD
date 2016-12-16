@@ -37,7 +37,9 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     @IBOutlet weak var numberOfLabels: UILabel!
     @IBOutlet weak var printButton: UIButton!
     @IBOutlet weak var mrdView: UIView!
-    
+	
+	var selectedPrinter: UIPrinter?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -91,6 +93,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		
 		let settingsButton = UIButton()
 		settingsButton.setImage(UIImage.init(named: "button_settings"), for: .normal)
+		settingsButton.frame = CGRect(x: 0, y: 0, width: 40, height: 27)
+		settingsButton.addTarget(self, action: #selector(MRDDetailsVC.pickPrinter), for: .touchUpInside)
 		let barButtonItem = UIBarButtonItem(customView: settingsButton)
 		
 		self.navigationItem.rightBarButtonItem = barButtonItem
@@ -99,7 +103,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+	
     func fillMRDDetails() {
         let coreDataStack = CoreDataStack()
         let catID = viewModel?.selectedCategoryID
@@ -185,27 +189,49 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                            discardDateTextField.text!, discardTimeTextField.text!]
         let printViewAlert = MRDPrintView.init(printInfo: printArray)
 		
-		printThis(mrdLabel: printViewAlert)
-
-//        printViewAlert.delegate = self
-//        printViewAlert.center = view.center
-//        AlertWindowView.sharedInstance.showWithView(printViewAlert,
-//                                                    animations:{
-//                                                        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
-//                                                                       animations: {
-//                                                                        printViewAlert.transform = CGAffineTransform.identity
-//                                                            },
-//                                                                       completion: {(completed) in})
-//            },dismissAnimations:{
-//                [weak printViewAlert] in
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    if let overView = printViewAlert
-//                    {
-//                        overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-//                    }
-//                })
-//            })
+		if self.selectedPrinter == nil {
+			printViewAlert.delegate = self
+			printViewAlert.center = view.center
+			AlertWindowView.sharedInstance.showWithView(printViewAlert,
+			                                            animations:{
+															UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
+																animations: {
+																	printViewAlert.transform = CGAffineTransform.identity
+																},
+																completion: {(completed) in})
+			},dismissAnimations:{
+				[weak printViewAlert] in
+				UIView.animate(withDuration: 0.3, animations: {
+					if let overView = printViewAlert
+					{
+						overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+					}
+				})
+			})
+		} else {
+			printThis(mrdLabel: printViewAlert)
+		}
     }
+	
+	func pickPrinter(sender : UIBarButtonItem) {
+		print("printer picked")
+		let printerPicker = UIPrinterPickerController.init(initiallySelectedPrinter: selectedPrinter)
+//MARK: TODO you can use shouldShowPrinter delegate method to show a printer in this list
+		printerPicker.present(animated: true, completionHandler: { pickerController, selected, error in
+			if selected {
+				self.selectedPrinter = pickerController.selectedPrinter!
+				self.selectedPrinter?.contactPrinter({ reachable in
+//MARK: TODO display the spinner until this is done, update the user with printer connected
+// if there is no valid printer connected either display the popup or disable the print button
+					if !reachable {
+						print("Printer is  not available, please make sure printer is ready")
+					} else {
+						print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
+					}
+				})
+			}
+		})
+	}
 	
 	func printThis(mrdLabel: UIView) {
 		UIGraphicsBeginImageContextWithOptions(mrdLabel.bounds.size, false, 0.0)
@@ -227,7 +253,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		printController.printingItem = image
 		
 		// Do it
-		printController.present(from: mrdLabel.frame, in: mrdLabel, animated: true, completionHandler: nil)
+		printController.print(to: selectedPrinter!, completionHandler: nil)
+//		printController.present(from: mrdLabel.frame, in: mrdLabel, animated: true, completionHandler: nil)
 	}
 	
     override var shouldAutorotate: Bool {
@@ -316,3 +343,4 @@ extension MRDDetailsVC:UITextFieldDelegate {
         })
     }
 }
+
