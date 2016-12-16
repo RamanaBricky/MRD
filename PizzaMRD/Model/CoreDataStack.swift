@@ -60,7 +60,7 @@ class CoreDataStack: NSObject {
                               3:[1:["String Cheese"], 2:["Mozzarella 1","Mozzarella 2","Mozzarella 3"], 3:["Garlic String"]],
                               4:[1:["Strips","Spicy Strips", "BBQ Wings"], 2:["Garlic Bread","Wedges"], 3:["Nachos"], 4:["Pasta"], 5:["Triangles"]],
                               5:[1:["Sauce"], 2:["BBQ Sauce"], 3:["Salsa"]],
-                              6:[1:["Choco Chip", "Caramel", "Orange"], 2:["Doughnuts"], 3:["Brownies"]],
+                              6:[1:["Choc Chip", "Caramel", "Orange"], 2:["Doughnuts"], 3:["Brownies"]],
                               7:[1:["Onions", "Tomatoes"], 2:["Peppers"]],
                               8:[1:["Garlic Sprinkle"], 2:["Chipotle","Habanera", "Naga"]]]
     
