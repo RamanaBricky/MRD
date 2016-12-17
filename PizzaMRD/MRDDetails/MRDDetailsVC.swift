@@ -59,6 +59,21 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
         
+        let defaults = UserDefaults.standard
+        if let printerUrl = defaults.url(forKey: "printerURL") {
+            selectedPrinter = UIPrinter(url: printerUrl)
+            selectedPrinter?.contactPrinter({ reachable in
+                if !reachable {
+//MARK: TODO show a message saying like "you are not connected to a valid printer, please connect to a printer to print the labels" then call pickPrinter()
+                    print("Printer is not available, please make sure printer is ready")
+                } else {
+                    let defaults = UserDefaults.standard
+                    defaults.set(self.selectedPrinter!.url, forKey: "printerURL")
+                    defaults.synchronize()
+                    print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
+                }
+            })
+        }
     }
     
     var subSubCategoryList:[String]?
@@ -192,22 +207,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         printViewAlert.center = view.center
         
 		if self.selectedPrinter == nil {
-			AlertWindowView.sharedInstance.showWithView(printViewAlert,
-			                                            animations:{
-															UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
-																animations: {
-																	printViewAlert.transform = CGAffineTransform.identity
-																},
-																completion: {(completed) in})
-			},dismissAnimations:{
-				[weak printViewAlert] in
-				UIView.animate(withDuration: 0.3, animations: {
-					if let overView = printViewAlert
-					{
-						overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-					}
-				})
-			})
+			showLabel(labelView: printViewAlert)
 		} else {
             //remove OK Button
             let frame = printViewAlert.frame
@@ -219,7 +219,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		}
     }
 	
-	func pickPrinter(sender : UIBarButtonItem) {
+	func pickPrinter() {
 		print("printer picked")
 		let printerPicker = UIPrinterPickerController.init(initiallySelectedPrinter: selectedPrinter)
 //MARK: TODO you can use shouldShowPrinter delegate method to show a printer in this list
@@ -232,6 +232,9 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 					if !reachable {
 						print("Printer is not available, please make sure printer is ready")
 					} else {
+                        let defaults = UserDefaults.standard
+                        defaults.set(self.selectedPrinter!.url, forKey: "printerURL")
+                        defaults.synchronize()
 						print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
 					}
 				})
@@ -239,7 +242,28 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		})
 	}
 	
+    func showLabel(labelView: UIView) {
+        AlertWindowView.sharedInstance.showWithView(labelView,
+                                                    animations:{
+                                                        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
+                                                                       animations: {
+                                                                        labelView.transform = CGAffineTransform.identity
+                                                        },
+                                                                       completion: {(completed) in})
+        },dismissAnimations:{
+            [weak labelView] in
+            UIView.animate(withDuration: 0.3, animations: {
+                if let overView = labelView
+                {
+                    overView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                }
+            })
+        })
+    }
+    
 	func printThis(mrdLabel: UIView) {
+        printButton.isEnabled = false
+        
 		UIGraphicsBeginImageContextWithOptions(mrdLabel.bounds.size, false, 0.0)
 		
 		mrdLabel.drawHierarchy(in: mrdLabel.bounds, afterScreenUpdates: true)
@@ -256,10 +280,22 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		printController.printInfo = printInfo
 		
 		// Assign an UIImage version of printView as a printing item
-		printController.printingItem = image
-
-		printController.print(to: selectedPrinter!, completionHandler: nil)
-        //handle delegate methods to load paper, load ink
+        if let text = printLabelCountTextField.text, let items = Int(text), let img = image {
+            printController.printingItems = Array(repeating: img, count: items)
+        } else {
+            printController.printingItem = image
+        }
+        printController.print(to: selectedPrinter!, completionHandler: { (controller, result, error) in
+            self.printButton.isEnabled = true
+            if result {
+               print("Job Completed")
+            } else {
+//MARK: TODO Cannot print, so let the user know about this
+               print("something went wrong")
+            }
+        })
+//MARK: TO DO
+        //handle delegate methods to load paper, printer problems
 	}
 	
     override var shouldAutorotate: Bool {
@@ -300,7 +336,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
 }
 
-extension MRDDetailsVC: UITableViewDataSource {
+extension MRDDetailsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (subSubCategoryList?.count)!
     }
@@ -317,9 +353,7 @@ extension MRDDetailsVC: UITableViewDataSource {
         
         return cell!
     }
-}
-
-extension MRDDetailsVC:UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath.row
     }
