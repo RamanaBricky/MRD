@@ -188,10 +188,10 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                            readyDateTextField.text!, readyTimeTextField.text!,
                            discardDateTextField.text!, discardTimeTextField.text!]
         let printViewAlert = MRDPrintView.init(printInfo: printArray)
-		
+        printViewAlert.delegate = self
+        printViewAlert.center = view.center
+        
 		if self.selectedPrinter == nil {
-			printViewAlert.delegate = self
-			printViewAlert.center = view.center
 			AlertWindowView.sharedInstance.showWithView(printViewAlert,
 			                                            animations:{
 															UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,
@@ -209,6 +209,12 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 				})
 			})
 		} else {
+            //remove OK Button
+            let frame = printViewAlert.frame
+            let newFrame = CGRect(origin: frame.origin, size: CGSize(width:frame.size.width, height:frame.size.height - printViewAlert.okButton.frame.size.height))
+            printViewAlert.okButton.removeFromSuperview()
+            printViewAlert.frame = newFrame
+            
 			printThis(mrdLabel: printViewAlert)
 		}
     }
@@ -224,7 +230,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 //MARK: TODO display the spinner until this is done, update the user with printer connected
 // if there is no valid printer connected either display the popup or disable the print button
 					if !reachable {
-						print("Printer is  not available, please make sure printer is ready")
+						print("Printer is not available, please make sure printer is ready")
 					} else {
 						print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
 					}
@@ -249,12 +255,11 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		let printController = UIPrintInteractionController.shared
 		printController.printInfo = printInfo
 		
-		// Assign a UIImage version of my UIView as a printing item
+		// Assign an UIImage version of printView as a printing item
 		printController.printingItem = image
-		
-		// Do it
+
 		printController.print(to: selectedPrinter!, completionHandler: nil)
-//		printController.present(from: mrdLabel.frame, in: mrdLabel, animated: true, completionHandler: nil)
+        //handle delegate methods to load paper, load ink
 	}
 	
     override var shouldAutorotate: Bool {

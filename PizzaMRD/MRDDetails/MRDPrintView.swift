@@ -30,6 +30,7 @@ class MRDPrintView:UIView {
     @IBOutlet weak var discardDateLabel: UILabel!
     @IBOutlet weak var discardTimeLabel: UILabel!
     
+    @IBOutlet weak var okButton: UIButton!
     weak var delegate: PrintViewDelegate?
     
     init(printInfo: [String]){

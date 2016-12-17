@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,6 +31,7 @@
                 <outlet property="madeDateLabel" destination="Mjm-Hv-PZF" id="KiE-H5-6p4"/>
                 <outlet property="madeLabel" destination="yBy-8M-zd0" id="XcF-px-rDu"/>
                 <outlet property="madeTimeLabel" destination="mfH-ko-eXX" id="ciU-yN-bHX"/>
+                <outlet property="okButton" destination="irg-K6-rlx" id="Jig-1q-5c8"/>
                 <outlet property="readyDateLabel" destination="K5g-qS-kb6" id="peK-9L-VtD"/>
                 <outlet property="readyLabel" destination="VtZ-g4-9VE" id="fdr-xn-Bdd"/>
                 <outlet property="readyTimeLabel" destination="svM-ne-54A" id="SFu-9k-CPD"/>
