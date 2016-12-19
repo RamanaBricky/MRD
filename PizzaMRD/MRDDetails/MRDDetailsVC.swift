@@ -263,7 +263,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
 	func printThis(mrdLabel: UIView) {
         printButton.isEnabled = false
-        mrdLabel.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        
 		UIGraphicsBeginImageContextWithOptions(mrdLabel.bounds.size, false, 0.0)
 		
 		mrdLabel.drawHierarchy(in: mrdLabel.bounds, afterScreenUpdates: true)
