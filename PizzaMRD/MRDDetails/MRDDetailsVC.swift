@@ -289,7 +289,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             if result {
                print("Job Completed")
             } else {
-				AlertWindowView.sharedInstance.show("Alert!", "Unable to print the label at the moment")
+//				AlertWindowView.sharedInstance.show("Alert!", "Unable to print the label at the moment")
             }
         })
 //MARK: TO DO
