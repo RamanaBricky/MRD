@@ -271,7 +271,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		UIGraphicsEndImageContext()
 		
 		let printInfo = UIPrintInfo(dictionary:nil)
-		printInfo.outputType = UIPrintInfoOutputType.general
+		printInfo.outputType = UIPrintInfoOutputType.grayscale
 		printInfo.jobName = "MRD"
 		
 		// Set up print controller
