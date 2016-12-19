@@ -33,7 +33,11 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(SubCategoryVC.subCategorySelected), name: NSNotification.Name(rawValue:"SubCategorySelected"), object: nil)
         
     }
-    
+	
+	deinit {
+		AlertWindowView.sharedInstance.dismissAlert()
+	}
+	
     func subCategorySelected(notification: Notification){
         
         let subCategoryOptionsDict = notification.userInfo

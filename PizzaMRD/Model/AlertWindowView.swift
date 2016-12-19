@@ -72,7 +72,119 @@ class AlertWindowView : NSObject
         
         return windowRootViewController
     }
-    
+	
+	@discardableResult func show(_ title: String, _ message: String) {
+		if newALertWindow != nil {
+			return
+		}
+		let rootViewController = createWindowOverlay()
+		let alertBackground = createAlertView(title, message)
+		alertBackground.layer.cornerRadius = 6.0
+		alertBackground.layer.masksToBounds = true
+		
+		rootViewController.view.addSubview(alertBackground)
+		
+		var layoutMetrics = ["WIDTH": 240, "WIDTH_PRIORITY": 750]
+		if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+			layoutMetrics["EDGEINSET"] = 40
+		} else {
+			layoutMetrics["EDGEINSET"] = 20
+		}
+		
+		rootViewController.view.addConstraint(NSLayoutConstraint(item: alertBackground, attribute: .centerX, relatedBy: .equal, toItem: rootViewController.view, attribute: .centerX, multiplier: 1, constant: 0))
+		rootViewController.view.addConstraint(NSLayoutConstraint(item: alertBackground, attribute: .centerY, relatedBy: .equal, toItem: rootViewController.view, attribute: .centerY, multiplier: 1, constant: 0))
+		rootViewController.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=EDGEINSET)-[backGround(==WIDTH@WIDTH_PRIORITY)]-(>=EDGEINSET)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: ["backGround":alertBackground]))
+		rootViewController.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=EDGEINSET)-[backGround]-(>=EDGEINSET)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: ["backGround":alertBackground]))
+		
+		alertBackground.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+		alertBackground.alpha = 0.3
+		UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
+			alertBackground.transform = CGAffineTransform.identity
+			alertBackground.alpha = 1.0
+		}, completion: nil)
+		
+		dismissAnimations = {
+			UIView.animate(withDuration: 0.3, animations: {
+				alertBackground.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+				alertBackground.alpha = 0.3
+			})
+		}
+	}
+	
+	func createAlertView(_ title: String, _ message: String) -> UIVisualEffectView{
+		let alertBackgroud = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+		alertBackgroud.translatesAutoresizingMaskIntoConstraints = false
+		
+		var layoutViews = [String: UIView]()
+		var layoutMetrics = [String: Int]()
+		
+		layoutMetrics["WIDTH"] = 240
+		layoutMetrics["WIDTH_PRIORITY"] = 750
+		layoutViews["background"] = alertBackgroud
+		
+		//Title
+		let titleLabel = UILabel()
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.text = title
+		titleLabel.adjustsFontSizeToFitWidth = true
+		titleLabel.font = UIFont.systemFont(ofSize: 16.0)
+		titleLabel.minimumScaleFactor = 0.5
+		titleLabel.numberOfLines = 0
+		titleLabel.textAlignment = .center
+		titleLabel.textColor = UIColor.white
+		alertBackgroud.addSubview(titleLabel)
+		layoutViews["title"] = titleLabel
+		
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[title]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: layoutViews))
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[title(==WIDTH@WIDTH_PRIORITY)]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		
+		//Message
+		let messageLabel = UILabel()
+		messageLabel.translatesAutoresizingMaskIntoConstraints = false
+		messageLabel.textColor = UIColor.white
+		messageLabel.font = UIFont.systemFont(ofSize: 15.0)
+		messageLabel.adjustsFontSizeToFitWidth = true
+		messageLabel.minimumScaleFactor = 0.8
+		messageLabel.textAlignment = .center
+		messageLabel.numberOfLines = 0
+		messageLabel.lineBreakMode = .byTruncatingTail
+		messageLabel.text = message
+		
+		alertBackgroud.addSubview(messageLabel)
+		layoutViews["message"] = messageLabel
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[message(==WIDTH@WIDTH_PRIORITY)]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		
+		let separatorLine = UIImageView(image: UIImage(named:"separator_line"))
+		separatorLine.translatesAutoresizingMaskIntoConstraints = false
+		alertBackgroud.addSubview(separatorLine)
+		layoutViews["line"] = separatorLine
+		
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[line]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		separatorLine.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[line(2)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: layoutViews))
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[title]-(12)-[message]-[line]", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		
+		//Button
+		let button = UIButton()
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setTitleColor(UIColor.white, for: .normal)
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 20.0)
+		button.titleLabel?.minimumScaleFactor = 0.2
+		button.titleLabel?.adjustsFontSizeToFitWidth = true
+		button.setTitle("OK", for: .normal)
+		button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
+		button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 8.0, 0.0, 8.0)
+		button.setContentCompressionResistancePriority(800, for: .horizontal)
+		alertBackgroud.addSubview(button)
+		layoutViews["button"] = button
+		
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[button]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[line]-(10)-[button(==50)]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
+		
+		applyMotionEffects(alertBackgroud)
+		
+		return alertBackgroud
+	}
+	
     @discardableResult func showWithView(_ view: UIView, animations:(() -> Void)? = nil, dismissAnimations: (() -> Void)? = nil) -> Bool
     {
         if newALertWindow != nil {
@@ -90,18 +202,6 @@ class AlertWindowView : NSObject
             view.center = rootViewController.view.center
         }
         return true
-    }
-    
-    func buttonPressed(_ button: UIButton)
-    {
-        dismissAlert()
-        let delegateCopy        = self.delegate
-        let objcDelegateCopy    = self.objcDelegate
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(k.dismissTime * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-            delegateCopy?.didDismissWithButtonIndex(button.tag, forIdentifier: self.identifier)
-            objcDelegateCopy?.didDismissWithButtonIndex(button.tag, andIdentifier: self.objcIdentifier)
-        }
-        
     }
     
     func dismissAlert()

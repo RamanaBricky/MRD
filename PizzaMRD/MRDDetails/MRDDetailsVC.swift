@@ -52,33 +52,34 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             selectedIndexPath = 0
             subSubCategoryTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
-        
+		
         printLabelCountTextField.text = "1"
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(MRDDetailsVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
-        
-        let defaults = UserDefaults.standard
-        if let printerUrl = defaults.url(forKey: "printerURL") {
-            selectedPrinter = UIPrinter(url: printerUrl)
-            selectedPrinter?.contactPrinter({ reachable in
-                if !reachable {
-//MARK: TODO show a message saying like "you are not connected to a valid printer, please connect to a printer to print the labels" then call pickPrinter()
-                    print("Printer is not available, please make sure printer is ready")
-                } else {
-                    let defaults = UserDefaults.standard
-                    defaults.set(self.selectedPrinter!.url, forKey: "printerURL")
-                    defaults.synchronize()
-                    print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
-                }
-            })
-        }
     }
-    
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		let defaults = UserDefaults.standard
+		if let printerUrl = defaults.url(forKey: "printerURL") {
+			selectedPrinter = UIPrinter(url: printerUrl)
+			selectedPrinter?.contactPrinter({ reachable in
+				if !reachable {
+					AlertWindowView.sharedInstance.show("Attention!", "Your preferred printer in not reachable, please make sure the printer is ready or connect to another printer.")
+				} else {
+					let defaults = UserDefaults.standard
+					defaults.set(self.selectedPrinter!.url, forKey: "printerURL")
+					defaults.synchronize()
+				}
+			})
+		}
+	}
+	
     var subSubCategoryList:[String]?
     var selectedIndexPath = -1
-    
+	
     func setupUI() {
         view.backgroundColor = UIColor.black
         madeLabel.textColor = UIColor.white
@@ -227,15 +228,13 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 			if selected {
 				self.selectedPrinter = pickerController.selectedPrinter!
 				self.selectedPrinter?.contactPrinter({ reachable in
-//MARK: TODO display the spinner until this is done, update the user with printer connected
-// if there is no valid printer connected either display the popup or disable the print button
+//MARK: TODO display the spinner until this is done
 					if !reachable {
-						print("Printer is not available, please make sure printer is ready")
+						AlertWindowView.sharedInstance.show("Attention!", "Not able to connect to the printer, please try again.")
 					} else {
                         let defaults = UserDefaults.standard
                         defaults.set(self.selectedPrinter!.url, forKey: "printerURL")
                         defaults.synchronize()
-						print("Connected to printer: \(self.selectedPrinter!.displayName) at \(self.selectedPrinter!.displayLocation)")
 					}
 				})
 			}
@@ -290,8 +289,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
             if result {
                print("Job Completed")
             } else {
-//MARK: TODO Cannot print, so let the user know about this
-               print("something went wrong")
+				AlertWindowView.sharedInstance.show("Alert!", "Unable to print the label at the moment")
             }
         })
 //MARK: TO DO
