@@ -34,7 +34,7 @@ class MRDPrintView:UIView {
     weak var delegate: PrintViewDelegate?
     
     init(printInfo: [String]){
-        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 178))
+        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 237))
         nibSetup()
         titleLabel.text = printInfo[0]
         madeDateLabel.text = printInfo[1]
@@ -59,7 +59,7 @@ class MRDPrintView:UIView {
     {
         backgroundColor = UIColor.clear
         view = loadViewFromNib()
-        let frame = CGRect(x: 0,y: 0,width: 160,height: 178)
+        let frame = CGRect(x: 0,y: 0,width: 160,height: 237)
         view.frame = frame
         bounds = view.frame
         
