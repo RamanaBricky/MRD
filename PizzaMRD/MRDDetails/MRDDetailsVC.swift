@@ -68,6 +68,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 			selectedPrinter?.contactPrinter({ reachable in
 				if !reachable {
 					self.selectedPrinter = nil
+					defaults.removeObject(forKey: "printerURL")
+					defaults.synchronize()
 					AlertWindowView.sharedInstance.show("Attention!", "Your preferred printer in not reachable, please make sure the printer is ready or connect to another printer.")
 				} else {
 					let defaults = UserDefaults.standard
