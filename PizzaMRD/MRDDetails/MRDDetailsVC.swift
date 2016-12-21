@@ -245,6 +245,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 	}
 	
     func showLabel(labelView: UIView) {
+		labelView.frame.size.width = 200.0
+		labelView.center = view.center
         AlertWindowView.sharedInstance.showWithView(labelView,
                                                     animations:{
                                                         UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.curveEaseInOut,

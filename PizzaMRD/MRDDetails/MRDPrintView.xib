@@ -161,19 +161,22 @@
                 <constraint firstItem="K5g-qS-kb6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8xw-DS-cYl"/>
                 <constraint firstItem="Mjm-Hv-PZF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D3M-xl-AA8"/>
                 <constraint firstItem="K5g-qS-kb6" firstAttribute="top" secondItem="VtZ-g4-9VE" secondAttribute="bottom" id="E1Z-io-4Fc"/>
+                <constraint firstItem="mfH-ko-eXX" firstAttribute="width" secondItem="Mjm-Hv-PZF" secondAttribute="width" id="H9x-kl-XdY"/>
                 <constraint firstItem="PxK-OA-e67" firstAttribute="top" secondItem="pVf-47-S12" secondAttribute="bottom" id="IX6-DA-kO9"/>
                 <constraint firstItem="yBy-8M-zd0" firstAttribute="top" secondItem="WSA-We-Afo" secondAttribute="bottom" id="JAQ-RR-X9N"/>
                 <constraint firstItem="pVf-47-S12" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jhq-Nw-pJC"/>
                 <constraint firstAttribute="trailing" secondItem="pVf-47-S12" secondAttribute="trailing" id="Jmm-9Z-9tK"/>
                 <constraint firstItem="VtZ-g4-9VE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K1T-ss-LqE"/>
                 <constraint firstAttribute="trailing" secondItem="PxK-OA-e67" secondAttribute="trailing" id="M2z-p0-PLh"/>
+                <constraint firstItem="PxK-OA-e67" firstAttribute="width" secondItem="V7f-aP-EEJ" secondAttribute="width" id="Sfs-3i-IMM"/>
                 <constraint firstItem="yBy-8M-zd0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TTd-cz-UGb"/>
                 <constraint firstItem="V7f-aP-EEJ" firstAttribute="top" secondItem="pVf-47-S12" secondAttribute="bottom" id="Y5p-eM-4Uz"/>
                 <constraint firstAttribute="trailing" secondItem="irg-K6-rlx" secondAttribute="trailing" id="YMe-cX-hNO"/>
                 <constraint firstItem="Mjm-Hv-PZF" firstAttribute="top" secondItem="yBy-8M-zd0" secondAttribute="bottom" id="ZBx-op-zPm"/>
                 <constraint firstAttribute="trailing" secondItem="WSA-We-Afo" secondAttribute="trailing" id="ZHl-0h-qQQ"/>
                 <constraint firstAttribute="trailing" secondItem="svM-ne-54A" secondAttribute="trailing" id="Zwu-FZ-IBh"/>
-                <constraint firstItem="mfH-ko-eXX" firstAttribute="leading" secondItem="Mjm-Hv-PZF" secondAttribute="trailing" id="bIh-vg-zK9"/>
+                <constraint firstItem="svM-ne-54A" firstAttribute="width" secondItem="K5g-qS-kb6" secondAttribute="width" id="cgS-Ek-3dV"/>
+                <constraint firstItem="svM-ne-54A" firstAttribute="leading" secondItem="K5g-qS-kb6" secondAttribute="trailing" id="dfy-nz-G6w"/>
                 <constraint firstItem="pVf-47-S12" firstAttribute="top" secondItem="svM-ne-54A" secondAttribute="bottom" id="eFh-u2-dc3"/>
                 <constraint firstAttribute="trailing" secondItem="yBy-8M-zd0" secondAttribute="trailing" id="ff7-cL-lS3"/>
                 <constraint firstItem="irg-K6-rlx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gwK-7T-7ds"/>
@@ -183,6 +186,7 @@
                 <constraint firstItem="mfH-ko-eXX" firstAttribute="top" secondItem="yBy-8M-zd0" secondAttribute="bottom" id="mRN-dF-QUI"/>
                 <constraint firstItem="WSA-We-Afo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wwT-S6-Q01"/>
                 <constraint firstItem="mfH-ko-eXX" firstAttribute="leading" secondItem="Mjm-Hv-PZF" secondAttribute="trailing" id="yLz-a7-0nr"/>
+                <constraint firstItem="PxK-OA-e67" firstAttribute="leading" secondItem="V7f-aP-EEJ" secondAttribute="trailing" id="yev-AE-LHQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="95" y="-217.5"/>
