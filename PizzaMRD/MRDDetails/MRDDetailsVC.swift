@@ -245,7 +245,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 	}
 	
     func showLabel(labelView: UIView) {
-		labelView.frame.size.width = 200.0
+		labelView.frame.size.width = 215.0
 		labelView.center = view.center
         AlertWindowView.sharedInstance.showWithView(labelView,
                                                     animations:{
