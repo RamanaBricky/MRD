@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SQLite
 
 enum Frequency:String {
     case hours =  "h"
@@ -41,10 +42,26 @@ struct MRDData {
     }
 }
 
-class CoreDataStack: NSObject {
-    static let moduleName = "MRD"
+class SqlStore {
+    static let db = try! Connection("\(Bundle.main.resourcePath!)/MRD.sqlite")
     
-    let categoriesList = [1:"Dough",2:"Toppings",3:"Cheese",4:"Starters", 5:"Sauce",6:"Desserts",7:"Deliveries",8:"Miscellaneous"]
+   static func sqlQuery(_ query: String) -> [Int:String] {
+        var dictionary: Dictionary<Int,String> = Dictionary()
+        for row in try! db.prepare(query) {
+            if let key = row[0] as? Int64, let value = row[1] as? String {
+                dictionary[Int(key)] = value
+            }
+        }
+    print(dictionary)
+        return dictionary
+    }
+}
+
+class CoreDataStack: NSObject {
+    
+    
+    static let moduleName = "MRD"
+    let categoriesList = SqlStore.sqlQuery("SELECT * FROM tbl_MRD_Categories")
     
     let subCategoriesList = [1:[1:"Italian",2:"SC/CB",3:"Classic",4:"Pan"],
                              2:[1:"Meat", 2:"Tins", 3:"MOP", 4:"Tomato/Chillies", 5:"Black Olives"],

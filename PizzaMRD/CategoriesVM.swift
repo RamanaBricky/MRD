@@ -19,5 +19,5 @@ protocol CategoriesViewModelDelegate:class {
 
 class CategoriesVM: CategoriesViewModel {
     weak var delegate:CategoriesViewModelDelegate?
-    var categoriesList = [1:"Dough",2:"Toppings",3:"Cheese",4:"Starters", 5:"Sauce",6:"Desserts",7:"Deliveries",8:"Miscellaneous"]
+    var categoriesList = CoreDataStack().categoriesList
 }
