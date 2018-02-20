@@ -10,8 +10,10 @@
 		0743A1301DECDF3D00EAF6A3 /* MRDPrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */; };
 		0743A1321DECEC7C00EAF6A3 /* MRDPrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */; };
 		076A21191DE64D5D00E7828D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5341DC495A00073B16D /* LaunchScreen.storyboard */; };
+		0783F1BC203CC1D3008A4269 /* MRD.db in Resources */ = {isa = PBXBuildFile; fileRef = 0783F1BB203CC1D3008A4269 /* MRD.db */; };
 		07E2DFC91DE500F400CBD7F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B52F1DC495A00073B16D /* Main.storyboard */; };
 		07E6F3181DE9F387000EB387 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
+		31D4D3F746051FF5F5921039 /* Pods_PizzaMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */; };
 		9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601ACA21DC7D67200FE3145 /* CoreData.framework */; };
 		9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
 		9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */; };
@@ -44,7 +46,9 @@
 /* Begin PBXFileReference section */
 		0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRDPrintView.xib; sourceTree = "<group>"; };
 		0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDPrintView.swift; sourceTree = "<group>"; };
+		0783F1BB203CC1D3008A4269 /* MRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MRD.db; sourceTree = "<group>"; };
 		07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~iphone.xib"; sourceTree = "<group>"; };
+		394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.debug.xcconfig"; sourceTree = "<group>"; };
 		9601ACA21DC7D67200FE3145 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
 		9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryVC.xib; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~ipad.xib"; sourceTree = "<group>"; };
 		96E416411DC95B5500939B62 /* MRDDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVC.swift; sourceTree = "<group>"; };
 		96E416431DC95BB500939B62 /* MRDDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVM.swift; sourceTree = "<group>"; };
+		BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.release.xcconfig"; sourceTree = "<group>"; };
+		DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,16 +90,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */,
+				31D4D3F746051FF5F5921039 /* Pods_PizzaMRD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B002423CAD22218DAA71E63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */,
+				BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9601ACA11DC7D67200FE3145 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				9601ACA21DC7D67200FE3145 /* CoreData.framework */,
+				DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +139,7 @@
 				9630B52A1DC495A00073B16D /* PizzaMRD */,
 				9630B5291DC495A00073B16D /* Products */,
 				9601ACA11DC7D67200FE3145 /* Frameworks */,
+				1B002423CAD22218DAA71E63 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +182,7 @@
 		96D44C1B1DC60CD700753A30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0783F1BB203CC1D3008A4269 /* MRD.db */,
 				96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */,
 				96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */,
 				96D44C1F1DC6106600753A30 /* CoreDataStack.swift */,
@@ -194,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9630B53A1DC495A00073B16D /* Build configuration list for PBXNativeTarget "PizzaMRD" */;
 			buildPhases = (
+				6458E7C8350AFBDA8BB0678A /* [CP] Check Pods Manifest.lock */,
 				9630B5241DC495A00073B16D /* Sources */,
 				9630B5251DC495A00073B16D /* Frameworks */,
 				9630B5261DC495A00073B16D /* Resources */,
+				3D58563B8A45400A9D6A7377 /* [CP] Embed Pods Frameworks */,
+				3DDA31D08E28BC695093C041 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				076A21191DE64D5D00E7828D /* LaunchScreen.storyboard in Resources */,
+				0783F1BC203CC1D3008A4269 /* MRD.db in Resources */,
 				07E2DFC91DE500F400CBD7F2 /* Main.storyboard in Resources */,
 				9630B5421DC496BE0073B16D /* Fonts in Resources */,
 				9630B5331DC495A00073B16D /* Assets.xcassets in Resources */,
@@ -264,6 +287,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D58563B8A45400A9D6A7377 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DDA31D08E28BC695093C041 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6458E7C8350AFBDA8BB0678A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PizzaMRD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9630B5241DC495A00073B16D /* Sources */ = {
@@ -408,6 +485,7 @@
 		};
 		9630B53B1DC495A00073B16D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -425,6 +503,7 @@
 		};
 		9630B53C1DC495A00073B16D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
