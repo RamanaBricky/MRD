@@ -13,8 +13,9 @@ protocol MRDDetailsViewModel {
     var selectedCategoryID:Int {get set}
     var selectedSubCategoryID:Int {get set}
     var selectedMRDType:Int? {get set}
+    var subSubCategoryList:[String] {get}
     
-    func getTitle() -> String
+    func getTitle() -> String?
 }
 
 protocol MRDDetailsDelegate:class {
@@ -28,8 +29,25 @@ class MRDetailsVM: MRDDetailsViewModel {
     var selectedSubCategoryID: Int = 0
     var selectedMRDType: Int?
     
-    func getTitle() -> String {
-        
-        return "Title"
+    var subSubCategoryList: [String] {
+        return DataStack.shared.subSubCategoryList(for: selectedCategoryID, selectedSubCategoryID)
+    }
+    
+    func getTitle() -> String? {
+        var title: String?
+        let subCategoryText = DataStack.shared.subCategoriesList[selectedCategoryID]?[selectedSubCategoryID]
+        if let mrdType = selectedMRDType {
+            let mrdTypeText = DataStack.shared.mrdType[selectedCategoryID]?[selectedSubCategoryID]?[mrdType]
+            if mrdTypeText?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
+                title = ("\(subCategoryText!) - \(mrdTypeText!)")
+            }
+            else {
+                title = subCategoryText
+            }
+        }
+        else {
+            title = subCategoryText
+        }
+        return title
     }
 }

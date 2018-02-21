@@ -47,7 +47,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         subSubCategoryTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
         subSubCategoryTableView.tableFooterView = UIView()
         
-        if (subSubCategoryList?.count) != nil {
+        if (viewModel?.subSubCategoryList.count) != nil {
             let indexPath = IndexPath.init(row: 0, section: 0)
             selectedIndexPath = 0
             subSubCategoryTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
@@ -80,7 +80,6 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		}
 	}
 	
-    var subSubCategoryList:[String]?
     var selectedIndexPath = -1
 	
     func setupUI() {
@@ -126,25 +125,9 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     func fillMRDDetails() {
         let catID = viewModel?.selectedCategoryID
         let subCatID = viewModel?.selectedSubCategoryID
-        let subCategoryText = DataStack.shared.subCategoriesList[catID!]?[subCatID!]
-        if let mrdType = viewModel?.selectedMRDType {
-            let mrdTypeText = DataStack.shared.mrdType[catID!]?[subCatID!]?[mrdType]
-            if mrdTypeText?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
-                title = ("\(subCategoryText!) - \(mrdTypeText!)")
-            }
-            else {
-               title = subCategoryText
-            }
-        }
-        else {
-            title = subCategoryText
-        }
         title = viewModel?.getTitle()
-        subSubCategoryList = DataStack.shared.subSubCategoryList[catID!]?[subCatID!]
-        print("something \((viewModel?.selectedCategoryID)!) \(subSubCategoryList!) \((viewModel?.selectedSubCategoryID)!)")
         
         let mrdStruct = DataStack.shared.mrdDataStruct[catID!]?[subCatID!]
-        print("dates \(mrdStruct!)")
         
         guard mrdStruct != nil else {
             return
@@ -343,7 +326,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 
 extension MRDDetailsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (subSubCategoryList?.count)!
+        return (viewModel?.subSubCategoryList.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -354,7 +337,7 @@ extension MRDDetailsVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         let row = indexPath.row
-        cell?.subCategoryOptionLabel.text = subSubCategoryList?[row]
+        cell?.subCategoryOptionLabel.text = viewModel?.subSubCategoryList[row]
         
         return cell!
     }

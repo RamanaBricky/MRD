@@ -52,8 +52,17 @@ class SqlStore {
                 dictionary[Int(key)] = value
             }
         }
-    print(dictionary)
         return dictionary
+    }
+    
+    static func sqlQueryArray(_ query: String) -> [String] {
+        var array: [String] = []
+        for row in try! db.prepare(query) {
+            if let value = row[0] as? String {
+                array.append(value)
+            }
+        }
+        return array
     }
 }
 
@@ -68,8 +77,8 @@ class DataStack: NSObject {
         return SqlStore.sqlQuery("SELECT Sub_Category, Sub_Category_Name FROM tbl_MRD_Sub_Categories where CategoryID = '\(categoryID)'")
     }
     
-    func subSubCategoryList(for categoryID: Int, _ subCategoryID: Int) -> [Int:String] {
-        return SqlStore.sqlQuery("SELECT Sub_Sub_Category, Title from tblSubSubCategory where Category = '\(categoryID)' & Sub_Category = '\(subCategoryID)'")
+    func subSubCategoryList(for categoryID: Int, _ subCategoryID: Int) -> [String] {
+        return SqlStore.sqlQueryArray("SELECT Title from tblSubSubCategory where Category = '\(categoryID)' AND Sub_Category = '\(subCategoryID)'")
     }
     
     let subCategoriesList = [1:[1:"Italian",2:"SC/CB",3:"Classic",4:"Pan"],
