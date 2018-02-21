@@ -81,25 +81,6 @@ class DataStack: NSObject {
         return SqlStore.sqlQueryArray("SELECT Title from tblSubSubCategory where Category = '\(categoryID)' AND Sub_Category = '\(subCategoryID)'")
     }
     
-    let subCategoriesList = [1:[1:"Italian",2:"SC/CB",3:"Classic",4:"Pan"],
-                             2:[1:"Meat", 2:"Tins", 3:"MOP", 4:"Tomato/Chillies", 5:"Black Olives"],
-                             3:[1:"String", 2:"Mozzarella", 3:"Garlic String"],
-                             4:[1:"Chicken", 2:"GB Wedges", 3:"Nachos", 4:"Pasta", 5:"Triangles"],
-                             5:[1:"Sauce", 2:"BBQ Sauce", 3:"Salsa"],
-                             6:[1:"Cookie Dough", 2:"Doughnuts", 3:"Brownies"],
-                             7:[1:"Onions/Tomatoes", 2:"Pepper"],
-                             8:[1:"Garlic Sprinkle", 2:"Top Sauces"]]
-    
-    let subSubCategoryList = [1:[1:["L Italian","M Italian","S Italian"],2:["SC/CB"],3:["Classic"],4:["L Pan","M Pan"]],
-                              2:[1:["Chicken","Cajun","Pepperoni","Ham","Beef","Pork","Bacon"], 2:["Tuna","Anchovies","Jalapenos","Sweetcorn","Pineapple"], 3:["Onions","Mushrooms","Peppers"], 4:["Tomatoes"], 5: ["Black Olives"]],
-                              3:[1:["String Cheese"], 2:["Mozzarella 1","Mozzarella 2","Mozzarella 3"], 3:["Garlic String"]],
-                              4:[1:["Strips","Spicy Strips", "BBQ Wings"], 2:["Garlic Bread","Wedges"], 3:["Nachos"], 4:["Pasta"], 5:["Triangles"]],
-                              5:[1:["Sauce"], 2:["BBQ Sauce"], 3:["Salsa"]],
-                              6:[1:["Choc Chip", "Caramel", "Orange"], 2:["Doughnuts"], 3:["Brownies"]],
-                              7:[1:["Onions", "Tomatoes"], 2:["Peppers"]],
-                              8:[1:["Garlic Sprinkle"], 2:["Chipotle","Habanera", "Naga"]]]
-    
-    
     let mrdType = [1:[1:["Defrost","S&C","BBQ"],
                       2:["Defrost","S&C","BBQ"],
                       3:["Defrost","S&C","BBQ"],

@@ -126,7 +126,6 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let catID = viewModel?.selectedCategoryID
         let subCatID = viewModel?.selectedSubCategoryID
         title = viewModel?.getTitle()
-        
         let mrdStruct = DataStack.shared.mrdDataStruct[catID!]?[subCatID!]
         
         guard mrdStruct != nil else {

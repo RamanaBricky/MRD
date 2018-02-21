@@ -35,7 +35,7 @@ class MRDetailsVM: MRDDetailsViewModel {
     
     func getTitle() -> String? {
         var title: String?
-        let subCategoryText = DataStack.shared.subCategoriesList[selectedCategoryID]?[selectedSubCategoryID]
+        let subCategoryText = DataStack.shared.subCategoryList(for: selectedCategoryID)[selectedSubCategoryID]
         if let mrdType = selectedMRDType {
             let mrdTypeText = DataStack.shared.mrdType[selectedCategoryID]?[selectedSubCategoryID]?[mrdType]
             if mrdTypeText?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
