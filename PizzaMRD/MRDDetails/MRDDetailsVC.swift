@@ -124,12 +124,11 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
 	
     func fillMRDDetails() {
-        let coreDataStack = CoreDataStack()
         let catID = viewModel?.selectedCategoryID
         let subCatID = viewModel?.selectedSubCategoryID
-        let subCategoryText = coreDataStack.subCategoriesList[catID!]?[subCatID!]
+        let subCategoryText = DataStack.shared.subCategoriesList[catID!]?[subCatID!]
         if let mrdType = viewModel?.selectedMRDType {
-            let mrdTypeText = coreDataStack.mrdType[catID!]?[subCatID!]?[mrdType]
+            let mrdTypeText = DataStack.shared.mrdType[catID!]?[subCatID!]?[mrdType]
             if mrdTypeText?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
                 title = ("\(subCategoryText!) - \(mrdTypeText!)")
             }
@@ -140,11 +139,11 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         else {
             title = subCategoryText
         }
-        
-        subSubCategoryList = coreDataStack.subSubCategoryList[catID!]?[subCatID!]
+        title = viewModel?.getTitle()
+        subSubCategoryList = DataStack.shared.subSubCategoryList[catID!]?[subCatID!]
         print("something \((viewModel?.selectedCategoryID)!) \(subSubCategoryList!) \((viewModel?.selectedSubCategoryID)!)")
         
-        let mrdStruct = coreDataStack.mrdDataStruct[catID!]?[subCatID!]
+        let mrdStruct = DataStack.shared.mrdDataStruct[catID!]?[subCatID!]
         print("dates \(mrdStruct!)")
         
         guard mrdStruct != nil else {

@@ -1,5 +1,5 @@
 //
-//  CoreDataStack.swift
+//  DataStack.swift
 //  PizzaMRD
 //
 //  Created by Venkata Mandala on 30/10/2016.
@@ -57,11 +57,20 @@ class SqlStore {
     }
 }
 
-class CoreDataStack: NSObject {
+class DataStack: NSObject {
     
+    static let shared = DataStack()
     
     static let moduleName = "MRD"
     let categoriesList = SqlStore.sqlQuery("SELECT * FROM tbl_MRD_Categories")
+    
+    func subCategoryList(for categoryID: Int) -> [Int:String] {
+        return SqlStore.sqlQuery("SELECT Sub_Category, Sub_Category_Name FROM tbl_MRD_Sub_Categories where CategoryID = '\(categoryID)'")
+    }
+    
+    func subSubCategoryList(for categoryID: Int, _ subCategoryID: Int) -> [Int:String] {
+        return SqlStore.sqlQuery("SELECT Sub_Sub_Category, Title from tblSubSubCategory where Category = '\(categoryID)' & Sub_Category = '\(subCategoryID)'")
+    }
     
     let subCategoriesList = [1:[1:"Italian",2:"SC/CB",3:"Classic",4:"Pan"],
                              2:[1:"Meat", 2:"Tins", 3:"MOP", 4:"Tomato/Chillies", 5:"Black Olives"],
@@ -139,67 +148,4 @@ class CoreDataStack: NSObject {
                 8:[1:[MRDData(1," ", .hours, 0, .days, 27)],
                    2:[MRDData(1," ", .hours, 0, .days, 13)]]]
     }
-    
-    func saveMainContext() {
-        guard managedObjectContext.hasChanges || saveManagedObjectContext.hasChanges else {
-            return
-        }
-        
-        managedObjectContext.performAndWait() {
-            do {
-                try self.managedObjectContext.save()
-            } catch {
-                fatalError("Error saving main managed object context! \(error)")
-            }
-        }
-        
-        saveManagedObjectContext.perform() {
-            do {
-                try self.saveManagedObjectContext.save()
-            } catch {
-                fatalError("Error saving private managed object context! \(error)")
-            }
-        }
-        
-    }
-    
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: moduleName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-    
-    lazy var applicationDocumentsDirectory: URL = {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-    }()
-    
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        
-        let persistentStoreURL = self.applicationDocumentsDirectory.appendingPathComponent("\(moduleName).sqlite")
-        
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
-                                               configurationName: nil,
-                                               at: persistentStoreURL,
-                                               options: [NSMigratePersistentStoresAutomaticallyOption: true,
-                                                         NSInferMappingModelAutomaticallyOption: false])
-        } catch {
-            fatalError("Persistent store error! \(error)")
-        }
-        
-        return coordinator
-    }()
-    
-    fileprivate lazy var saveManagedObjectContext: NSManagedObjectContext = {
-        let moc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        moc.persistentStoreCoordinator = self.persistentStoreCoordinator
-        return moc
-    }()
-    
-    lazy var managedObjectContext: NSManagedObjectContext = {
-        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.parent = self.saveManagedObjectContext
-        return managedObjectContext
-    }()
-    
 }

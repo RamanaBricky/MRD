@@ -13,6 +13,8 @@ protocol MRDDetailsViewModel {
     var selectedCategoryID:Int {get set}
     var selectedSubCategoryID:Int {get set}
     var selectedMRDType:Int? {get set}
+    
+    func getTitle() -> String
 }
 
 protocol MRDDetailsDelegate:class {
@@ -25,4 +27,9 @@ class MRDetailsVM: MRDDetailsViewModel {
     var selectedCategoryID: Int = 0
     var selectedSubCategoryID: Int = 0
     var selectedMRDType: Int?
+    
+    func getTitle() -> String {
+        
+        return "Title"
+    }
 }

@@ -24,10 +24,9 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let coreDataStack = CoreDataStack()
+
         subCategoriesCollectionView.backgroundColor = UIColor.black
-         self.navigationItem.title = coreDataStack.categoriesList[(viewModel?.selectedCategoryID)!]
+        self.navigationItem.title = viewModel?.title
         
         subCategoriesCollectionView.register(UINib.init(nibName: String(describing: SubCategoryCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SubCategoryCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(SubCategoryVC.subCategorySelected), name: NSNotification.Name(rawValue:"SubCategorySelected"), object: nil)
@@ -43,9 +42,8 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         let subCategoryOptionsDict = notification.userInfo
         catID = subCategoryOptionsDict!["cat"] as! Int
         subCatID = subCategoryOptionsDict!["sub"] as! Int
-        let coreDataStack = CoreDataStack()
         
-        if let mrdTypeArray = coreDataStack.mrdType[catID]![subCatID], mrdTypeArray.count <= 1 {
+        if let mrdTypeArray = DataStack.shared.mrdType[catID]![subCatID], mrdTypeArray.count <= 1 {
             //navigate to print screen
             navigateToPrintScreen()
         }
