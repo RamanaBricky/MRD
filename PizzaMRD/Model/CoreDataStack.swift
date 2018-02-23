@@ -43,7 +43,7 @@ struct MRDData {
 }
 
 class SqlStore {
-    static let db = try! Connection("\(Bundle.main.resourcePath!)/MRD.sqlite")
+    static let db = try! Connection("\(Bundle.main.resourcePath!)/MRD.db")
     
    static func sqlQuery(_ query: String) -> [Int:String] {
         var dictionary: Dictionary<Int,String> = Dictionary()
