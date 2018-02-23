@@ -126,42 +126,39 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         let catID = viewModel?.selectedCategoryID
         let subCatID = viewModel?.selectedSubCategoryID
         title = viewModel?.getTitle()
-        let mrdStruct = DataStack.shared.mrdDataStruct[catID!]?[subCatID!]
+        let mrdStruct = DataStack.shared.mrdDataStruct(for: catID!, subCatID!)
         
-        guard mrdStruct != nil else {
+        guard mrdStruct.count > 0 else {
             return
         }
-
+        
         let date = Date()
         
         madeDateTextField.text = convertDateToString(date: date)
         madeTimeTextField.text = date.toString(.none, timeStyle: .short)
         
-        if !(mrdStruct?.isEmpty)! {
-            if let firstMRDStruct = mrdStruct?[(viewModel?.selectedMRDType)!] {
-                let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
-                
-                readyDateTextField.text = convertDateToString(date: rDate)
-                readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
-                
-                if firstMRDStruct.mRDDiscardFrequency == .useByDate {
-                    discardDateTextField.text = "UBD"
-                    discardTimeTextField.text = "UBD"
-                }
-                else {
-                    let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
-                    discardDateTextField.text = convertDateToString(date: dDate)
-                    
-                    if firstMRDStruct.eod {
-                        discardTimeTextField.text = "23:59"
-                    }
-                    else {
-                        discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
-                    }
-                }
+        let index = viewModel?.selectedMRDType! == 0 ? 0:(viewModel?.selectedMRDType)! - 1
+        let firstMRDStruct = mrdStruct[index]
+        let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
+        
+        readyDateTextField.text = convertDateToString(date: rDate)
+        readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
+        
+        if firstMRDStruct.mRDDiscardFrequency == .useByDate {
+            discardDateTextField.text = "UBD"
+            discardTimeTextField.text = "UBD"
+        }
+        else {
+            let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
+            discardDateTextField.text = convertDateToString(date: dDate)
+            
+            if firstMRDStruct.eod {
+                discardTimeTextField.text = "23:59"
+            }
+            else {
+                discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
             }
         }
-       
     }
     
     func convertDateToString(date: Date) -> String{

@@ -64,6 +64,22 @@ class SqlStore {
         }
         return array
     }
+    
+    static func sqlMRDStruct(_ query: String) -> [MRDData] {
+        var array: [MRDData] = []
+        for row in try! db.prepare(query) {
+            if let typeID = row[0] as? Int64,
+               let typeTitle = row[1] as? String,
+               let readyFrequency = row[2] as? String,
+               let readyInterval = row[3] as? Int64,
+               let discardFrequency = row[4] as? String,
+               let discardInterval = row[5] as? Int64,
+                let eod = row[6] as? Int64 {
+                array.append(MRDData(Int(typeID), typeTitle, Frequency(rawValue: readyFrequency)!, Int(readyInterval), Frequency(rawValue: discardFrequency)!, Int(discardInterval), eod == 0 ? false:true))
+            }
+        }
+        return array
+    }
 }
 
 class DataStack: NSObject {
@@ -82,36 +98,10 @@ class DataStack: NSObject {
     }
     
     func mrdType(for categoryID: Int, _ subCategoryID: Int) -> [Int:String] {
-        return SqlStore.sqlQuery("SELECT mrd_type, mrd_type_desc from tbl_MRD_Type where MRD_Category = '\(categoryID)' AND MRD_Sub_Category = '\(subCategoryID)'")
+        return SqlStore.sqlQuery("SELECT mrd_type, mrd_type_desc from tbl_MRD_Type where MRD_Category = '\(categoryID)' AND MRD_Sub_Category = '\(subCategoryID)' ORDER BY mrd_type")
     }
     
-    var mrdDataStruct:[Int:[Int:[MRDData]]]{
-        return [1:[1:[MRDData(1,"Defrost", .hours, 12, .days, 3, false), MRDData(2, "S&C", .hours, 0, .hours, 6, false), MRDData(3, "BBQ", .hours, 0, .hours, 6, false)],
-                   2:[MRDData(1,"Defrost", .hours, 12, .days, 3, false), MRDData(2, "S&C", .hours, 0, .hours, 4, false), MRDData(3, "BBQ", .hours, 0, .hours, 4, false)],
-                   3:[MRDData(1,"Defrost", .days, 1, .days, 3, false), MRDData(2, "S&C", .hours, 0, .hours, 6, false), MRDData(3, "BBQ", .hours, 0, .hours, 6, false)],
-                   4:[MRDData(1,"Defrost", .hours, 6, .hours, 26, false), MRDData(2, "S&C", .hours, 0, .hours, 4, false), MRDData(3, "BBQ", .hours, 0, .hours, 4, false)]],
-                2:[1:[MRDData(1," ", .days, 1, .days, 3)],
-                   2:[MRDData(1,"Open", .hours, 0, .days, 2)],
-                   3:[MRDData(1," ", .hours, 0, .days, 1)],
-                   4:[MRDData(1," ", .hours, 0, .days, 0)],
-                   5:[MRDData(1," ", .hours, 0, .days, 13)]],
-                3:[1:[MRDData(1," ", .days, 3, .days, 6)],
-                   2:[MRDData(1,"One Stack", .days, 1, .days, 6), MRDData(2, "Two Stack", .days, 2, .days, 6), MRDData(3, "Three Stack", .days, 3, .days, 6)],
-                   3: [MRDData(1, " ", .days, 1, .days, 6)]],
-                4:[1:[MRDData(1," ", .days, 1, .days, 2)],
-                   2:[MRDData(1,"Plain", .days, 1, .days, 2), MRDData(2, "Ready Topped", .hours, 0, .days, 0), MRDData(3, "Frozen Topped", .days, 1, .days, 0)],
-                   3:[MRDData(1,"Open Bag", .hours, 0, .days, 27), MRDData(2, "Panned", .hours, 0, .days, 1), MRDData(3, "Pre-topped", .hours, 0, .hours, 4, false)],
-                   4:[MRDData(1," ", .days, 1, .days, 3)],
-                   5:[MRDData(1," ", .days, 1, .days, 2)]],
-                5:[1:[MRDData(1," ", .hours, 1, .days, 3)],
-                   2:[MRDData(1,"Open", .hours, 0, .days, 13)],
-                   3:[MRDData(1,"Open", .hours, 0, .days, 27)]],
-                6:[1:[MRDData(1," ", .days, 1, .days, 13)],
-                   2:[MRDData(1," ", .hours, 1, .days, 1)],
-                   3:[MRDData(1," ", .days, 1, .days, 2)]],
-                7:[1:[MRDData(1," ", .hours, 0, .days, 9)],
-                   2:[MRDData(1," ", .hours, 0, .days, 4)]],
-                8:[1:[MRDData(1," ", .hours, 0, .days, 27)],
-                   2:[MRDData(1," ", .hours, 0, .days, 13)]]]
+    func mrdDataStruct(for categoryID: Int, _ subCategoryID: Int) -> [MRDData] {
+        return SqlStore.sqlMRDStruct("SELECT MRD_Type, MRD_Type_Desc, MRD_Ready_Frequency, MRD_Ready_Interval, MRD_Discard_Frequency, MRD_Discard_Interval, MRD_EOD FROM tbl_MRD_Type WHERE MRD_Category = '\(categoryID)' AND MRD_Sub_Category = '\(subCategoryID)'")
     }
 }

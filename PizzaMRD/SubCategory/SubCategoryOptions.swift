@@ -73,6 +73,6 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath.row
-        delegate?.optionSelected(with: selectedIndexPath)
+        delegate?.optionSelected(with: selectedIndexPath+1)
     }
 }
