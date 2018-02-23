@@ -81,33 +81,9 @@ class DataStack: NSObject {
         return SqlStore.sqlQueryArray("SELECT Title from tblSubSubCategory where Category = '\(categoryID)' AND Sub_Category = '\(subCategoryID)'")
     }
     
-    let mrdType = [1:[1:["Defrost","S&C","BBQ"],
-                      2:["Defrost","S&C","BBQ"],
-                      3:["Defrost","S&C","BBQ"],
-                      4:["Defrost","S&C","BBQ"]],
-                   2:[1:[" "],
-                      2:["Open"],
-                      3:[" "],
-                      4:[" "],
-                      5:[" "]],
-                   3:[1:[""],
-                      2:["One Stack", "Two Stack", "Three Stack"],
-                      3:[" "]],
-                   4:[1:[" "],
-                      2:["Plain", "Ready Topped", "Frozen Topped"],
-                      3:["Open Bag", "Panned", "Pre-topped"],
-                      4:[""],
-                      5:[""]],
-                   5:[1:[" "],
-                      2:["Open"],
-                      3:["Open"]],
-                   6:[1:[" "],
-                      2:[""],
-                      3:[""]],
-                   7:[1:[" "],
-                      2:[""]],
-                   8:[1:[" "],
-                      2:[""]]]
+    func mrdType(for categoryID: Int, _ subCategoryID: Int) -> [Int:String] {
+        return SqlStore.sqlQuery("SELECT mrd_type, mrd_type_desc from tbl_MRD_Type where MRD_Category = '\(categoryID)' AND MRD_Sub_Category = '\(subCategoryID)'")
+    }
     
     var mrdDataStruct:[Int:[Int:[MRDData]]]{
         return [1:[1:[MRDData(1,"Defrost", .hours, 12, .days, 3, false), MRDData(2, "S&C", .hours, 0, .hours, 6, false), MRDData(3, "BBQ", .hours, 0, .hours, 6, false)],

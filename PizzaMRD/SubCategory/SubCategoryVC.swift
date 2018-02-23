@@ -1,10 +1,3 @@
-//
-//  SubCategoryVC.swift
-//  PizzaMRD
-//
-//  Created by Venkata Mandala on 31/10/2016.
-//  Copyright © 2016 Ramana Reddy. All rights reserved.
-//
 
 import UIKit
 import Foundation
@@ -43,13 +36,14 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
         catID = subCategoryOptionsDict!["cat"] as! Int
         subCatID = subCategoryOptionsDict!["sub"] as! Int
         
-        if let mrdTypeArray = DataStack.shared.mrdType[catID]![subCatID], mrdTypeArray.count <= 1 {
+        if let mrdTypeArray = viewModel?.mrdTypeList(subCatID), mrdTypeArray.count <= 1 {
             //navigate to print screen
             navigateToPrintScreen()
         }
         else {
             //Show the MRD Type if there is any
-            let subCategoryOptions = SubCategoryOptions.init(catID: catID, subCatID:  subCatID)
+            let subCategoryOptionsVM = SubCategoryOptionsVM(catID: catID, subCatID: subCatID)
+            let subCategoryOptions = SubCategoryOptions(viewModel: subCategoryOptionsVM)
             subCategoryOptions.delegate = self
             subCategoryOptions.center = view.center
             

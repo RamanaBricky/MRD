@@ -1,17 +1,9 @@
-//
-//  SubCategoryOptionsVM.swift
-//  PizzaMRD
-//
-//  Created by Venkata Mandala on 01/11/2016.
-//  Copyright © 2016 Ramana Reddy. All rights reserved.
-//
 
 import Foundation
 
 protocol SubCategoryOptionsViewModel {
     weak var delegate: SubCategoryOptionsViewDelegate? {get set}
-    
-    func getMRDList(catID:Int, subCatID:Int)->[String]
+    var subSubCategoryList: [Int:String] {get set}
 }
 
 protocol SubCategoryOptionsViewDelegate: class {
@@ -19,8 +11,13 @@ protocol SubCategoryOptionsViewDelegate: class {
 }
 class SubCategoryOptionsVM: SubCategoryOptionsViewModel {
     weak var delegate: SubCategoryOptionsViewDelegate?
+    var subSubCategoryList: [Int : String]
+    private let categoryID:Int
+    private let subCategoryID:Int
     
-    func getMRDList(catID:Int, subCatID:Int)->[String] {
-        return DataStack.shared.mrdType[catID]![subCatID]!
+    init(catID: Int, subCatID: Int) {
+        categoryID = catID
+        subCategoryID = subCatID
+        subSubCategoryList = DataStack.shared.mrdType(for: categoryID, subCategoryID)
     }
 }
