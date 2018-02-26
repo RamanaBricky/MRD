@@ -13,6 +13,7 @@
 		0783F1BC203CC1D3008A4269 /* PHMRD.db in Resources */ = {isa = PBXBuildFile; fileRef = 0783F1BB203CC1D3008A4269 /* PHMRD.db */; };
 		07E2DFC91DE500F400CBD7F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B52F1DC495A00073B16D /* Main.storyboard */; };
 		07E6F3181DE9F387000EB387 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
+		19019367F7E14C6D52D99846 /* Pods_MRHMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */; };
 		31D4D3F746051FF5F5921039 /* Pods_PizzaMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */; };
 		9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601ACA21DC7D67200FE3145 /* CoreData.framework */; };
 		9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
@@ -114,11 +115,14 @@
 		96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~ipad.xib"; sourceTree = "<group>"; };
 		96E416411DC95B5500939B62 /* MRDDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVC.swift; sourceTree = "<group>"; };
 		96E416431DC95BB500939B62 /* MRDDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVM.swift; sourceTree = "<group>"; };
+		A6FB7A251E41036AFCD15454 /* Pods-MRHMRD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRHMRD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.release.xcconfig"; sourceTree = "<group>"; };
 		DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRHMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EC2ECE20444E7800B290B0 /* MRHMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRHMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EC2ECF20444E7800B290B0 /* MRHMRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MRHMRD.plist; path = /Users/ramana/MRD/MRHMRD.plist; sourceTree = "<absolute>"; };
 		F1EC2ED02044577600B290B0 /* MRHMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MRHMRD.db; sourceTree = "<group>"; };
+		FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRHMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			files = (
 				F1EC2EB820444E7800B290B0 /* CoreData.framework in Frameworks */,
 				F1EC2EB920444E7800B290B0 /* Pods_PizzaMRD.framework in Frameworks */,
+				19019367F7E14C6D52D99846 /* Pods_MRHMRD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +153,8 @@
 			children = (
 				394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */,
 				BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */,
+				A6FB7A251E41036AFCD15454 /* Pods-MRHMRD.debug.xcconfig */,
+				FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 			children = (
 				9601ACA21DC7D67200FE3145 /* CoreData.framework */,
 				DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */,
+				EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -446,7 +454,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PizzaMRD-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MRHMRD-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -459,7 +467,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -468,7 +476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F1EC2ECA20444E7800B290B0 /* [CP] Copy Pods Resources */ = {
@@ -483,7 +491,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -698,7 +706,7 @@
 		};
 		F1EC2ECC20444E7800B290B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */;
+			baseConfigurationReference = A6FB7A251E41036AFCD15454 /* Pods-MRHMRD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -706,7 +714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
 				DEVELOPMENT_TEAM = 9ZYWNJDG54;
-				INFOPLIST_FILE = "PizzaMRD copy-Info.plist";
+				INFOPLIST_FILE = MRHMRD.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
@@ -719,7 +727,7 @@
 		};
 		F1EC2ECD20444E7800B290B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */;
+			baseConfigurationReference = FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -727,7 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
 				DEVELOPMENT_TEAM = 9ZYWNJDG54;
-				INFOPLIST_FILE = "PizzaMRD copy-Info.plist";
+				INFOPLIST_FILE = MRHMRD.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;

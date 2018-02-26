@@ -1,8 +1,7 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 use_frameworks!
-def app_pods do
+def app_pods
     pod 'SQLite.swift', '~> 0.11.4'
 end
 
