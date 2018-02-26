@@ -16,12 +16,6 @@ enum Frequency:String {
     case useByDate = "u"
 }
 
-enum MRDType:Int {
-    case one
-    case two
-    case three
-}
-
 struct MRDData {
     var typeID = 1
     var typeTitle = ""
