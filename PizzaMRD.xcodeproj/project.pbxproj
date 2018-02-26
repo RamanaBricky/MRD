@@ -41,6 +41,40 @@
 		96E416401DC95B2000939B62 /* MRDDetailsVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */; };
 		96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416411DC95B5500939B62 /* MRDDetailsVC.swift */; };
 		96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
+		F1EC2EA520444E7800B290B0 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
+		F1EC2EA620444E7800B290B0 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
+		F1EC2EA720444E7800B290B0 /* PrintLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635D8E21DCADBB000E668EE /* PrintLabelView.swift */; };
+		F1EC2EA820444E7800B290B0 /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5451DC49BE30073B16D /* CategoriesCell.swift */; };
+		F1EC2EA920444E7800B290B0 /* SubCategoryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACB11DC804B300FE3145 /* SubCategoryOptions.swift */; };
+		F1EC2EAA20444E7800B290B0 /* MRDDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416411DC95B5500939B62 /* MRDDetailsVC.swift */; };
+		F1EC2EAB20444E7800B290B0 /* MRDPrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */; };
+		F1EC2EAC20444E7800B290B0 /* SubCategoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA91DC7E5B500FE3145 /* SubCategoryVM.swift */; };
+		F1EC2EAD20444E7800B290B0 /* SubCategoryOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACB31DC8074A00FE3145 /* SubCategoryOptionCell.swift */; };
+		F1EC2EAE20444E7800B290B0 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
+		F1EC2EAF20444E7800B290B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52D1DC495A00073B16D /* ViewController.swift */; };
+		F1EC2EB020444E7800B290B0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
+		F1EC2EB120444E7800B290B0 /* MRD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */; };
+		F1EC2EB220444E7800B290B0 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
+		F1EC2EB320444E7800B290B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* CoreDataStack.swift */; };
+		F1EC2EB420444E7800B290B0 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
+		F1EC2EB520444E7800B290B0 /* SubCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACAB1DC7F6E800FE3145 /* SubCategoryCell.swift */; };
+		F1EC2EB620444E7800B290B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52B1DC495A00073B16D /* AppDelegate.swift */; };
+		F1EC2EB820444E7800B290B0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601ACA21DC7D67200FE3145 /* CoreData.framework */; };
+		F1EC2EB920444E7800B290B0 /* Pods_PizzaMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */; };
+		F1EC2EBB20444E7800B290B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5341DC495A00073B16D /* LaunchScreen.storyboard */; };
+		F1EC2EBC20444E7800B290B0 /* MRD.db in Resources */ = {isa = PBXBuildFile; fileRef = 0783F1BB203CC1D3008A4269 /* MRD.db */; };
+		F1EC2EBD20444E7800B290B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B52F1DC495A00073B16D /* Main.storyboard */; };
+		F1EC2EBE20444E7800B290B0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5411DC496BD0073B16D /* Fonts */; };
+		F1EC2EBF20444E7800B290B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5321DC495A00073B16D /* Assets.xcassets */; };
+		F1EC2EC020444E7800B290B0 /* MRDDetailsVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */; };
+		F1EC2EC120444E7800B290B0 /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACAD1DC7F6F700FE3145 /* SubCategoryCell.xib */; };
+		F1EC2EC220444E7800B290B0 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
+		F1EC2EC320444E7800B290B0 /* SubCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */; };
+		F1EC2EC420444E7800B290B0 /* PrintLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9635D8E01DCADBA000E668EE /* PrintLabelView.xib */; };
+		F1EC2EC520444E7800B290B0 /* SubCategoryOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACAF1DC8049C00FE3145 /* SubCategoryOptions.xib */; };
+		F1EC2EC620444E7800B290B0 /* SubCategoryOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACB51DC8075D00FE3145 /* SubCategoryOptionCell.xib */; };
+		F1EC2EC720444E7800B290B0 /* MRDPrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */; };
+		F1EC2EC820444E7800B290B0 /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5461DC49BE30073B16D /* CategoriesCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +116,8 @@
 		96E416431DC95BB500939B62 /* MRDDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDDetailsVM.swift; sourceTree = "<group>"; };
 		BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.release.xcconfig"; sourceTree = "<group>"; };
 		DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1EC2ECE20444E7800B290B0 /* MRHMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRHMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1EC2ECF20444E7800B290B0 /* MRHMRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MRHMRD.plist; path = /Users/ramana/MRD/MRHMRD.plist; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +127,15 @@
 			files = (
 				9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */,
 				31D4D3F746051FF5F5921039 /* Pods_PizzaMRD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1EC2EB720444E7800B290B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EC2EB820444E7800B290B0 /* CoreData.framework in Frameworks */,
+				F1EC2EB920444E7800B290B0 /* Pods_PizzaMRD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +185,7 @@
 				9630B5291DC495A00073B16D /* Products */,
 				9601ACA11DC7D67200FE3145 /* Frameworks */,
 				1B002423CAD22218DAA71E63 /* Pods */,
+				F1EC2ECF20444E7800B290B0 /* MRHMRD.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				9630B5281DC495A00073B16D /* PizzaMRD.app */,
+				F1EC2ECE20444E7800B290B0 /* MRHMRD.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,6 +276,26 @@
 			productReference = 9630B5281DC495A00073B16D /* PizzaMRD.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1EC2EA220444E7800B290B0 /* MRHMRD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1EC2ECB20444E7800B290B0 /* Build configuration list for PBXNativeTarget "MRHMRD" */;
+			buildPhases = (
+				F1EC2EA320444E7800B290B0 /* [CP] Check Pods Manifest.lock */,
+				F1EC2EA420444E7800B290B0 /* Sources */,
+				F1EC2EB720444E7800B290B0 /* Frameworks */,
+				F1EC2EBA20444E7800B290B0 /* Resources */,
+				F1EC2EC920444E7800B290B0 /* [CP] Embed Pods Frameworks */,
+				F1EC2ECA20444E7800B290B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MRHMRD;
+			productName = PizzaMRD;
+			productReference = F1EC2ECE20444E7800B290B0 /* MRHMRD.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +308,10 @@
 				TargetAttributes = {
 					9630B5271DC495A00073B16D = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9ZYWNJDG54;
+						ProvisioningStyle = Automatic;
+					};
+					F1EC2EA220444E7800B290B0 = {
 						DevelopmentTeam = 9ZYWNJDG54;
 						ProvisioningStyle = Automatic;
 					};
@@ -260,6 +331,7 @@
 			projectRoot = "";
 			targets = (
 				9630B5271DC495A00073B16D /* PizzaMRD */,
+				F1EC2EA220444E7800B290B0 /* MRHMRD */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +355,27 @@
 				9601ACB61DC8075D00FE3145 /* SubCategoryOptionCell.xib in Resources */,
 				0743A1301DECDF3D00EAF6A3 /* MRDPrintView.xib in Resources */,
 				9630B5481DC49BE30073B16D /* CategoriesCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1EC2EBA20444E7800B290B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EC2EBB20444E7800B290B0 /* LaunchScreen.storyboard in Resources */,
+				F1EC2EBC20444E7800B290B0 /* MRD.db in Resources */,
+				F1EC2EBD20444E7800B290B0 /* Main.storyboard in Resources */,
+				F1EC2EBE20444E7800B290B0 /* Fonts in Resources */,
+				F1EC2EBF20444E7800B290B0 /* Assets.xcassets in Resources */,
+				F1EC2EC020444E7800B290B0 /* MRDDetailsVC~ipad.xib in Resources */,
+				F1EC2EC120444E7800B290B0 /* SubCategoryCell.xib in Resources */,
+				F1EC2EC220444E7800B290B0 /* MRDDetailsVC~iphone.xib in Resources */,
+				F1EC2EC320444E7800B290B0 /* SubCategoryVC.xib in Resources */,
+				F1EC2EC420444E7800B290B0 /* PrintLabelView.xib in Resources */,
+				F1EC2EC520444E7800B290B0 /* SubCategoryOptions.xib in Resources */,
+				F1EC2EC620444E7800B290B0 /* SubCategoryOptionCell.xib in Resources */,
+				F1EC2EC720444E7800B290B0 /* MRDPrintView.xib in Resources */,
+				F1EC2EC820444E7800B290B0 /* CategoriesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +433,57 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F1EC2EA320444E7800B290B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PizzaMRD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1EC2EC920444E7800B290B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1EC2ECA20444E7800B290B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -365,6 +509,31 @@
 				9630B54A1DC49C8E0073B16D /* CategoriesVM.swift in Sources */,
 				9601ACAC1DC7F6E800FE3145 /* SubCategoryCell.swift in Sources */,
 				9630B52C1DC495A00073B16D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1EC2EA420444E7800B290B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EC2EA520444E7800B290B0 /* MRDDetailsVM.swift in Sources */,
+				F1EC2EA620444E7800B290B0 /* SubCategoryOptionsVM.swift in Sources */,
+				F1EC2EA720444E7800B290B0 /* PrintLabelView.swift in Sources */,
+				F1EC2EA820444E7800B290B0 /* CategoriesCell.swift in Sources */,
+				F1EC2EA920444E7800B290B0 /* SubCategoryOptions.swift in Sources */,
+				F1EC2EAA20444E7800B290B0 /* MRDDetailsVC.swift in Sources */,
+				F1EC2EAB20444E7800B290B0 /* MRDPrintView.swift in Sources */,
+				F1EC2EAC20444E7800B290B0 /* SubCategoryVM.swift in Sources */,
+				F1EC2EAD20444E7800B290B0 /* SubCategoryOptionCell.swift in Sources */,
+				F1EC2EAE20444E7800B290B0 /* AlertWindowView.swift in Sources */,
+				F1EC2EAF20444E7800B290B0 /* ViewController.swift in Sources */,
+				F1EC2EB020444E7800B290B0 /* DateHelper.swift in Sources */,
+				F1EC2EB120444E7800B290B0 /* MRD.xcdatamodeld in Sources */,
+				F1EC2EB220444E7800B290B0 /* SubCategoryVC.swift in Sources */,
+				F1EC2EB320444E7800B290B0 /* CoreDataStack.swift in Sources */,
+				F1EC2EB420444E7800B290B0 /* CategoriesVM.swift in Sources */,
+				F1EC2EB520444E7800B290B0 /* SubCategoryCell.swift in Sources */,
+				F1EC2EB620444E7800B290B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +692,46 @@
 			};
 			name = Release;
 		};
+		F1EC2ECC20444E7800B290B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZYWNJDG54;
+				INFOPLIST_FILE = "PizzaMRD copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F1EC2ECD20444E7800B290B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZYWNJDG54;
+				INFOPLIST_FILE = "PizzaMRD copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,6 +749,15 @@
 			buildConfigurations = (
 				9630B53B1DC495A00073B16D /* Debug */,
 				9630B53C1DC495A00073B16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1EC2ECB20444E7800B290B0 /* Build configuration list for PBXNativeTarget "MRHMRD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1EC2ECC20444E7800B290B0 /* Debug */,
+				F1EC2ECD20444E7800B290B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
