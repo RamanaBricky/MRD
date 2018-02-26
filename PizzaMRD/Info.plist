@@ -48,5 +48,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Database_FileName</key>
+	<string>$(DATABASE_FILE_NAME)</string>
 </dict>
 </plist>
