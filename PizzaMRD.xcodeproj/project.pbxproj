@@ -34,8 +34,7 @@
 		9630B54A1DC49C8E0073B16D /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
 		9635D8E11DCADBA000E668EE /* PrintLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9635D8E01DCADBA000E668EE /* PrintLabelView.xib */; };
 		9635D8E31DCADBB000E668EE /* PrintLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635D8E21DCADBB000E668EE /* PrintLabelView.swift */; };
-		96D44C1E1DC60D0B00753A30 /* MRD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */; };
-		96D44C201DC6106600753A30 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* CoreDataStack.swift */; };
+		96D44C201DC6106600753A30 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* DataStack.swift */; };
 		96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
 		96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
 		96E4163B1DC9511C00939B62 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
@@ -54,9 +53,8 @@
 		F1EC2EAE20444E7800B290B0 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
 		F1EC2EAF20444E7800B290B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52D1DC495A00073B16D /* ViewController.swift */; };
 		F1EC2EB020444E7800B290B0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
-		F1EC2EB120444E7800B290B0 /* MRD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */; };
 		F1EC2EB220444E7800B290B0 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
-		F1EC2EB320444E7800B290B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* CoreDataStack.swift */; };
+		F1EC2EB320444E7800B290B0 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* DataStack.swift */; };
 		F1EC2EB420444E7800B290B0 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
 		F1EC2EB520444E7800B290B0 /* SubCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACAB1DC7F6E800FE3145 /* SubCategoryCell.swift */; };
 		F1EC2EB620444E7800B290B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52B1DC495A00073B16D /* AppDelegate.swift */; };
@@ -88,9 +86,8 @@
 		F1EC2EDE20445CAC00B290B0 /* AlertWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4163A1DC9511C00939B62 /* AlertWindowView.swift */; };
 		F1EC2EDF20445CAC00B290B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52D1DC495A00073B16D /* ViewController.swift */; };
 		F1EC2EE020445CAC00B290B0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
-		F1EC2EE120445CAC00B290B0 /* MRD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */; };
 		F1EC2EE220445CAC00B290B0 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
-		F1EC2EE320445CAC00B290B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* CoreDataStack.swift */; };
+		F1EC2EE320445CAC00B290B0 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* DataStack.swift */; };
 		F1EC2EE420445CAC00B290B0 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
 		F1EC2EE520445CAC00B290B0 /* SubCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACAB1DC7F6E800FE3145 /* SubCategoryCell.swift */; };
 		F1EC2EE620445CAC00B290B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B52B1DC495A00073B16D /* AppDelegate.swift */; };
@@ -143,8 +140,7 @@
 		9630B5491DC49C8E0073B16D /* CategoriesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesVM.swift; path = ../CategoriesVM.swift; sourceTree = "<group>"; };
 		9635D8E01DCADBA000E668EE /* PrintLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrintLabelView.xib; sourceTree = "<group>"; };
 		9635D8E21DCADBB000E668EE /* PrintLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintLabelView.swift; sourceTree = "<group>"; };
-		96D44C1D1DC60D0B00753A30 /* MRD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRD.xcdatamodel; sourceTree = "<group>"; };
-		96D44C1F1DC6106600753A30 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		96D44C1F1DC6106600753A30 /* DataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
 		96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryOptionsVM.swift; sourceTree = "<group>"; };
 		96E4163A1DC9511C00939B62 /* AlertWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindowView.swift; sourceTree = "<group>"; };
@@ -293,8 +289,7 @@
 				F1EC2ED02044577600B290B0 /* MRHMRD.db */,
 				0783F1BB203CC1D3008A4269 /* PHMRD.db */,
 				96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */,
-				96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */,
-				96D44C1F1DC6106600753A30 /* CoreDataStack.swift */,
+				96D44C1F1DC6106600753A30 /* DataStack.swift */,
 				96E4163A1DC9511C00939B62 /* AlertWindowView.swift */,
 			);
 			path = Model;
@@ -663,9 +658,8 @@
 				96E4163B1DC9511C00939B62 /* AlertWindowView.swift in Sources */,
 				9630B52E1DC495A00073B16D /* ViewController.swift in Sources */,
 				96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */,
-				96D44C1E1DC60D0B00753A30 /* MRD.xcdatamodeld in Sources */,
 				9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */,
-				96D44C201DC6106600753A30 /* CoreDataStack.swift in Sources */,
+				96D44C201DC6106600753A30 /* DataStack.swift in Sources */,
 				9630B54A1DC49C8E0073B16D /* CategoriesVM.swift in Sources */,
 				9601ACAC1DC7F6E800FE3145 /* SubCategoryCell.swift in Sources */,
 				9630B52C1DC495A00073B16D /* AppDelegate.swift in Sources */,
@@ -688,9 +682,8 @@
 				F1EC2EAE20444E7800B290B0 /* AlertWindowView.swift in Sources */,
 				F1EC2EAF20444E7800B290B0 /* ViewController.swift in Sources */,
 				F1EC2EB020444E7800B290B0 /* DateHelper.swift in Sources */,
-				F1EC2EB120444E7800B290B0 /* MRD.xcdatamodeld in Sources */,
 				F1EC2EB220444E7800B290B0 /* SubCategoryVC.swift in Sources */,
-				F1EC2EB320444E7800B290B0 /* CoreDataStack.swift in Sources */,
+				F1EC2EB320444E7800B290B0 /* DataStack.swift in Sources */,
 				F1EC2EB420444E7800B290B0 /* CategoriesVM.swift in Sources */,
 				F1EC2EB520444E7800B290B0 /* SubCategoryCell.swift in Sources */,
 				F1EC2EB620444E7800B290B0 /* AppDelegate.swift in Sources */,
@@ -713,9 +706,8 @@
 				F1EC2EDE20445CAC00B290B0 /* AlertWindowView.swift in Sources */,
 				F1EC2EDF20445CAC00B290B0 /* ViewController.swift in Sources */,
 				F1EC2EE020445CAC00B290B0 /* DateHelper.swift in Sources */,
-				F1EC2EE120445CAC00B290B0 /* MRD.xcdatamodeld in Sources */,
 				F1EC2EE220445CAC00B290B0 /* SubCategoryVC.swift in Sources */,
-				F1EC2EE320445CAC00B290B0 /* CoreDataStack.swift in Sources */,
+				F1EC2EE320445CAC00B290B0 /* DataStack.swift in Sources */,
 				F1EC2EE420445CAC00B290B0 /* CategoriesVM.swift in Sources */,
 				F1EC2EE520445CAC00B290B0 /* SubCategoryCell.swift in Sources */,
 				F1EC2EE620445CAC00B290B0 /* AppDelegate.swift in Sources */,
@@ -1003,19 +995,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		96D44C1C1DC60D0B00753A30 /* MRD.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				96D44C1D1DC60D0B00753A30 /* MRD.xcdatamodel */,
-			);
-			currentVersion = 96D44C1D1DC60D0B00753A30 /* MRD.xcdatamodel */;
-			path = MRD.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9630B5201DC495A00073B16D /* Project object */;
 }
