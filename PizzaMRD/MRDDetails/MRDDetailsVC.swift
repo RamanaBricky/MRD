@@ -112,6 +112,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		let settingsButton = UIButton()
 		settingsButton.setImage(UIImage.init(named: "button_settings"), for: .normal)
 		settingsButton.frame = CGRect(x: 0, y: 0, width: 40, height: 27)
+        settingsButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: 27.0).isActive = true
 		settingsButton.addTarget(self, action: #selector(MRDDetailsVC.pickPrinter), for: .touchUpInside)
 		let barButtonItem = UIBarButtonItem(customView: settingsButton)
 		
