@@ -12,3 +12,7 @@ end
 target 'MRHMRD' do
     app_pods
 end
+
+target 'SWMRD' do
+    app_pods
+end

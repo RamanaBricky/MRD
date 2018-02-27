@@ -15,6 +15,7 @@
 		07E6F3181DE9F387000EB387 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
 		19019367F7E14C6D52D99846 /* Pods_MRHMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */; };
 		31D4D3F746051FF5F5921039 /* Pods_PizzaMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */; };
+		4BB6C20F67EB9A1CC8B88A9B /* Pods_SWMRD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201F94BA7E80C815FA195A1B /* Pods_SWMRD.framework */; };
 		9601ACA31DC7D67200FE3145 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601ACA21DC7D67200FE3145 /* CoreData.framework */; };
 		9601ACA61DC7E48000FE3145 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */; };
 		9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */; };
@@ -109,6 +110,12 @@
 		F1EC2EF820445CAC00B290B0 /* MRDPrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */; };
 		F1EC2EF920445CAC00B290B0 /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5461DC49BE30073B16D /* CategoriesCell.xib */; };
 		F1EC2F0220445D1A00B290B0 /* SWMRD.db in Resources */ = {isa = PBXBuildFile; fileRef = F1EC2F0120445D1900B290B0 /* SWMRD.db */; };
+		F1EC2F0520455BD100B290B0 /* BestBeforePrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */; };
+		F1EC2F0620455BD100B290B0 /* BestBeforePrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */; };
+		F1EC2F0720455BD100B290B0 /* BestBeforePrintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */; };
+		F1EC2F0920455BE800B290B0 /* BestBeforePrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */; };
+		F1EC2F0A20455BE800B290B0 /* BestBeforePrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */; };
+		F1EC2F0B20455BE800B290B0 /* BestBeforePrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,7 +123,9 @@
 		0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRDPrintView.swift; sourceTree = "<group>"; };
 		0783F1BB203CC1D3008A4269 /* PHMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = PHMRD.db; sourceTree = "<group>"; };
 		07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MRDDetailsVC~iphone.xib"; sourceTree = "<group>"; };
+		201F94BA7E80C815FA195A1B /* Pods_SWMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		394A52B28C9E0EE89AAE7FED /* Pods-PizzaMRD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.debug.xcconfig"; sourceTree = "<group>"; };
+		412A8960E6DD8B776C973772 /* Pods-SWMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-SWMRD/Pods-SWMRD.release.xcconfig"; sourceTree = "<group>"; };
 		9601ACA21DC7D67200FE3145 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9601ACA51DC7E48000FE3145 /* SubCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
 		9601ACA71DC7E49A00FE3145 /* SubCategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryVC.xib; sourceTree = "<group>"; };
@@ -157,6 +166,9 @@
 		F1EC2EFF20445CAC00B290B0 /* SWMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EC2F0020445CAD00B290B0 /* SWMRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SWMRD.plist; path = /Users/ramana/MRD/SWMRD.plist; sourceTree = "<absolute>"; };
 		F1EC2F0120445D1900B290B0 /* SWMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SWMRD.db; sourceTree = "<group>"; };
+		F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestBeforePrintView.xib; sourceTree = "<group>"; };
+		F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBeforePrintView.swift; sourceTree = "<group>"; };
+		FF910AD7057161BF10A05090 /* Pods-SWMRD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWMRD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SWMRD/Pods-SWMRD.debug.xcconfig"; sourceTree = "<group>"; };
 		FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRHMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +199,7 @@
 				F1EC2EE820445CAC00B290B0 /* CoreData.framework in Frameworks */,
 				F1EC2EE920445CAC00B290B0 /* Pods_PizzaMRD.framework in Frameworks */,
 				F1EC2EEA20445CAC00B290B0 /* Pods_MRHMRD.framework in Frameworks */,
+				4BB6C20F67EB9A1CC8B88A9B /* Pods_SWMRD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +213,8 @@
 				BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */,
 				A6FB7A251E41036AFCD15454 /* Pods-MRHMRD.debug.xcconfig */,
 				FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */,
+				FF910AD7057161BF10A05090 /* Pods-SWMRD.debug.xcconfig */,
+				412A8960E6DD8B776C973772 /* Pods-SWMRD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 				9601ACA21DC7D67200FE3145 /* CoreData.framework */,
 				DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */,
 				EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */,
+				201F94BA7E80C815FA195A1B /* Pods_SWMRD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 		9630B52A1DC495A00073B16D /* PizzaMRD */ = {
 			isa = PBXGroup;
 			children = (
+				F1EC2F0320455AC100B290B0 /* LabelViews */,
 				96E4163C1DC95AB200939B62 /* MRDDetails */,
 				9601ACA41DC7E43F00FE3145 /* subCategory */,
 				96D44C1B1DC60CD700753A30 /* Model */,
@@ -304,10 +321,19 @@
 				9635D8E01DCADBA000E668EE /* PrintLabelView.xib */,
 				9635D8E21DCADBB000E668EE /* PrintLabelView.swift */,
 				07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */,
-				0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */,
-				0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */,
 			);
 			path = MRDDetails;
+			sourceTree = "<group>";
+		};
+		F1EC2F0320455AC100B290B0 /* LabelViews */ = {
+			isa = PBXGroup;
+			children = (
+				0743A12F1DECDF3D00EAF6A3 /* MRDPrintView.xib */,
+				0743A1311DECEC7C00EAF6A3 /* MRDPrintView.swift */,
+				F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */,
+				F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */,
+			);
+			path = LabelViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +460,7 @@
 				9601ACA81DC7E49A00FE3145 /* SubCategoryVC.xib in Resources */,
 				9635D8E11DCADBA000E668EE /* PrintLabelView.xib in Resources */,
 				9601ACB01DC8049C00FE3145 /* SubCategoryOptions.xib in Resources */,
+				F1EC2F0520455BD100B290B0 /* BestBeforePrintView.xib in Resources */,
 				9601ACB61DC8075D00FE3145 /* SubCategoryOptionCell.xib in Resources */,
 				0743A1301DECDF3D00EAF6A3 /* MRDPrintView.xib in Resources */,
 				9630B5481DC49BE30073B16D /* CategoriesCell.xib in Resources */,
@@ -455,6 +482,7 @@
 				F1EC2EC320444E7800B290B0 /* SubCategoryVC.xib in Resources */,
 				F1EC2EC420444E7800B290B0 /* PrintLabelView.xib in Resources */,
 				F1EC2EC520444E7800B290B0 /* SubCategoryOptions.xib in Resources */,
+				F1EC2F0620455BD100B290B0 /* BestBeforePrintView.xib in Resources */,
 				F1EC2EC620444E7800B290B0 /* SubCategoryOptionCell.xib in Resources */,
 				F1EC2EC720444E7800B290B0 /* MRDPrintView.xib in Resources */,
 				F1EC2EC820444E7800B290B0 /* CategoriesCell.xib in Resources */,
@@ -466,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EC2EEC20445CAC00B290B0 /* LaunchScreen.storyboard in Resources */,
+				F1EC2F0720455BD100B290B0 /* BestBeforePrintView.xib in Resources */,
 				F1EC2EED20445CAC00B290B0 /* Main.storyboard in Resources */,
 				F1EC2EEE20445CAC00B290B0 /* Fonts in Resources */,
 				F1EC2EEF20445CAC00B290B0 /* Assets.xcassets in Resources */,
@@ -599,7 +628,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MRHMRD-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SWMRD-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -612,7 +641,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SWMRD/Pods-SWMRD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -621,7 +650,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SWMRD/Pods-SWMRD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F1EC2EFB20445CAC00B290B0 /* [CP] Copy Pods Resources */ = {
@@ -636,7 +665,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRHMRD/Pods-MRHMRD-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SWMRD/Pods-SWMRD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -647,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */,
+				F1EC2F0920455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */,
 				9635D8E31DCADBB000E668EE /* PrintLabelView.swift in Sources */,
 				9630B5471DC49BE30073B16D /* CategoriesCell.swift in Sources */,
@@ -671,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EC2EA520444E7800B290B0 /* MRDDetailsVM.swift in Sources */,
+				F1EC2F0A20455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				F1EC2EA620444E7800B290B0 /* SubCategoryOptionsVM.swift in Sources */,
 				F1EC2EA720444E7800B290B0 /* PrintLabelView.swift in Sources */,
 				F1EC2EA820444E7800B290B0 /* CategoriesCell.swift in Sources */,
@@ -695,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EC2ED520445CAC00B290B0 /* MRDDetailsVM.swift in Sources */,
+				F1EC2F0B20455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				F1EC2ED620445CAC00B290B0 /* SubCategoryOptionsVM.swift in Sources */,
 				F1EC2ED720445CAC00B290B0 /* PrintLabelView.swift in Sources */,
 				F1EC2ED820445CAC00B290B0 /* CategoriesCell.swift in Sources */,
@@ -915,7 +947,7 @@
 		};
 		F1EC2EFD20445CAC00B290B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6FB7A251E41036AFCD15454 /* Pods-MRHMRD.debug.xcconfig */;
+			baseConfigurationReference = FF910AD7057161BF10A05090 /* Pods-SWMRD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -936,7 +968,7 @@
 		};
 		F1EC2EFE20445CAC00B290B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF985B41AA01370CFD97E2C8 /* Pods-MRHMRD.release.xcconfig */;
+			baseConfigurationReference = 412A8960E6DD8B776C973772 /* Pods-SWMRD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
