@@ -37,12 +37,12 @@ class MRDPrintView:UIView {
         super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 228))
         nibSetup()
         titleLabel.text = printInfo[0]
-        madeDateLabel.text = printInfo[1]
-        madeTimeLabel.text = printInfo[2]
-        readyDateLabel.text = printInfo[3]
-        readyTimeLabel.text = printInfo[4]
+//        madeDateLabel.text = printInfo[1]
+//        madeTimeLabel.text = printInfo[2]
+//        readyDateLabel.text = printInfo[3]
+//        readyTimeLabel.text = printInfo[4]
         discardDateLabel.text = printInfo[5]
-        discardTimeLabel.text = printInfo[6]
+//        discardTimeLabel.text = printInfo[6]
     }
     
     override init(frame: CGRect)
@@ -59,7 +59,8 @@ class MRDPrintView:UIView {
     {
         backgroundColor = UIColor.clear
         view = loadViewFromNib()
-        let frame = CGRect(x: 0,y: 0,width: 160,height: 228)
+//        let frame = CGRect(x: 0,y: 0,width: 160,height: 228)
+        let frame = CGRect(x: 0,y: 0,width: 160,height: 64)
         view.frame = frame
         bounds = view.frame
         
@@ -68,20 +69,20 @@ class MRDPrintView:UIView {
         addSubview(view)
         
         applyBorderChanges(to: titleLabel)
-        applyBorderChanges(to: madeLabel)
-        applyBorderChanges(to: madeDateLabel)
-        applyBorderChanges(to: madeTimeLabel)
-        applyBorderChanges(to: readyLabel)
-        applyBorderChanges(to: readyDateLabel)
-        applyBorderChanges(to: readyTimeLabel)
-        applyBorderChanges(to: discardLabel)
+//        applyBorderChanges(to: madeLabel)
+//        applyBorderChanges(to: madeDateLabel)
+//        applyBorderChanges(to: madeTimeLabel)
+//        applyBorderChanges(to: readyLabel)
+//        applyBorderChanges(to: readyDateLabel)
+//        applyBorderChanges(to: readyTimeLabel)
+//        applyBorderChanges(to: discardLabel)
         applyBorderChanges(to: discardDateLabel)
-        applyBorderChanges(to: discardTimeLabel)
+//        applyBorderChanges(to: discardTimeLabel)
     }
     
     fileprivate func loadViewFromNib() -> UIView
     {
-        let nib = UINib(nibName: String(describing: MRDPrintView.self), bundle: nil)
+        let nib = UINib(nibName: String(describing: BestBeforePrintView.self), bundle: nil)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         return nibView
     }
