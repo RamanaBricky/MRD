@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol PrintViewDelegate: class {
-    func didOK()
-}
-
 class MRDPrintView:UIView {
     
     @IBOutlet var view: UIView!
@@ -29,9 +25,6 @@ class MRDPrintView:UIView {
     @IBOutlet weak var discardLabel: UILabel!
     @IBOutlet weak var discardDateLabel: UILabel!
     @IBOutlet weak var discardTimeLabel: UILabel!
-    
-    @IBOutlet weak var okButton: UIButton!
-    weak var delegate: PrintViewDelegate?
     
     init(printInfo: [String:String]){
         super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 228))
@@ -90,10 +83,6 @@ class MRDPrintView:UIView {
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.borderWidth = 1.0
         
-    }
-    
-    @IBAction func okButtonPressed(_ sender: Any) {
-        delegate?.didOK()
     }
 }
 

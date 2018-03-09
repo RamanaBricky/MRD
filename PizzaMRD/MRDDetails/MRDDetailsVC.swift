@@ -153,16 +153,6 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
         #else
             let printViewAlert = MRDPrintView.init(printInfo: printDetails)
         #endif
-        
-//        printViewAlert.delegate = self
-//        
-//        if selectedPrinter != nil {
-//            //remove OK Button
-//            let frame = printViewAlert.frame
-//            let newFrame = CGRect(origin: frame.origin, size: CGSize(width:frame.size.width, height:frame.size.height - printViewAlert.okButton.frame.size.height))
-//            printViewAlert.okButton.removeFromSuperview()
-//            printViewAlert.frame = newFrame
-//        }
         return printViewAlert
     }
     
@@ -309,12 +299,6 @@ extension MRDDetailsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath.row
-    }
-}
-
-extension MRDDetailsVC:PrintViewDelegate {
-    func didOK() {
-        AlertWindowView.sharedInstance.dismissAlert()
     }
 }
 
