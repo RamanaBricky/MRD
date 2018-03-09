@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BestBeforePrintView" customModule="MRHMRD" customModuleProvider="target">
             <connections>
+                <outlet property="bestBeforeLabel" destination="7lK-LI-ZkY" id="1vi-w2-JpL"/>
                 <outlet property="discardLabel" destination="2sa-Qh-WKh" id="jeP-5G-OYC"/>
                 <outlet property="titleLabel" destination="jZl-JR-OfR" id="Mhs-Oz-zlC"/>
                 <outlet property="view" destination="iN0-l3-epB" id="gzM-qE-JRv"/>
@@ -24,22 +25,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Before" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lK-LI-ZkY">
-                    <rect key="frame" x="0.0" y="0.0" width="40" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="7kU-ft-c88"/>
+                        <constraint firstAttribute="width" constant="30" id="7kU-ft-c88"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-JR-OfR">
-                    <rect key="frame" x="40" y="0.0" width="263" height="32"/>
+                    <rect key="frame" x="30" y="0.0" width="273" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-Qh-WKh">
-                    <rect key="frame" x="40" y="32" width="263" height="32"/>
+                    <rect key="frame" x="30" y="32" width="273" height="32"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

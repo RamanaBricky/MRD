@@ -14,6 +14,7 @@ class BestBeforePrintView: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var discardLabel: UILabel!
+    @IBOutlet weak var bestBeforeLabel: UILabel!
     
     init(printInfo: [String:String]){
         super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 32))
@@ -32,6 +33,7 @@ class BestBeforePrintView: UIView {
         
         applyBorderChanges(to: titleLabel)
         applyBorderChanges(to: discardLabel)
+        rotateLabel()
     }
     
     override init(frame: CGRect)
@@ -55,5 +57,9 @@ class BestBeforePrintView: UIView {
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.borderWidth = 1.0
         
+    }
+    
+    private func rotateLabel() {
+        bestBeforeLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
     }
 }
