@@ -33,16 +33,16 @@ class MRDPrintView:UIView {
     @IBOutlet weak var okButton: UIButton!
     weak var delegate: PrintViewDelegate?
     
-    init(printInfo: [String]){
+    init(printInfo: [String:String]){
         super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 228))
         nibSetup()
-        titleLabel.text = printInfo[0]
-        madeDateLabel.text = printInfo[1]
-        madeTimeLabel.text = printInfo[2]
-        readyDateLabel.text = printInfo[3]
-        readyTimeLabel.text = printInfo[4]
-        discardDateLabel.text = printInfo[5]
-        discardTimeLabel.text = printInfo[6]
+        titleLabel.text = printInfo[titleString]
+        madeDateLabel.text = printInfo[madeDateString]
+        madeTimeLabel.text = printInfo[madeTimeString]
+        readyDateLabel.text = printInfo[readyDateString]
+        readyTimeLabel.text = printInfo[readyTimeString]
+        discardDateLabel.text = printInfo[discardDateString]
+        discardTimeLabel.text = printInfo[discardTimeString]
     }
     
     override init(frame: CGRect)

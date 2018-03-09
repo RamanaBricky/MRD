@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Oswald-Medium.ttf">
-            <string>Oswald-Medium</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRDPrintView" customModule="PizzaMRD" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRDPrintView" customModule="MRHMRD" customModuleProvider="target">
             <connections>
                 <outlet property="discardDateLabel" destination="V7f-aP-EEJ" id="0yL-9p-vR1"/>
                 <outlet property="discardLabel" destination="pVf-47-S12" id="ucu-Xg-hgr"/>
@@ -22,7 +17,6 @@
                 <outlet property="madeDateLabel" destination="Mjm-Hv-PZF" id="KiE-H5-6p4"/>
                 <outlet property="madeLabel" destination="yBy-8M-zd0" id="XcF-px-rDu"/>
                 <outlet property="madeTimeLabel" destination="mfH-ko-eXX" id="ciU-yN-bHX"/>
-                <outlet property="okButton" destination="irg-K6-rlx" id="Jig-1q-5c8"/>
                 <outlet property="readyDateLabel" destination="K5g-qS-kb6" id="peK-9L-VtD"/>
                 <outlet property="readyLabel" destination="VtZ-g4-9VE" id="fdr-xn-Bdd"/>
                 <outlet property="readyTimeLabel" destination="svM-ne-54A" id="SFu-9k-CPD"/>
@@ -32,7 +26,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="160" height="225"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="185"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WSA-We-Afo">
@@ -138,19 +132,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irg-K6-rlx">
-                    <rect key="frame" x="0.0" y="190" width="160" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="aZz-mG-BqT"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
-                    <state key="normal" title="OK">
-                        <color key="titleColor" red="1" green="0.24319955400000001" blue="0.19601283180000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="okButtonPressed:" destination="-1" eventType="touchUpInside" id="03k-QU-CSr"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -171,7 +152,6 @@
                 <constraint firstItem="PxK-OA-e67" firstAttribute="width" secondItem="V7f-aP-EEJ" secondAttribute="width" id="Sfs-3i-IMM"/>
                 <constraint firstItem="yBy-8M-zd0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TTd-cz-UGb"/>
                 <constraint firstItem="V7f-aP-EEJ" firstAttribute="top" secondItem="pVf-47-S12" secondAttribute="bottom" id="Y5p-eM-4Uz"/>
-                <constraint firstAttribute="trailing" secondItem="irg-K6-rlx" secondAttribute="trailing" id="YMe-cX-hNO"/>
                 <constraint firstItem="Mjm-Hv-PZF" firstAttribute="top" secondItem="yBy-8M-zd0" secondAttribute="bottom" id="ZBx-op-zPm"/>
                 <constraint firstAttribute="trailing" secondItem="WSA-We-Afo" secondAttribute="trailing" id="ZHl-0h-qQQ"/>
                 <constraint firstAttribute="trailing" secondItem="svM-ne-54A" secondAttribute="trailing" id="Zwu-FZ-IBh"/>
@@ -179,10 +159,8 @@
                 <constraint firstItem="svM-ne-54A" firstAttribute="leading" secondItem="K5g-qS-kb6" secondAttribute="trailing" id="dfy-nz-G6w"/>
                 <constraint firstItem="pVf-47-S12" firstAttribute="top" secondItem="svM-ne-54A" secondAttribute="bottom" id="eFh-u2-dc3"/>
                 <constraint firstAttribute="trailing" secondItem="yBy-8M-zd0" secondAttribute="trailing" id="ff7-cL-lS3"/>
-                <constraint firstItem="irg-K6-rlx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gwK-7T-7ds"/>
                 <constraint firstItem="svM-ne-54A" firstAttribute="top" secondItem="VtZ-g4-9VE" secondAttribute="bottom" id="i7G-Di-eec"/>
                 <constraint firstItem="V7f-aP-EEJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jZC-XR-SYV"/>
-                <constraint firstItem="irg-K6-rlx" firstAttribute="top" secondItem="PxK-OA-e67" secondAttribute="bottom" id="kAX-0Q-vFf"/>
                 <constraint firstItem="mfH-ko-eXX" firstAttribute="top" secondItem="yBy-8M-zd0" secondAttribute="bottom" id="mRN-dF-QUI"/>
                 <constraint firstItem="WSA-We-Afo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wwT-S6-Q01"/>
                 <constraint firstItem="mfH-ko-eXX" firstAttribute="leading" secondItem="Mjm-Hv-PZF" secondAttribute="trailing" id="yLz-a7-0nr"/>

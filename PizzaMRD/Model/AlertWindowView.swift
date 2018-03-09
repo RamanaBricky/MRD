@@ -62,6 +62,8 @@ class AlertWindowView : NSObject
         oldWindow = UIApplication.shared.keyWindow
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.windowLevel = UIWindowLevelAlert + 1
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlert))
+        window.addGestureRecognizer(gesture)
         window.rootViewController = windowRootViewController
         window.makeKeyAndVisible()
         self.newALertWindow = window
@@ -73,7 +75,7 @@ class AlertWindowView : NSObject
         return windowRootViewController
     }
 	
-	@discardableResult func show(_ title: String, _ message: String) {
+    func show(_ title: String, _ message: String) {
 		if newALertWindow != nil {
 			return
 		}

@@ -125,39 +125,47 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
 	
     func fillMRDDetails() {
-        title = viewModel?.getTitle()
-        if let mrdDetails = viewModel?.getMRDDetails() {
-            madeDateTextField.text = mrdDetails[madeDate]
-            madeTimeTextField.text = mrdDetails[madeTime]
-            readyDateTextField.text = mrdDetails[readyDate]
-            readyTimeTextField.text = mrdDetails[readyTime]
-            discardDateTextField.text = mrdDetails[discardDate]
-            discardTimeTextField.text = mrdDetails[discardTime]
+        if let mrdDetails = viewModel?.mrdDictionary {
+            title = mrdDetails[titleString]
+            madeDateTextField.text = mrdDetails[madeDateString]
+            madeTimeTextField.text = mrdDetails[madeTimeString]
+            readyDateTextField.text = mrdDetails[readyDateString]
+            readyTimeTextField.text = mrdDetails[readyTimeString]
+            discardDateTextField.text = mrdDetails[discardDateString]
+            discardTimeTextField.text = mrdDetails[discardTimeString]
         }
     }
     
     @IBAction func printAction(_ sender: AnyObject) {
-        let printArray = [title!,
-                           madeDateTextField.text!, madeTimeTextField.text!,
-                           readyDateTextField.text!, readyTimeTextField.text!,
-                           discardDateTextField.text!, discardTimeTextField.text!]
-        let printViewAlert = MRDPrintView.init(printInfo: printArray)
-        printViewAlert.delegate = self
+        let printViewAlert = getPrintView()
         printViewAlert.center = view.center
-        
 		if self.selectedPrinter == nil {
 			showLabel(labelView: printViewAlert)
 		} else {
-            //remove OK Button
-            let frame = printViewAlert.frame
-            let newFrame = CGRect(origin: frame.origin, size: CGSize(width:frame.size.width, height:frame.size.height - printViewAlert.okButton.frame.size.height))
-            printViewAlert.okButton.removeFromSuperview()
-            printViewAlert.frame = newFrame
-            
 			printThis(mrdLabel: printViewAlert)
 		}
     }
 	
+    func getPrintView() -> UIView {
+        let printDetails = viewModel!.getPrintDetails()
+        #if MRH
+            let printViewAlert = BestBeforePrintView.init(printInfo: printDetails)
+        #else
+            let printViewAlert = MRDPrintView.init(printInfo: printDetails)
+        #endif
+        
+//        printViewAlert.delegate = self
+//        
+//        if selectedPrinter != nil {
+//            //remove OK Button
+//            let frame = printViewAlert.frame
+//            let newFrame = CGRect(origin: frame.origin, size: CGSize(width:frame.size.width, height:frame.size.height - printViewAlert.okButton.frame.size.height))
+//            printViewAlert.okButton.removeFromSuperview()
+//            printViewAlert.frame = newFrame
+//        }
+        return printViewAlert
+    }
+    
 	func pickPrinter() {
 		print("printer picked")
 		let printerPicker = UIPrinterPickerController.init(initiallySelectedPrinter: selectedPrinter)

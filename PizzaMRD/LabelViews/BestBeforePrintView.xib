@@ -13,8 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BestBeforePrintView" customModule="MRHMRD" customModuleProvider="target">
             <connections>
-                <outlet property="discardLabel" destination="2sa-Qh-WKh" id="GEP-Zu-6cI"/>
-                <outlet property="titleLabel" destination="jZl-JR-OfR" id="19p-Q4-Sda"/>
+                <outlet property="discardLabel" destination="2sa-Qh-WKh" id="jeP-5G-OYC"/>
+                <outlet property="titleLabel" destination="jZl-JR-OfR" id="Mhs-Oz-zlC"/>
+                <outlet property="view" destination="iN0-l3-epB" id="gzM-qE-JRv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
