@@ -125,59 +125,14 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
 	
     func fillMRDDetails() {
-        let catID = viewModel?.selectedCategoryID
-        let subCatID = viewModel?.selectedSubCategoryID
         title = viewModel?.getTitle()
-        let mrdStruct = DataStack.shared.mrdDataStruct(for: catID!, subCatID!)
-        
-        guard mrdStruct.count > 0 else {
-            return
-        }
-        
-        let date = Date()
-        
-        madeDateTextField.text = convertDateToString(date: date)
-        madeTimeTextField.text = date.toString(.none, timeStyle: .short)
-        
-        let index = viewModel?.selectedMRDType! == 0 ? 0:(viewModel?.selectedMRDType)! - 1
-        let firstMRDStruct = mrdStruct[index]
-        let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
-        
-        readyDateTextField.text = convertDateToString(date: rDate)
-        readyTimeTextField.text = rDate.toString(.none, timeStyle: .short)
-        
-        if firstMRDStruct.mRDDiscardFrequency == .useByDate {
-            discardDateTextField.text = "UBD"
-            discardTimeTextField.text = "UBD"
-        }
-        else {
-            let dDate = calculateDateAndTime(date: rDate, frequency: firstMRDStruct.mRDDiscardFrequency, interval: firstMRDStruct.mRDDiscardInterval)
-            discardDateTextField.text = convertDateToString(date: dDate)
-            
-            if firstMRDStruct.eod {
-                discardTimeTextField.text = "23:59"
-            }
-            else {
-                discardTimeTextField.text = dDate.toString(.none, timeStyle: .short)
-            }
-        }
-    }
-    
-    func convertDateToString(date: Date) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM"
-        return "\(dateFormatter.string(from: date))"
-    }
-    
-    func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
-        switch frequency
-        {
-            case .hours:
-                return date.dateByAddingHours(interval)
-            case .days:
-                return date.dateByAddingDays(interval)
-            default:
-                return date
+        if let mrdDetails = viewModel?.getMRDDetails() {
+            madeDateTextField.text = mrdDetails[madeDate]
+            madeTimeTextField.text = mrdDetails[madeTime]
+            readyDateTextField.text = mrdDetails[readyDate]
+            readyTimeTextField.text = mrdDetails[readyTime]
+            discardDateTextField.text = mrdDetails[discardDate]
+            discardTimeTextField.text = mrdDetails[discardTime]
         }
     }
     
