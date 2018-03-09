@@ -48,11 +48,12 @@ extension ViewController: UICollectionViewDataSource {
         return (viewModel?.categoriesList.count)!
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indextPath: IndexPath) -> UICollectionViewCell {
-        let buttonTitle = (viewModel?.categoriesList[(indextPath as NSIndexPath).item+1])! as String
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indextPath) as! CategoriesCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = DataStack.nextAvailableIndex(viewModel!.categoriesList, at: indexPath.row)
+        let buttonTitle = (viewModel?.categoriesList[index])! as String
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
 
-            cell.categoryID = (indextPath as NSIndexPath).row + 1
+            cell.categoryID = index
             cell.categoryButton.setTitle(buttonTitle, for: .normal)
         return cell
     }

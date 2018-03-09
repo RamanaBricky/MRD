@@ -89,12 +89,12 @@ extension SubCategoryVC: UICollectionViewDataSource, UICollectionViewDelegateFlo
         return (viewModel?.subCategoryList!.count)!
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indextPath: IndexPath) -> UICollectionViewCell {
-        let buttonTitle = (viewModel?.subCategoryList![(indextPath as NSIndexPath).item+1])! as String
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = DataStack.nextAvailableIndex((viewModel?.subCategoryList)!, at: indexPath.row)
+        let buttonTitle = (viewModel?.subCategoryList![index])! as String
         
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubCategoryCell", for: indextPath) as! SubCategoryCell
-        cell.subCategoryID = (indextPath as NSIndexPath).row + 1
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubCategoryCell", for: indexPath) as! SubCategoryCell
+        cell.subCategoryID = index
         cell.categoryID = viewModel?.selectedCategoryID
         cell.subCategoryButton.setTitle(buttonTitle, for: .normal)
         return cell

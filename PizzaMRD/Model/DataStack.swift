@@ -98,4 +98,9 @@ class DataStack: NSObject {
     func mrdDataStruct(for categoryID: Int, _ subCategoryID: Int) -> [MRDData] {
         return SqlStore.sqlMRDStruct("SELECT MRD_Type, MRD_Type_Desc, MRD_Ready_Frequency, MRD_Ready_Interval, MRD_Discard_Frequency, MRD_Discard_Interval, MRD_EOD FROM tbl_MRD_Type WHERE MRD_Category = '\(categoryID)' AND MRD_Sub_Category = '\(subCategoryID)'")
     }
+    
+    static func nextAvailableIndex(_ dictionary: [Int:String], at index: Int) -> Int {
+        let allKeys = dictionary.keys.sorted()
+        return allKeys[index]
+    }
 }

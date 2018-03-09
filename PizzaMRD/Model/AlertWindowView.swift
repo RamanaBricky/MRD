@@ -63,6 +63,7 @@ class AlertWindowView : NSObject
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.windowLevel = UIWindowLevelAlert + 1
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlert))
+        gesture.cancelsTouchesInView = false
         window.addGestureRecognizer(gesture)
         window.rootViewController = windowRootViewController
         window.makeKeyAndVisible()
@@ -297,10 +298,6 @@ class WindowRootViewController: UIViewController
     
     override var shouldAutorotate : Bool {
         return false
-    }
-    
-    deinit {
-        print("WindowRootViewController -DEINIT")
     }
 }
 

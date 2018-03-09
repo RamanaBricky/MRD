@@ -59,7 +59,7 @@ class SubCategoryCell: UICollectionViewCell {
     }
     
     @IBAction func subCategoriesButtonSelected(_ sender: AnyObject) {
-        let userinfo = ["cat":categoryID, "sub":subCategoryID]
+        let userinfo: [String:Int] = ["cat":categoryID, "sub":subCategoryID]
         NotificationCenter.default.post(name:  NSNotification.Name(rawValue:"SubCategorySelected"), object: nil, userInfo:userinfo)
     }
 }

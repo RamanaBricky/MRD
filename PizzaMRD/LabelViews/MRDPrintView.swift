@@ -27,7 +27,7 @@ class MRDPrintView:UIView {
     @IBOutlet weak var discardTimeLabel: UILabel!
     
     init(printInfo: [String:String]){
-        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 228))
+        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 188))
         nibSetup()
         titleLabel.text = printInfo[titleString]
         madeDateLabel.text = printInfo[madeDateString]
@@ -52,7 +52,7 @@ class MRDPrintView:UIView {
     {
         backgroundColor = UIColor.clear
         view = loadViewFromNib()
-        let frame = CGRect(x: 0,y: 0,width: 160,height: 228)
+        let frame = CGRect(x: 0,y: 0,width: 160,height: 188)
         view.frame = frame
         bounds = view.frame
         

@@ -38,7 +38,7 @@ class MRDetailsVM: MRDDetailsViewModel {
     private var discardDate = Date()
     
     var mrdDictionary: [String:String] {
-        let mrdStruct = DataStack.shared.mrdDataStruct(for: selectedCategoryID, selectedCategoryID)
+        let mrdStruct = DataStack.shared.mrdDataStruct(for: selectedCategoryID, selectedSubCategoryID)
         let date = Date()
         let mdDate = convertDateToString(date: date, format: "dd/MM")
         let mdTime = date.toString(.none, timeStyle: .short)
