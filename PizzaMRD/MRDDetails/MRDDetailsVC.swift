@@ -199,28 +199,24 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     }
     
 	func printThis(mrdLabel: UIView) {
-        printButton.isEnabled = false
-        
-		UIGraphicsBeginImageContextWithOptions(mrdLabel.bounds.size, false, 0.0)
-		
-		mrdLabel.drawHierarchy(in: mrdLabel.bounds, afterScreenUpdates: true)
-		//pass this image to printer
-		let image = UIGraphicsGetImageFromCurrentImageContext()
-		UIGraphicsEndImageContext()
-		
-		let printInfo = UIPrintInfo(dictionary:nil)
-		printInfo.outputType = UIPrintInfoOutputType.grayscale
-		printInfo.jobName = "MRD"
-		
-		// Set up print controller
-		let printController = UIPrintInteractionController.shared
-		printController.printInfo = printInfo
-		
-		// Assign an UIImage version of printView as a printing item
-        if let text = printLabelCountTextField.text, let items = Int(text), let img = image {
-            printController.printingItems = Array(repeating: img, count: items)
+    printButton.isEnabled = false
+    
+    guard let data = viewModel?.createPdfFromView(aView: mrdLabel) else {
+      return
+    }
+    let printInfo = UIPrintInfo(dictionary:nil)
+    printInfo.outputType = UIPrintInfoOutputType.photoGrayscale
+    printInfo.jobName = "MRD"
+
+    // Set up print controller
+    let printController = UIPrintInteractionController.shared
+    printController.printInfo = printInfo
+
+    // Assign an UIImage version of printView as a printing item
+        if let text = printLabelCountTextField.text, let items = Int(text) {
+            printController.printingItems = Array(repeating: data, count: items)
         } else {
-            printController.printingItem = image
+            printController.printingItem = data
         }
         printController.print(to: selectedPrinter!, completionHandler: { (controller, result, error) in
             self.printButton.isEnabled = true
@@ -230,13 +226,13 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
                 controller.printingItems = nil
                 controller.printingItem = nil
                 controller.dismiss(animated: true)
-				AlertWindowView.sharedInstance.show("Alert!", "Unable to print the label at the moment")
+        AlertWindowView.sharedInstance.show("Alert!", "Unable to print the label at the moment")
             }
         })
 //MARK: TO DO
         //handle delegate methods to load paper, printer problems
 	}
-	
+  
     override var shouldAutorotate: Bool {
         return false
     }

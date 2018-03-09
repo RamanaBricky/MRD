@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 let titleString = "title"
 let madeDateString = "madeDate"
 let madeTimeString = "madeTime"
@@ -16,7 +18,7 @@ let discardDateString = "discardDate"
 let discardTimeString = "discardTime"
 
 protocol MRDDetailsViewModel {
-    weak var delegate:MRDDetailsDelegate? {get set}
+    var delegate:MRDDetailsDelegate? {get set}
     var selectedCategoryID:Int {get set}
     var selectedSubCategoryID:Int {get set}
     var selectedMRDType:Int? {get set}
@@ -24,6 +26,8 @@ protocol MRDDetailsViewModel {
     var mrdDictionary:[String:String] {get}
     
     func getPrintDetails() -> [String:String]
+    func image(with inView: UIView) -> UIImage?
+  func createPdfFromView(aView: UIView) -> NSMutableData?
 }
 
 protocol MRDDetailsDelegate:class {
@@ -109,7 +113,32 @@ class MRDetailsVM: MRDDetailsViewModel {
             return mrdDictionary
         #endif
     }
+  
+  func image(with inView: UIView) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(inView.bounds.size, inView.isOpaque, 0.0)
+    defer { UIGraphicsEndImageContext() }
+    if let context = UIGraphicsGetCurrentContext() {
+      inView.layer.render(in: context)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      return image
+    }
+    return nil
+  }
+  
+  func createPdfFromView(aView: UIView) -> NSMutableData?
+  {
+    aView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+    let pdfData = NSMutableData()
+    UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil)
+    UIGraphicsBeginPDFPage()
     
+    guard let pdfContext = UIGraphicsGetCurrentContext() else { return nil }
+    
+    aView.layer.render(in: pdfContext)
+    UIGraphicsEndPDFContext()
+    return pdfData
+  }
+  
     private func convertDateToString(date: Date, format: String) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format

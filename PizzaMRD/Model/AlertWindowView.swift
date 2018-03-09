@@ -135,7 +135,7 @@ class AlertWindowView : NSObject
 		titleLabel.numberOfLines = 0
 		titleLabel.textAlignment = .center
 		titleLabel.textColor = UIColor.white
-		alertBackgroud.addSubview(titleLabel)
+		alertBackgroud.contentView.addSubview(titleLabel)
 		layoutViews["title"] = titleLabel
 		
 		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[title]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: layoutViews))
@@ -153,13 +153,13 @@ class AlertWindowView : NSObject
 		messageLabel.lineBreakMode = .byTruncatingTail
 		messageLabel.text = message
 		
-		alertBackgroud.addSubview(messageLabel)
+		alertBackgroud.contentView.addSubview(messageLabel)
 		layoutViews["message"] = messageLabel
 		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[message(==WIDTH@WIDTH_PRIORITY)]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
 		
 		let separatorLine = UIImageView(image: UIImage(named:"separator_line"))
 		separatorLine.translatesAutoresizingMaskIntoConstraints = false
-		alertBackgroud.addSubview(separatorLine)
+		alertBackgroud.contentView.addSubview(separatorLine)
 		layoutViews["line"] = separatorLine
 		
 		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[line]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))
@@ -177,7 +177,7 @@ class AlertWindowView : NSObject
 		button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
 		button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 8.0, 0.0, 8.0)
 		button.setContentCompressionResistancePriority(800, for: .horizontal)
-		alertBackgroud.addSubview(button)
+		alertBackgroud.contentView.addSubview(button)
 		layoutViews["button"] = button
 		
 		alertBackgroud.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[button]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: layoutMetrics, views: layoutViews))

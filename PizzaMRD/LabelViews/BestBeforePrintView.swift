@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let widthValue = 115
+let heightValue = 32
+
 class BestBeforePrintView: UIView {
     
     @IBOutlet var view: UIView!
@@ -17,7 +20,7 @@ class BestBeforePrintView: UIView {
     @IBOutlet weak var bestBeforeLabel: UILabel!
     
     init(printInfo: [String:String]){
-        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 32))
+        super.init(frame: CGRect(x: 0,y: 0,width: widthValue,height: heightValue))
         
         nibSetup()
         titleLabel.text = printInfo[titleString]
@@ -26,14 +29,15 @@ class BestBeforePrintView: UIView {
     
     private func nibSetup() {
         view = loadViewFromNib()
-        let frame = CGRect(x: 0,y: 0,width: 160,height: 32)
+        let frame = CGRect(x: 0,y: 0,width: widthValue,height: heightValue)
         view.frame = frame
         bounds = view.frame
         addSubview(view)
-        
+      
         applyBorderChanges(to: titleLabel)
         applyBorderChanges(to: discardLabel)
-        rotateLabel()
+        applyBorderChanges(to: bestBeforeLabel)
+//        rotateLabel()
     }
     
     override init(frame: CGRect)
