@@ -35,6 +35,7 @@
 		9630B54A1DC49C8E0073B16D /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630B5491DC49C8E0073B16D /* CategoriesVM.swift */; };
 		9635D8E11DCADBA000E668EE /* PrintLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9635D8E01DCADBA000E668EE /* PrintLabelView.xib */; };
 		9635D8E31DCADBB000E668EE /* PrintLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635D8E21DCADBB000E668EE /* PrintLabelView.swift */; };
+		96451CB420535F9A00A7522F /* MRHMRD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451CB220535F9000A7522F /* MRHMRD.xcassets */; };
 		96D44C201DC6106600753A30 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D44C1F1DC6106600753A30 /* DataStack.swift */; };
 		96DB258B1DCA9FBE0040E2A2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */; };
 		96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
@@ -64,7 +65,6 @@
 		F1EC2EBB20444E7800B290B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5341DC495A00073B16D /* LaunchScreen.storyboard */; };
 		F1EC2EBD20444E7800B290B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9630B52F1DC495A00073B16D /* Main.storyboard */; };
 		F1EC2EBE20444E7800B290B0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5411DC496BD0073B16D /* Fonts */; };
-		F1EC2EBF20444E7800B290B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9630B5321DC495A00073B16D /* Assets.xcassets */; };
 		F1EC2EC020444E7800B290B0 /* MRDDetailsVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */; };
 		F1EC2EC120444E7800B290B0 /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9601ACAD1DC7F6F700FE3145 /* SubCategoryCell.xib */; };
 		F1EC2EC220444E7800B290B0 /* MRDDetailsVC~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */; };
@@ -149,6 +149,7 @@
 		9630B5491DC49C8E0073B16D /* CategoriesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesVM.swift; path = ../CategoriesVM.swift; sourceTree = "<group>"; };
 		9635D8E01DCADBA000E668EE /* PrintLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrintLabelView.xib; sourceTree = "<group>"; };
 		9635D8E21DCADBB000E668EE /* PrintLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintLabelView.swift; sourceTree = "<group>"; };
+		96451CB220535F9000A7522F /* MRHMRD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MRHMRD.xcassets; sourceTree = "<group>"; };
 		96D44C1F1DC6106600753A30 /* DataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
 		96DB258A1DCA9FBE0040E2A2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryOptionsVM.swift; sourceTree = "<group>"; };
@@ -285,6 +286,7 @@
 				9630B5321DC495A00073B16D /* Assets.xcassets */,
 				9630B5341DC495A00073B16D /* LaunchScreen.storyboard */,
 				9630B5371DC495A00073B16D /* Info.plist */,
+				96451CB220535F9000A7522F /* MRHMRD.xcassets */,
 			);
 			path = PizzaMRD;
 			sourceTree = "<group>";
@@ -415,7 +417,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					F1EC2EA220444E7800B290B0 = {
-						DevelopmentTeam = 9ZYWNJDG54;
+						DevelopmentTeam = 3BRLGH5MDE;
 						ProvisioningStyle = Automatic;
 					};
 					F1EC2ED220445CAC00B290B0 = {
@@ -474,8 +476,8 @@
 				F1EC2EBB20444E7800B290B0 /* LaunchScreen.storyboard in Resources */,
 				F1EC2EBD20444E7800B290B0 /* Main.storyboard in Resources */,
 				F1EC2EBE20444E7800B290B0 /* Fonts in Resources */,
-				F1EC2EBF20444E7800B290B0 /* Assets.xcassets in Resources */,
 				F1EC2EC020444E7800B290B0 /* MRDDetailsVC~ipad.xib in Resources */,
+				96451CB420535F9A00A7522F /* MRHMRD.xcassets in Resources */,
 				F1EC2EC120444E7800B290B0 /* SubCategoryCell.xib in Resources */,
 				F1EC2EC220444E7800B290B0 /* MRDDetailsVC~iphone.xib in Resources */,
 				F1EC2ED12044577800B290B0 /* MRHMRD.db in Resources */,
@@ -914,12 +916,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
-				DEVELOPMENT_TEAM = 9ZYWNJDG54;
+				DEVELOPMENT_TEAM = 3BRLGH5MDE;
 				INFOPLIST_FILE = MRHMRD.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.MRHMRD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.mrhmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -936,12 +938,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
-				DEVELOPMENT_TEAM = 9ZYWNJDG54;
+				DEVELOPMENT_TEAM = 3BRLGH5MDE;
 				INFOPLIST_FILE = MRHMRD.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.MRHMRD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.mrhmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
