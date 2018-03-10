@@ -9,12 +9,20 @@
 import Foundation
 import UIKit
 
+enum LabelViewType: String {
+  case mrd = "mrd"
+  case bb  = "bb"
+}
+
 class Config {
     static let shared = Config()
     private var colorPalette: [String:String] {
-        return Bundle.main.object(forInfoDictionaryKey: "ColorPalette") as! [String : String]
+        return Bundle.main.object(forInfoDictionaryKey: "ColorPalette") as! [String:String]
     }
-    
+  
+  private var labelView: [String:String] {
+    return Bundle.main.object(forInfoDictionaryKey: "Config") as! [String:String]
+  }
     private func color(with hexString: String?) -> UIColor {
         guard let hex = hexString else {
             return .black
@@ -67,4 +75,12 @@ class Config {
     var cellBackgroundColor: UIColor {
         return color(with: colorPalette["cellBackground"])
     }
+  
+  func getLabelViewType() -> LabelViewType {
+    if let value = labelView["LabelView"], let lblView = LabelViewType(rawValue: value) {
+      return lblView
+    } else {
+      return .mrd
+    }
+  }
 }

@@ -152,15 +152,17 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 		}
     }
 	
-    func getPrintView() -> UIView {
-        let printDetails = viewModel!.getPrintDetails()
-        #if MRH
-            let printViewAlert = BestBeforePrintView.init(printInfo: printDetails)
-        #else
-            let printViewAlert = MRDPrintView.init(printInfo: printDetails)
-        #endif
-        return printViewAlert
+  func getPrintView() -> UIView {
+    let printDetails = viewModel!.getPrintDetails()
+    var printViewAlert : UIView!
+    switch Config.shared.getLabelViewType() {
+    case .bb:
+      printViewAlert = BestBeforePrintView.init(printInfo: printDetails)
+    default:
+      printViewAlert = MRDPrintView.init(printInfo: printDetails)
     }
+    return printViewAlert
+  }
     
 	func pickPrinter() {
 		print("printer picked")

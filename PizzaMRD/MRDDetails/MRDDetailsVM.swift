@@ -104,14 +104,15 @@ class MRDetailsVM: MRDDetailsViewModel {
         return title
     }
     
-    func getPrintDetails() -> [String:String]{
-        #if MRH
-            return [ titleString : getTitle(),
-                    discardDateString : convertDateToString(date: discardDate, format: "dd/MM/YYYY")
-                   ]
-        #else
-            return mrdDictionary
-        #endif
+    func getPrintDetails() -> [String:String] {
+      switch Config.shared.getLabelViewType() {
+      case .bb:
+        return [ titleString : getTitle(),
+                 discardDateString : convertDateToString(date: discardDate, format: "dd/MM/YYYY")
+        ]
+      default:
+        return mrdDictionary
+      }
     }
   
   func image(with inView: UIView) -> UIImage? {

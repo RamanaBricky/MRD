@@ -2,23 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ColorPalette</key>
-	<dict>
-		<key>primary</key>
-		<string>#178336</string>
-		<key>secondary</key>
-		<string>#FDB713</string>
-		<key>tertiary</key>
-		<string>#a0a0a0</string>
-		<key>text</key>
-		<string>#178336</string>
-		<key>staticText</key>
-		<string>#FFFFFF</string>
-		<key>cellBackground</key>
-		<string>#FFFFFF</string>
-		<key>viewBackground</key>
-		<string>#FDB713</string>
-	</dict>
+	<key>Config</key>
+	<dict/>
+	<key>LabelView</key>
+	<string>mrd</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -34,7 +21,24 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
+	<key>ColorPalette</key>
+	<dict>
+		<key>cellBackground</key>
+		<string>#FFFFFF</string>
+		<key>primary</key>
+		<string>#178336</string>
+		<key>secondary</key>
+		<string>#FDB713</string>
+		<key>staticText</key>
+		<string>#FFFFFF</string>
+		<key>tertiary</key>
+		<string>#a0a0a0</string>
+		<key>text</key>
+		<string>#178336</string>
+		<key>viewBackground</key>
+		<string>#FDB713</string>
+	</dict>
 	<key>Database_FileName</key>
 	<string>$(DATABASE_FILE_NAME)</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -167,10 +167,10 @@
 		EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRHMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11741BF20543B6B00D7FAF1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F1EC2ECE20444E7800B290B0 /* MRHMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRHMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EC2ECF20444E7800B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = info.plist; path = /Users/ramana/MRD/PizzaMRD/Configuration/MRHMRD/info.plist; sourceTree = "<absolute>"; };
+		F1EC2ECF20444E7800B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		F1EC2ED02044577600B290B0 /* MRHMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MRHMRD.db; sourceTree = "<group>"; };
 		F1EC2EFF20445CAC00B290B0 /* SWMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EC2F0020445CAD00B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = info.plist; path = /Users/ramana/MRD/PizzaMRD/Configuration/SWMRD/info.plist; sourceTree = "<absolute>"; };
+		F1EC2F0020445CAD00B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		F1EC2F0120445D1900B290B0 /* SWMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SWMRD.db; sourceTree = "<group>"; };
 		F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestBeforePrintView.xib; sourceTree = "<group>"; };
 		F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBeforePrintView.swift; sourceTree = "<group>"; };
@@ -918,7 +918,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/PHMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.phmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -940,7 +940,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/PHMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.phmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -962,7 +962,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/MRHMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.mrhmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -984,7 +984,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/MRHMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.mrhmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1006,7 +1006,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/SWMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSW";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.swmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1028,7 +1028,7 @@
 				INFOPLIST_FILE = PizzaMRD/Configuration/SWMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSW";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.swmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
