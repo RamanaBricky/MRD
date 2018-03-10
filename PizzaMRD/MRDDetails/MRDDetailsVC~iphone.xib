@@ -26,6 +26,8 @@
                 <outlet property="madeDateTextField" destination="Fty-Se-VuH" id="N6K-aC-PtB"/>
                 <outlet property="madeLabel" destination="qWp-bX-tlr" id="lgO-iI-PnA"/>
                 <outlet property="madeTimeTextField" destination="cF9-Nv-1mR" id="OfH-kr-Mcw"/>
+                <outlet property="mainView" destination="HTi-Hc-ExJ" id="gH3-8o-rc0"/>
+                <outlet property="mrdView" destination="UA3-jC-Y1b" id="m2t-lL-She"/>
                 <outlet property="numberOfLabels" destination="uc7-d6-CYe" id="aes-UD-Bvq"/>
                 <outlet property="printButton" destination="vUa-L2-Kku" id="KRr-Yn-SbA"/>
                 <outlet property="printLabelCountTextField" destination="I3y-hI-foN" id="y06-tl-Wkp"/>

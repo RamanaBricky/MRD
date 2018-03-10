@@ -44,6 +44,9 @@
 		96E416401DC95B2000939B62 /* MRDDetailsVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E4163F1DC95B2000939B62 /* MRDDetailsVC~ipad.xib */; };
 		96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416411DC95B5500939B62 /* MRDDetailsVC.swift */; };
 		96E416441DC95BB500939B62 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
+		F11741C020543B6B00D7FAF1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11741BF20543B6B00D7FAF1 /* Config.swift */; };
+		F11741C120543B6B00D7FAF1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11741BF20543B6B00D7FAF1 /* Config.swift */; };
+		F11741C220543B6B00D7FAF1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11741BF20543B6B00D7FAF1 /* Config.swift */; };
 		F1EC2EA520444E7800B290B0 /* MRDDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416431DC95BB500939B62 /* MRDDetailsVM.swift */; };
 		F1EC2EA620444E7800B290B0 /* SubCategoryOptionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E416381DC93A2D00939B62 /* SubCategoryOptionsVM.swift */; };
 		F1EC2EA720444E7800B290B0 /* PrintLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635D8E21DCADBB000E668EE /* PrintLabelView.swift */; };
@@ -142,7 +145,7 @@
 		9630B5301DC495A00073B16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9630B5321DC495A00073B16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9630B5351DC495A00073B16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9630B5371DC495A00073B16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9630B5371DC495A00073B16D /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		9630B5411DC496BD0073B16D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		9630B5451DC49BE30073B16D /* CategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		9630B5461DC49BE30073B16D /* CategoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
@@ -162,11 +165,12 @@
 		BB1268311207F1A6D884860C /* Pods-PizzaMRD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaMRD.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaMRD/Pods-PizzaMRD.release.xcconfig"; sourceTree = "<group>"; };
 		DAB35DE2E93ED65670ED161D /* Pods_PizzaMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB08F32598A56B0B2E4E89B4 /* Pods_MRHMRD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRHMRD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11741BF20543B6B00D7FAF1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F1EC2ECE20444E7800B290B0 /* MRHMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRHMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EC2ECF20444E7800B290B0 /* MRHMRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MRHMRD.plist; path = /Users/ramana/MRD/MRHMRD.plist; sourceTree = "<absolute>"; };
+		F1EC2ECF20444E7800B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = info.plist; path = /Users/ramana/MRD/PizzaMRD/Configuration/MRHMRD/info.plist; sourceTree = "<absolute>"; };
 		F1EC2ED02044577600B290B0 /* MRHMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MRHMRD.db; sourceTree = "<group>"; };
 		F1EC2EFF20445CAC00B290B0 /* SWMRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWMRD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EC2F0020445CAD00B290B0 /* SWMRD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SWMRD.plist; path = /Users/ramana/MRD/SWMRD.plist; sourceTree = "<absolute>"; };
+		F1EC2F0020445CAD00B290B0 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = info.plist; path = /Users/ramana/MRD/PizzaMRD/Configuration/SWMRD/info.plist; sourceTree = "<absolute>"; };
 		F1EC2F0120445D1900B290B0 /* SWMRD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SWMRD.db; sourceTree = "<group>"; };
 		F1EC2F0420455BD100B290B0 /* BestBeforePrintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestBeforePrintView.xib; sourceTree = "<group>"; };
 		F1EC2F0820455BE800B290B0 /* BestBeforePrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBeforePrintView.swift; sourceTree = "<group>"; };
@@ -257,8 +261,6 @@
 				9630B5291DC495A00073B16D /* Products */,
 				9601ACA11DC7D67200FE3145 /* Frameworks */,
 				1B002423CAD22218DAA71E63 /* Pods */,
-				F1EC2ECF20444E7800B290B0 /* MRHMRD.plist */,
-				F1EC2F0020445CAD00B290B0 /* SWMRD.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,6 +277,7 @@
 		9630B52A1DC495A00073B16D /* PizzaMRD */ = {
 			isa = PBXGroup;
 			children = (
+				F11741B82054361700D7FAF1 /* Configuration */,
 				F1EC2F0320455AC100B290B0 /* LabelViews */,
 				96E4163C1DC95AB200939B62 /* MRDDetails */,
 				9601ACA41DC7E43F00FE3145 /* subCategory */,
@@ -286,7 +289,6 @@
 				9630B52F1DC495A00073B16D /* Main.storyboard */,
 				9630B5321DC495A00073B16D /* Assets.xcassets */,
 				9630B5341DC495A00073B16D /* LaunchScreen.storyboard */,
-				9630B5371DC495A00073B16D /* Info.plist */,
 				96451CB220535F9000A7522F /* MRHMRD.xcassets */,
 				96451CB52053693A00A7522F /* SWMRD.xcassets */,
 			);
@@ -327,6 +329,41 @@
 				07E6F3171DE9F387000EB387 /* MRDDetailsVC~iphone.xib */,
 			);
 			path = MRDDetails;
+			sourceTree = "<group>";
+		};
+		F11741B82054361700D7FAF1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F11741BB2054364500D7FAF1 /* SWMRD */,
+				F11741BA2054363F00D7FAF1 /* MRHMRD */,
+				F11741B92054363700D7FAF1 /* PHMRD */,
+				F11741BF20543B6B00D7FAF1 /* Config.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F11741B92054363700D7FAF1 /* PHMRD */ = {
+			isa = PBXGroup;
+			children = (
+				9630B5371DC495A00073B16D /* info.plist */,
+			);
+			path = PHMRD;
+			sourceTree = "<group>";
+		};
+		F11741BA2054363F00D7FAF1 /* MRHMRD */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC2ECF20444E7800B290B0 /* info.plist */,
+			);
+			path = MRHMRD;
+			sourceTree = "<group>";
+		};
+		F11741BB2054364500D7FAF1 /* SWMRD */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC2F0020445CAD00B290B0 /* info.plist */,
+			);
+			path = SWMRD;
 			sourceTree = "<group>";
 		};
 		F1EC2F0320455AC100B290B0 /* LabelViews */ = {
@@ -683,6 +720,7 @@
 				F1EC2F0920455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				96E416391DC93A2D00939B62 /* SubCategoryOptionsVM.swift in Sources */,
 				9635D8E31DCADBB000E668EE /* PrintLabelView.swift in Sources */,
+				F11741C020543B6B00D7FAF1 /* Config.swift in Sources */,
 				9630B5471DC49BE30073B16D /* CategoriesCell.swift in Sources */,
 				9601ACB21DC804B300FE3145 /* SubCategoryOptions.swift in Sources */,
 				96E416421DC95B5500939B62 /* MRDDetailsVC.swift in Sources */,
@@ -708,6 +746,7 @@
 				F1EC2F0A20455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				F1EC2EA620444E7800B290B0 /* SubCategoryOptionsVM.swift in Sources */,
 				F1EC2EA720444E7800B290B0 /* PrintLabelView.swift in Sources */,
+				F11741C120543B6B00D7FAF1 /* Config.swift in Sources */,
 				F1EC2EA820444E7800B290B0 /* CategoriesCell.swift in Sources */,
 				F1EC2EA920444E7800B290B0 /* SubCategoryOptions.swift in Sources */,
 				F1EC2EAA20444E7800B290B0 /* MRDDetailsVC.swift in Sources */,
@@ -733,6 +772,7 @@
 				F1EC2F0B20455BE800B290B0 /* BestBeforePrintView.swift in Sources */,
 				F1EC2ED620445CAC00B290B0 /* SubCategoryOptionsVM.swift in Sources */,
 				F1EC2ED720445CAC00B290B0 /* PrintLabelView.swift in Sources */,
+				F11741C220543B6B00D7FAF1 /* Config.swift in Sources */,
 				F1EC2ED820445CAC00B290B0 /* CategoriesCell.swift in Sources */,
 				F1EC2ED920445CAC00B290B0 /* SubCategoryOptions.swift in Sources */,
 				F1EC2EDA20445CAC00B290B0 /* MRDDetailsVC.swift in Sources */,
@@ -875,7 +915,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = PHMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = PizzaMRD/Info.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/PHMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
@@ -897,7 +937,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = PHMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = PizzaMRD/Info.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/PHMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
@@ -919,7 +959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = MRHMRD.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/MRHMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
@@ -941,7 +981,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = MRHMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = MRHMRD.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/MRHMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DMRH";
@@ -963,7 +1003,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = SWMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = SWMRD.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/SWMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSW";
@@ -985,7 +1025,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = SWMRD;
 				DEVELOPMENT_TEAM = 3BRLGH5MDE;
-				INFOPLIST_FILE = SWMRD.plist;
+				INFOPLIST_FILE = PizzaMRD/Configuration/SWMRD/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DSW";

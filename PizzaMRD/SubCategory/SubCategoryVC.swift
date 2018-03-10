@@ -17,15 +17,16 @@ class SubCategoryVC: UIViewController, SubCategoryViewModelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        subCategoriesCollectionView.backgroundColor = UIColor.black
-        self.navigationItem.title = viewModel?.title
-        
+        configureUI()
         subCategoriesCollectionView.register(UINib.init(nibName: String(describing: SubCategoryCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SubCategoryCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(SubCategoryVC.subCategorySelected), name: NSNotification.Name(rawValue:"SubCategorySelected"), object: nil)
-        
     }
 	
+    func configureUI() {
+        subCategoriesCollectionView.backgroundColor = Config.shared.viewBackgroundColor
+        navigationItem.title = viewModel?.title
+    }
+    
 	deinit {
 		AlertWindowView.sharedInstance.dismissAlert()
 	}

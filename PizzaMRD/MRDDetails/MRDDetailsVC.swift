@@ -37,7 +37,8 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     @IBOutlet weak var numberOfLabels: UILabel!
     @IBOutlet weak var printButton: UIButton!
     @IBOutlet weak var mrdView: UIView!
-	
+    @IBOutlet weak var mainView: UIView!
+    
 	var selectedPrinter: UIPrinter?
 	
     override func viewDidLoad() {
@@ -83,31 +84,36 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     var selectedIndexPath = -1
 	
     func setupUI() {
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = Config.shared.viewBackgroundColor
+        mainView.backgroundColor = Config.shared.viewBackgroundColor
+        mrdView.backgroundColor = Config.shared.viewBackgroundColor
+        
         madeLabel.textColor = UIColor.white
         readyLabel.textColor = UIColor.green
         discardLabel.textColor = UIColor.red
-        dateLabel.textColor = UIColor.red
-        timeLabel.textColor = UIColor.red
-        numberOfLabels.textColor = UIColor.red
-        madeDateTextField.textColor = UIColor.red
-        madeTimeTextField.textColor = UIColor.red
-        readyDateTextField.textColor = UIColor.red
-        readyTimeTextField.textColor = UIColor.red
-        discardDateTextField.textColor = UIColor.red
-        discardTimeTextField.textColor = UIColor.red
+        dateLabel.textColor = Config.shared.staticTextColor
+        timeLabel.textColor = Config.shared.staticTextColor
+        numberOfLabels.textColor = Config.shared.staticTextColor
+        madeDateTextField.textColor = Config.shared.textColor
+        madeTimeTextField.textColor = Config.shared.textColor
+        readyDateTextField.textColor = Config.shared.textColor
+        readyTimeTextField.textColor = Config.shared.textColor
+        discardDateTextField.textColor = Config.shared.textColor
+        discardTimeTextField.textColor = Config.shared.textColor
         
-        subSubCategoryTableView.backgroundColor = UIColor.black
-        printLabelCountTextField.textColor = UIColor.red
+        subSubCategoryTableView.backgroundColor = Config.shared.viewBackgroundColor
+        printLabelCountTextField.textColor = Config.shared.textColor
         
-        subSubCategoryTableView.layer.borderColor = UIColor.gray.cgColor
+        subSubCategoryTableView.layer.borderColor = Config.shared.primaryColor.cgColor
         subSubCategoryTableView.layer.borderWidth = 5.0
         
         if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
             mrdView.layer.borderColor = UIColor.lightGray.cgColor
             mrdView.layer.borderWidth = 1.0
         }
-        applyGradientAndShadow()
+        printButton.backgroundColor = Config.shared.tertiaryColor
+        printButton.layer.cornerRadius = 4.0
+        printButton.setTitleColor(Config.shared.textColor, for: .normal)
 		
 		let settingsButton = UIButton()
 		settingsButton.setImage(UIImage.init(named: "button_settings"), for: .normal)
@@ -178,7 +184,7 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 	}
 	
     func showLabel(labelView: UIView) {
-		labelView.frame.size.width = 215.0
+		labelView.frame.size.width = 115.0
 		labelView.center = view.center
         AlertWindowView.sharedInstance.showWithView(labelView,
                                                     animations:{
@@ -239,35 +245,6 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return .portrait
-    }
-    
-    func applyGradientAndShadow()
-    {
-        printButton.setTitleColor(UIColor.red, for: .normal)
-        printButton.layer.cornerRadius = 4.0
-        //        categoryButton.titleLabel!.font = UIFont.gtBoldFont(withSize: 16)
-        let color1 = UIColor(white: 1.0, alpha: 0.7)
-        let color2 = UIColor(white: 0.3, alpha: 1.0)
-        
-        printButton.backgroundColor = UIColor.clear
-        
-        printButton.layer.shadowColor = UIColor.black.cgColor
-        printButton.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        printButton.layer.shadowOpacity = 0.7
-        printButton.layer.shadowRadius = 0.0
-        
-        let mainLayer = CAGradientLayer()
-        mainLayer.frame = printButton.layer.bounds
-        
-        mainLayer.colors = [color1.cgColor, color2.cgColor]
-        
-        mainLayer.locations = [0.0, 1.0]
-        
-        mainLayer.cornerRadius = printButton.layer.cornerRadius
-        
-        printButton.layer.insertSublayer(mainLayer, at: 0)
-        
-        printButton.setTitleColor(UIColor.red, for: .normal)
     }
 }
 

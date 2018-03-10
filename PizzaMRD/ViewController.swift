@@ -20,9 +20,7 @@ class ViewController: UIViewController, CategoriesViewModelDelegate, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
-        self.categoriesCollectionView.backgroundColor = UIColor.black
-        
+        configureUI()
         viewModel = CategoriesVM()
         categoriesCollectionView.register(UINib.init(nibName: String(describing: CategoriesCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CategoriesCell.self))
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.navigateToSubCategory), name: NSNotification.Name(rawValue:"NavigateToSubCategory"), object: nil)
@@ -40,6 +38,11 @@ class ViewController: UIViewController, CategoriesViewModelDelegate, UICollectio
         let subCategoryVC = notification.object as! SubCategoryVC
         self.navigationController?.pushViewController(subCategoryVC, animated: true)
         
+    }
+    
+    func configureUI() {
+        view.backgroundColor = Config.shared.viewBackgroundColor
+        categoriesCollectionView.backgroundColor = Config.shared.viewBackgroundColor
     }
 }
 

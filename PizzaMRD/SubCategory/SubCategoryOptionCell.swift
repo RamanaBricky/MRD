@@ -19,7 +19,7 @@ class SubCategoryOptionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        subCategoryOptionLabel.backgroundColor = UIColor.black
-        subCategoryOptionLabel.textColor = UIColor.red
+        subCategoryOptionLabel.backgroundColor = Config.shared.viewBackgroundColor
+        subCategoryOptionLabel.textColor = Config.shared.textColor
     }
 }

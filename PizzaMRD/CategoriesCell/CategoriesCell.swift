@@ -20,31 +20,11 @@ class CategoriesCell: UICollectionViewCell {
     
     func applyGradientAndShadow()
     {
-        categoryButton.setTitleColor(UIColor.red, for: .normal)
-        categoryButton.layer.cornerRadius = 4.0
-//        categoryButton.titleLabel!.font = UIFont.gtBoldFont(withSize: 16)
-        let color1 = UIColor(white: 1.0, alpha: 0.7)
-        let color2 = UIColor(white: 0.3, alpha: 1.0)
-        
-        categoryButton.backgroundColor = UIColor.clear
-        
-        categoryButton.layer.shadowColor = UIColor.black.cgColor
-        categoryButton.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        categoryButton.layer.shadowOpacity = 0.7
-        categoryButton.layer.shadowRadius = 0.0
-        
-        let mainLayer = CAGradientLayer()
-        mainLayer.frame = categoryButton.layer.bounds
-        
-        mainLayer.colors = [color1.cgColor, color2.cgColor]
-        
-        mainLayer.locations = [0.0, 1.0]
-        
-        mainLayer.cornerRadius = categoryButton.layer.cornerRadius
-        
-        categoryButton.layer.insertSublayer(mainLayer, at: 0)
-        
-        applyTextShadow()
+        backgroundColor = Config.shared.cellBackgroundColor
+        categoryButton.setTitleColor(Config.shared.textColor, for: .normal)
+        categoryButton.titleLabel?.numberOfLines = 0
+        categoryButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        categoryButton.titleLabel?.lineBreakMode = .byWordWrapping
     }
     
     @IBAction func categoriesButtonSelected(_ sender: AnyObject) {

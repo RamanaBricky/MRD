@@ -12,9 +12,11 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
     var selectedIndexPath:Int = 0
     var viewModel: SubCategoryOptionsViewModel {
         didSet {
-        viewModel.delegate = self
+            viewModel.delegate = self
         }
     }
+    
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet var view: UIView!
     @IBOutlet weak var subCategoryOptionTableView: UITableView!
     
@@ -45,7 +47,9 @@ class SubCategoryOptions: UIView, UITableViewDelegate, UITableViewDataSource, Su
         addSubview(view)
         subCategoryOptionTableView.register(UINib.init(nibName: String(describing: SubCategoryOptionCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCategoryOptionCell.self))
         subCategoryOptionTableView.tableFooterView = UIView()
-        subCategoryOptionTableView.backgroundColor = UIColor.black
+        subCategoryOptionTableView.backgroundColor = Config.shared.viewBackgroundColor
+        headerLabel.backgroundColor = Config.shared.primaryColor
+        headerLabel.textColor = UIColor.white
     }
     
     fileprivate func loadViewFromNib() -> UIView

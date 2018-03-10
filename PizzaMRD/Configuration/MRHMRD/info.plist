@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ColorPalette</key>
+	<dict>
+		<key>primary</key>
+		<string>#772288</string>
+		<key>secondary</key>
+		<string>#667072</string>
+		<key>tertiary</key>
+		<string>#a0a0a0</string>
+		<key>text</key>
+		<string>#772288</string>
+		<key>staticText</key>
+		<string>#FFFFFF</string>
+		<key>cellBackground</key>
+		<string>#FFFFFF</string>
+		<key>viewBackground</key>
+		<string>#667072</string>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

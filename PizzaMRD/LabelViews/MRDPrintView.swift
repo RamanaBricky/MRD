@@ -59,7 +59,7 @@ class MRDPrintView:UIView {
         view.frame = frame
         bounds = view.frame
         
-        view.layer.borderColor = UIColor.red.cgColor
+        view.layer.borderColor = Config.shared.primaryColor.cgColor
         view.layer.borderWidth = 2.0
         addSubview(view)
         
