@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let mrdWidthValue = 95
+let mrdHeightValue = 87
+
 class MRDPrintView:UIView {
     
     @IBOutlet var view: UIView!
@@ -27,7 +30,7 @@ class MRDPrintView:UIView {
     @IBOutlet weak var discardTimeLabel: UILabel!
     
     init(printInfo: [String:String]){
-        super.init(frame: CGRect(x: 0,y: 0,width: 160,height: 188))
+        super.init(frame: CGRect(x: 0,y: 0,width: mrdWidthValue,height: mrdHeightValue))
         nibSetup()
         titleLabel.text = printInfo[titleString]
         madeDateLabel.text = printInfo[madeDateString]
@@ -52,7 +55,7 @@ class MRDPrintView:UIView {
     {
         backgroundColor = UIColor.clear
         view = loadViewFromNib()
-        let frame = CGRect(x: 0,y: 0,width: 160,height: 188)
+        let frame = CGRect(x: 0,y: 0,width: mrdWidthValue,height: mrdHeightValue)
         view.frame = frame
         bounds = view.frame
         
@@ -81,7 +84,7 @@ class MRDPrintView:UIView {
     
     func applyBorderChanges(to label:UILabel) {
         label.layer.borderColor = UIColor.black.cgColor
-        label.layer.borderWidth = 1.0
+        label.layer.borderWidth = 0.5
         
     }
 }
