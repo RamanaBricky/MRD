@@ -287,10 +287,7 @@
 				9630B52B1DC495A00073B16D /* AppDelegate.swift */,
 				9630B52D1DC495A00073B16D /* ViewController.swift */,
 				9630B52F1DC495A00073B16D /* Main.storyboard */,
-				9630B5321DC495A00073B16D /* Assets.xcassets */,
 				9630B5341DC495A00073B16D /* LaunchScreen.storyboard */,
-				96451CB220535F9000A7522F /* MRHMRD.xcassets */,
-				96451CB52053693A00A7522F /* SWMRD.xcassets */,
 			);
 			path = PizzaMRD;
 			sourceTree = "<group>";
@@ -345,6 +342,7 @@
 		F11741B92054363700D7FAF1 /* PHMRD */ = {
 			isa = PBXGroup;
 			children = (
+				9630B5321DC495A00073B16D /* Assets.xcassets */,
 				9630B5371DC495A00073B16D /* info.plist */,
 			);
 			path = PHMRD;
@@ -353,6 +351,7 @@
 		F11741BA2054363F00D7FAF1 /* MRHMRD */ = {
 			isa = PBXGroup;
 			children = (
+				96451CB220535F9000A7522F /* MRHMRD.xcassets */,
 				F1EC2ECF20444E7800B290B0 /* info.plist */,
 			);
 			path = MRHMRD;
@@ -361,6 +360,7 @@
 		F11741BB2054364500D7FAF1 /* SWMRD */ = {
 			isa = PBXGroup;
 			children = (
+				96451CB52053693A00A7522F /* SWMRD.xcassets */,
 				F1EC2F0020445CAD00B290B0 /* info.plist */,
 			);
 			path = SWMRD;
