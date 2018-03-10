@@ -415,7 +415,7 @@
 				TargetAttributes = {
 					9630B5271DC495A00073B16D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 9ZYWNJDG54;
+						DevelopmentTeam = 3BRLGH5MDE;
 						ProvisioningStyle = Automatic;
 					};
 					F1EC2EA220444E7800B290B0 = {
@@ -874,12 +874,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = PHMRD;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3BRLGH5MDE;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.phmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -896,12 +896,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DATABASE_FILE_NAME = PHMRD;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3BRLGH5MDE;
 				INFOPLIST_FILE = PizzaMRD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPH";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SRISAILTD.PHMRD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.phmrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
