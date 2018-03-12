@@ -3,9 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Config</key>
-	<dict/>
-	<key>LabelView</key>
-	<string>mrd</string>
+	<dict>
+		<key>LabelView</key>
+		<string>mrd</string>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
