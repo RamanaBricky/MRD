@@ -45,14 +45,16 @@ class MRDetailsVM: MRDDetailsViewModel {
         let mrdStruct = DataStack.shared.mrdDataStruct(for: selectedCategoryID, selectedSubCategoryID)
         let date = Date()
         let mdDate = convertDateToString(date: date, format: "dd/MM")
-        let mdTime = covertTimeTo24Hrs(time: date.toString(.none, timeStyle: .short))
+//        let mdTime = covertTimeTo24Hrs(time: date.toString(.none, timeStyle: .short))
+        let mdTime = date.toString(.none, timeStyle: .short)
         
         let index = selectedMRDType! == 0 ? 0:selectedMRDType! - 1
         let firstMRDStruct = mrdStruct[index]
         let rDate = calculateDateAndTime(date: date, frequency: firstMRDStruct.mRDReadyFrequency, interval: firstMRDStruct.mRDReadyInterval)
         
         let rdDate = convertDateToString(date: rDate, format: "dd/MM")
-        let rdTime = covertTimeTo24Hrs(time: rDate.toString(.none, timeStyle: .short))
+//        let rdTime = covertTimeTo24Hrs(time: rDate.toString(.none, timeStyle: .short))
+        let rdTime = rDate.toString(.none, timeStyle: .short)
         
         var discDate = ""
         var discTime = ""
@@ -68,7 +70,8 @@ class MRDetailsVM: MRDDetailsViewModel {
                 discTime = "23:59"
             }
             else {
-              discTime = covertTimeTo24Hrs(time: discardDate.toString(.none, timeStyle: .short))
+//              discTime = covertTimeTo24Hrs(time: discardDate.toString(.none, timeStyle: .short))
+                discTime = discardDate.toString(.none, timeStyle: .short)
             }
         }
         
@@ -146,16 +149,16 @@ class MRDetailsVM: MRDDetailsViewModel {
         return "\(dateFormatter.string(from: date))"
     }
   
-  private func covertTimeTo24Hrs(time: String) -> String {
-    
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "h:mm a"
-    
-    let date = dateFormatter.date(from: time)
-    dateFormatter.dateFormat = "HH:mm"
-    
-    return dateFormatter.string(from: date!)
-  }
+//  private func covertTimeTo24Hrs(time: String) -> String {
+//
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = "h:mm a"
+//
+//    let date = dateFormatter.date(from: time)
+//    dateFormatter.dateFormat = "HH:mm"
+//
+//    return dateFormatter.string(from: date!)
+//  }
   
     private func calculateDateAndTime(date: Date, frequency: Frequency = .useByDate, interval: Int = 0) -> Date{
         switch frequency
