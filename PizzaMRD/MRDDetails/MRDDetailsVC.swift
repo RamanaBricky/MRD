@@ -157,7 +157,12 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
     var printViewAlert : UIView!
     switch Config.shared.getLabelViewType() {
     case .bb:
-      printViewAlert = BestBeforePrintView.init(printInfo: printDetails)
+      let bbView = BestBeforePrintView.init(printInfo: printDetails)
+      if selectedPrinter == nil {
+        bbView.titleLabel.font = UIFont(name: bbView.titleLabel.font.fontName, size: 16.0)
+        bbView.discardLabel.font = UIFont(name: bbView.discardLabel.font.fontName, size: 16.0)
+      }
+        printViewAlert = bbView
     default:
       printViewAlert = MRDPrintView.init(printInfo: printDetails)
     }
@@ -186,7 +191,14 @@ class MRDDetailsVC: UIViewController, MRDDetailsDelegate {
 	}
 	
     func showLabel(labelView: UIView) {
-		labelView.frame.size.width = 115.0
+        switch Config.shared.getLabelViewType() {
+        case .bb:
+            labelView.frame.size.width = 215.0
+            labelView.frame.size.height = 50.0
+        default:
+            labelView.frame.size.width = 115.0
+        }
+		
 		labelView.center = view.center
         AlertWindowView.sharedInstance.showWithView(labelView,
                                                     animations:{
